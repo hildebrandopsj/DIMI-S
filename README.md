@@ -3,7 +3,7 @@ Programa para dimensionamento de seções em concreto armado.
 
 Foi inicialmente desenvolvido como uma planilha do software SMath Studio e distribuída livremente, atualmente a planilha está sendo reescrita em PASCAL.
 
-Capabilidades:
+**Capabilidades:**
 - Concretos até 90 MPa
 - Dimensionamento à flexão simples
 - Dimensionamento à flexão composta normal (em fase de testes)
@@ -16,7 +16,21 @@ Capabilidades:
 - Fadiga (Armaduras longitudinais e transversais)
 - Detalhamento (Ancoragem, ganchos, traspasse, decalagem etc)
 
-Convido todos aqueles que tiverem interesse em:
+**Convido todos aqueles que tiverem interesse em:**
 - Auxiliar no desenvolvimento;
 - Auxiliar com testes;
 - Solicitar a inclusão de novas ferramentas;
+
+**Módulos transcritos para Pascal:**
+- [X] Materiais
+- [ ] Seção
+- [ ] Flexão Simples
+- [ ] Flexão Composta
+- [ ] Cortante
+- [ ] Torção
+- [ ] Armadura
+- [ ] Alojamento
+- [ ] Fissuração
+- [ ] Deformação
+- [ ] Fadiga
+- [ ] Detalhamento
