@@ -1,0 +1,1769 @@
+object Form1: TForm1
+  Left = 1339
+  Height = 920
+  Top = 49
+  Width = 483
+  BorderIcons = [biSystemMenu, biMinimize, biHelp]
+  BorderStyle = bsSingle
+  Caption = 'DIMensIonamento de Seções'
+  ClientHeight = 920
+  ClientWidth = 483
+  Icon.Data = {
+    BE0C00000000010001002020000001001800A80C000016000000280000002000
+    0000400000000100180000000000000C00006400000064000000000000000000
+    00002626238E8E80A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5958E8E8127
+    27238E8E81A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5958E
+    8E80A5A595A5A595A5A595A09E8BA2A190A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A09E8C817655857C5EA5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A2A190867C5E8C856AA5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A4A494938D75A5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A59495917AA5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A5A595A5A4949B9883A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A5A595A3A2918F886EA5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5
+    A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A4A494A5A595A5A595A5A595A4A494A5A595A5
+    A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A2A08F877E60A5A595A5A5959D9B878B8468A5A595A5
+    A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5
+    95A5A595A5A595A5A595A5A595A5A594A5A595A5A595A5A595A5A494A5A595A5
+    A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A5959E9E8F3C3C360F0F0E3A3A348B8D81A5A595A5A595A5A595A5A5
+    95A5A595A5A5959EA39A80867F73736877776B8E9288A4A596A5A595A5A59591
+    9183A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A5953C3C36000000000000000000133A67508CCA7791A38282767B7B
+    6F5F5F564684C8277FE40B25430000000000001037633383DC5A85AF6161581E
+    1E1BA5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A5950F0F0D000000000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595393934000000000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A5958B8D8110466B0E466D0E466D1860A4257EE52071C90E466D0E46
+    6D0E466D2188E3228CEB145B920E466D0E466D185FA1257EE52174CE0E466D07
+    2438A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A5954E9FD11F9CF21F9CF2228FEC257EE52485E81F9CF21F9C
+    F21F9CF21F9CF21F9CF21F9CF21F9CF21F9CF22290ED257EE52484E81F9CF21D
+    94E5A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A5957699A51876B81876B81E7ACD257EE5227CDA1876B81876
+    B81876B82093EC2195EF1A7FC81876B81876B81D7ACB257EE5227DDC1876B810
+    4F7AA5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595828275000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A5957B7B6F000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595605F56000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A5954399CF1D91E11D91E12189E3257EE52383E41D91E11D91
+    E11D91E11F9AF01F9AF11E94E61D91E11D91E12089E3257EE52482E41D91E115
+    68A2A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A5959EA59A229CF01F9CF21F9CF2228FEC257EE52485E81F9CF21F9C
+    F21F9CF21F9CF21F9CF21F9CF21F9CF21F9CF22290ED257EE52484E81F9CF21C
+    8DDBA5A595A5A595A5A595A5A595A5A595A5A595A5A595A09E8C928C73A5A595
+    A5A595A5A59580867E092B43092B43092B4316518D257EE51E6BBF092B43092B
+    43092B432180DF2386E9114674092B43092B43154F89257EE5206FC6092B4303
+    111BA5A595A5A595A5A595A5A595A5A595A5A595A5A595A3A3929C9985A5A595
+    A5A595A5A595737368000000000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A59576766B000000000000000000113A69257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    0000A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595959078837959
+    9C9985A5A5958E92880D41640D41640D4164185D9F257EE51F70C70D41640D41
+    640D41642286E3238BEB13578B0D41640D4164175C9C257EE52073CC0D416406
+    2031A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A5958E886D807554
+    97937DA5A595A4A5962F9DE71F9CF21F9CF2228FEC257EE52485E81F9CF21F9C
+    F21F9CF21F9CF21F9CF21F9CF21F9CF21F9CF22290ED257EE52484E81F9CF21D
+    93E4A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A4A4939E9C88
+    A5A595A5A595A5A5955892B3197CC0197CC01E7DD1257EE5227EDC197CC0197C
+    C0197CC02094EC2096EF1B84CE197CC0197CC01E7DD0257EE5237EDE197CC011
+    54828E8E81A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A595A5A595616158000000000000113A68257EE51C61B00000000000
+    000000002376D7257EE50B2543000000000000103763257EE51E66B900000000
+    00002727238E8E81A5A595A5A595A5A595A5A595A5A595A5A595A5A595A5A595
+    A5A595A5A5959191831E1E1B000000000000091F372479DC1341760000000000
+    000000001A579E2274D1040F1B000000000000081B312378DA14467E00000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000
+  }
+  OnCreate = FormCreate
+  LCLVersion = '2.2.2.0'
+  object PageControl1: TPageControl
+    Left = 10
+    Height = 880
+    Top = 10
+    Width = 462
+    ActivePage = TabMateriais
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = tpLeft
+    object TabMateriais: TTabSheet
+      Caption = 'Materiais'
+      ClientHeight = 872
+      ClientWidth = 431
+      object gb_Coeficientes: TGroupBox
+        Left = 10
+        Height = 110
+        Top = 10
+        Width = 415
+        Caption = 'Coeficientes de ponderação'
+        ClientHeight = 90
+        ClientWidth = 411
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+        object lb_Gama_s: TLabel
+          Left = 10
+          Height = 15
+          Top = 2
+          Width = 22
+          Caption = 'γs ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Gama_c: TLabel
+          Left = 10
+          Height = 15
+          Top = 29
+          Width = 23
+          Caption = 'γc ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Delta: TLabel
+          Left = 10
+          Height = 15
+          Top = 56
+          Width = 176
+          Caption = 'Redistribuição de momentos (δ) :'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object tb_Gama_s: TEdit
+          Left = 220
+          Height = 23
+          Top = 0
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnKeyPress = tb_Gama_sKeyPress
+          ParentFont = False
+          TabOrder = 0
+          Text = '1,15'
+        end
+        object tb_Gama_c: TEdit
+          Left = 220
+          Height = 23
+          Top = 27
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnKeyPress = tb_Gama_cKeyPress
+          ParentFont = False
+          TabOrder = 1
+          Text = '1,4'
+        end
+        object tb_Delta: TEdit
+          Left = 220
+          Height = 23
+          Top = 54
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnKeyPress = tb_DeltaKeyPress
+          ParentFont = False
+          TabOrder = 2
+          Text = '1,00'
+        end
+      end
+      object gb_Concreto: TGroupBox
+        Left = 10
+        Height = 405
+        Top = 120
+        Width = 415
+        Caption = 'Concreto'
+        ClientHeight = 385
+        ClientWidth = 411
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        object lb_Fck: TLabel
+          Left = 10
+          Height = 15
+          Top = 2
+          Width = 27
+          Caption = 'fck ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd: TLabel
+          Left = 10
+          Height = 15
+          Top = 29
+          Width = 28
+          Caption = 'fcd ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Alpha_v2: TLabel
+          Left = 10
+          Height = 15
+          Top = 56
+          Width = 30
+          Caption = 'αv2 ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd1: TLabel
+          Left = 10
+          Height = 15
+          Top = 83
+          Width = 34
+          Caption = 'fcd1 ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd2: TLabel
+          Left = 10
+          Height = 15
+          Top = 110
+          Width = 34
+          Caption = 'fcd2 ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd3: TLabel
+          Left = 10
+          Height = 15
+          Top = 137
+          Width = 34
+          Caption = 'fcd3 ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctm: TLabel
+          Left = 10
+          Height = 15
+          Top = 164
+          Width = 36
+          Caption = 'fctm ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fckt_inf: TLabel
+          Left = 10
+          Height = 15
+          Top = 191
+          Width = 48
+          Caption = 'fctk,inf ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctk_sup: TLabel
+          Left = 10
+          Height = 15
+          Top = 218
+          Width = 53
+          Caption = 'fctk,sup ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctd: TLabel
+          Left = 10
+          Height = 15
+          Top = 245
+          Width = 32
+          Caption = 'fctd ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Alpha_e: TLabel
+          Left = 10
+          Height = 15
+          Top = 272
+          Width = 24
+          Caption = 'αe ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Alpha_i: TLabel
+          Left = 10
+          Height = 15
+          Top = 299
+          Width = 21
+          Caption = 'αi ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Eci: TLabel
+          Left = 10
+          Height = 15
+          Top = 326
+          Width = 26
+          Caption = 'Eci ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object cb_Fck: TComboBox
+          Left = 220
+          Height = 23
+          Top = 0
+          Width = 140
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ItemHeight = 15
+          ItemIndex = 5
+          Items.Strings = (
+            '15'
+            '18'
+            '20'
+            '25'
+            '30'
+            '35'
+            '40'
+            '45'
+            '50'
+            '55'
+            '60'
+            '65'
+            '70'
+            '75'
+            '80'
+            '85'
+            '90'
+          )
+          OnChange = cb_FckChange
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 0
+          Text = '35'
+        end
+        object lb_Fck_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 2
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object tb_Fcd: TEdit
+          Left = 220
+          Height = 23
+          Top = 27
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 1
+        end
+        object tb_Alpha_v2: TEdit
+          Left = 220
+          Height = 23
+          Top = 54
+          Width = 180
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 2
+        end
+        object tb_Fcd1: TEdit
+          Left = 220
+          Height = 23
+          Top = 81
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 3
+        end
+        object tb_Fcd2: TEdit
+          Left = 220
+          Height = 23
+          Top = 108
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 4
+        end
+        object tb_Fcd3: TEdit
+          Left = 220
+          Height = 23
+          Top = 135
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 5
+        end
+        object tb_Fctm: TEdit
+          Left = 220
+          Height = 23
+          Top = 162
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 6
+        end
+        object tb_Fctk_inf: TEdit
+          Left = 220
+          Height = 23
+          Top = 189
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 7
+        end
+        object tb_Fctk_sup: TEdit
+          Left = 220
+          Height = 23
+          Top = 216
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 8
+        end
+        object tb_Fctd: TEdit
+          Left = 220
+          Height = 23
+          Top = 243
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 9
+        end
+        object tb_Alpha_i: TEdit
+          Left = 220
+          Height = 23
+          Top = 297
+          Width = 180
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 10
+        end
+        object tb_Eci: TEdit
+          Left = 220
+          Height = 23
+          Top = 324
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 11
+        end
+        object tb_Ecs: TEdit
+          Left = 220
+          Height = 23
+          Top = 351
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 12
+        end
+        object lb_Ecs: TLabel
+          Left = 10
+          Height = 15
+          Top = 353
+          Width = 28
+          Caption = 'Ecs ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object cb_Alpha_e: TComboBox
+          Left = 220
+          Height = 23
+          Top = 270
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'Basalto ou diabásio'
+            'Granito ou Gnaisse'
+            'Calcário'
+            'Arenito'
+          )
+          OnChange = cb_Alpha_eChange
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 13
+          Text = 'Granito ou Gnaisse'
+        end
+        object lb_Fcd_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 29
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd1_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 83
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd2_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 110
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fcd3_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 137
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctm_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 164
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctk_inf_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 191
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctk_sup_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 218
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fctd_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 245
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Eci_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 326
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Ecs_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 353
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object gb_Bloco: TGroupBox
+        Left = 10
+        Height = 129
+        Top = 530
+        Width = 415
+        Caption = 'Parâmetros do bloco retangular'
+        ClientHeight = 109
+        ClientWidth = 411
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object lb_Epsilon_c2: TLabel
+          Left = 10
+          Height = 15
+          Top = 2
+          Width = 28
+          Caption = 'εc2 ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Epsilon_cu: TLabel
+          Left = 10
+          Height = 15
+          Top = 29
+          Width = 29
+          Caption = 'εcu ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Alpha_c: TLabel
+          Left = 10
+          Height = 15
+          Top = 56
+          Width = 24
+          Caption = 'αc ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Lambda: TLabel
+          Left = 10
+          Height = 15
+          Top = 83
+          Width = 17
+          Caption = 'λ ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object tb_Epsilon_c2: TEdit
+          Left = 220
+          Height = 23
+          Top = 0
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 0
+        end
+        object tb_Epsilon_cu: TEdit
+          Left = 220
+          Height = 23
+          Top = 27
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 1
+        end
+        object tb_Alpha_c: TEdit
+          Left = 220
+          Height = 23
+          Top = 54
+          Width = 180
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 2
+        end
+        object tb_Lambda: TEdit
+          Left = 220
+          Height = 23
+          Top = 81
+          Width = 180
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 3
+        end
+        object lb_Epsilon_c2_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 2
+          Width = 15
+          Caption = '‰'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Epsilon_cu_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 29
+          Width = 15
+          Caption = '‰'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 10
+        Height = 185
+        Top = 660
+        Width = 415
+        Caption = 'Aço'
+        ClientHeight = 165
+        ClientWidth = 411
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+        object cb_Fyk: TComboBox
+          Left = 220
+          Height = 23
+          Top = 0
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'CA25'
+            'CA50'
+            'CA60'
+          )
+          OnChange = cb_FykChange
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+          Text = 'CA50'
+        end
+        object cb_Fywk: TComboBox
+          Left = 220
+          Height = 23
+          Top = 27
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'CA50'
+            'CA60'
+          )
+          OnChange = cb_FywkChange
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+          Text = 'CA50'
+        end
+        object tb_Fyd: TEdit
+          Left = 220
+          Height = 23
+          Top = 54
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 0
+        end
+        object tb_Fywd: TEdit
+          Left = 220
+          Height = 23
+          Top = 81
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 3
+        end
+        object tb_Es: TEdit
+          Left = 220
+          Height = 23
+          Top = 108
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 2
+        end
+        object lb_Fyk: TLabel
+          Left = 10
+          Height = 15
+          Top = 2
+          Width = 27
+          Caption = 'fyk ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fywk: TLabel
+          Left = 10
+          Height = 15
+          Top = 29
+          Width = 36
+          Caption = 'fywk ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fyd: TLabel
+          Left = 10
+          Height = 15
+          Top = 56
+          Width = 28
+          Caption = 'fyd ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fywd: TLabel
+          Left = 10
+          Height = 15
+          Top = 83
+          Width = 37
+          Caption = 'fywd ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Es: TLabel
+          Left = 10
+          Height = 15
+          Top = 110
+          Width = 22
+          Caption = 'Es ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Epsilon_yd: TLabel
+          Left = 10
+          Height = 15
+          Top = 137
+          Width = 29
+          Caption = 'εyd ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object tb_Epsilon_yd: TEdit
+          Left = 220
+          Height = 23
+          Top = 135
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 4
+        end
+        object lb_Epsilon_yd_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 137
+          Width = 15
+          Caption = '‰'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Es_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 110
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fywd_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 83
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Fyd_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 56
+          Width = 24
+          Caption = 'MPa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+    end
+    object TabSecao: TTabSheet
+      Caption = 'Seção'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox5: TGroupBox
+        Left = 10
+        Height = 273
+        Top = 10
+        Width = 415
+        Caption = 'Geometria'
+        TabOrder = 0
+      end
+      object GroupBox6: TGroupBox
+        Left = 10
+        Height = 185
+        Top = 296
+        Width = 415
+        Caption = 'Propriedades Geométricas'
+        TabOrder = 1
+      end
+      object GroupBox7: TGroupBox
+        Left = 10
+        Height = 361
+        Top = 488
+        Width = 415
+        Caption = 'Seção transversal'
+        TabOrder = 2
+      end
+    end
+    object TabFlexao: TTabSheet
+      Caption = 'Flexão Simples'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox8: TGroupBox
+        Left = 10
+        Height = 105
+        Top = 10
+        Width = 415
+        Caption = 'Esforços Solicitantes'
+        TabOrder = 0
+      end
+      object GroupBox9: TGroupBox
+        Left = 10
+        Height = 201
+        Top = 128
+        Width = 415
+        Caption = 'Determinação da linha neutra'
+        TabOrder = 1
+      end
+      object GroupBox10: TGroupBox
+        Left = 10
+        Height = 201
+        Top = 344
+        Width = 415
+        Caption = 'Armaduras de equilíbrio geral'
+        TabOrder = 2
+      end
+      object GroupBox11: TGroupBox
+        Left = 10
+        Height = 73
+        Top = 560
+        Width = 415
+        Caption = 'Armaduras auxiliares'
+        TabOrder = 3
+      end
+      object GroupBox12: TGroupBox
+        Left = 10
+        Height = 201
+        Top = 648
+        Width = 415
+        Caption = 'Armaduras adotadas'
+        TabOrder = 4
+      end
+    end
+    object TabFCN: TTabSheet
+      Caption = 'Flexão Composta'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox13: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 10
+        Width = 415
+        Caption = 'Esforços Solicitantes'
+        TabOrder = 0
+      end
+      object GroupBox14: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 144
+        Width = 415
+        Caption = 'Coeficientes'
+        TabOrder = 1
+      end
+      object GroupBox15: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 272
+        Width = 415
+        Caption = 'Determinação da linha neutra'
+        TabOrder = 2
+      end
+      object GroupBox16: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 408
+        Width = 415
+        Caption = 'Armaduras de equilíbrio geral'
+        TabOrder = 3
+      end
+    end
+    object TabCortante: TTabSheet
+      Caption = 'Cortante'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox17: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 10
+        Width = 415
+        Caption = 'Esforços Solicitantes'
+        TabOrder = 0
+      end
+      object GroupBox18: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 144
+        Width = 415
+        Caption = 'Modelo de Cálculo'
+        TabOrder = 1
+      end
+      object GroupBox19: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 280
+        Width = 415
+        Caption = 'Dispensa da armadura transversal'
+        TabOrder = 2
+      end
+      object GroupBox20: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 408
+        Width = 415
+        Caption = 'Verificações do concreto'
+        TabOrder = 3
+      end
+      object GroupBox21: TGroupBox
+        Left = 10
+        Height = 121
+        Top = 544
+        Width = 415
+        Caption = 'Armaduras de equilíbrio geral'
+        TabOrder = 4
+      end
+      object GroupBox22: TGroupBox
+        Left = 10
+        Height = 73
+        Top = 672
+        Width = 415
+        Caption = 'Espaçamentos máximos'
+        TabOrder = 5
+      end
+      object GroupBox23: TGroupBox
+        Left = 10
+        Height = 73
+        Top = 752
+        Width = 415
+        Caption = 'Decalagem (al)'
+        TabOrder = 6
+      end
+    end
+    object TabTorcao: TTabSheet
+      Caption = 'Torção'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox24: TGroupBox
+        Left = 10
+        Height = 65
+        Top = 10
+        Width = 415
+        Caption = 'Esforços Solicitantes'
+        TabOrder = 0
+      end
+      object GroupBox25: TGroupBox
+        Left = 10
+        Height = 209
+        Top = 88
+        Width = 415
+        Caption = 'Parede equivalente'
+        TabOrder = 1
+      end
+      object GroupBox26: TGroupBox
+        Left = 10
+        Height = 145
+        Top = 312
+        Width = 415
+        Caption = 'Verificações do concreto'
+        TabOrder = 2
+      end
+      object GroupBox27: TGroupBox
+        Left = 10
+        Height = 105
+        Top = 472
+        Width = 415
+        Caption = 'Armaduras transversais de equilíbrio geral'
+        TabOrder = 3
+      end
+      object GroupBox28: TGroupBox
+        Left = 10
+        Height = 105
+        Top = 592
+        Width = 415
+        Caption = 'Armaduras longitudinais de equilíbrio geral'
+        TabOrder = 4
+      end
+      object GroupBox29: TGroupBox
+        Left = 10
+        Height = 64
+        Top = 704
+        Width = 415
+        Caption = 'Distribuição Horizontal'
+        TabOrder = 5
+      end
+      object GroupBox30: TGroupBox
+        Left = 10
+        Height = 64
+        Top = 784
+        Width = 415
+        Caption = 'Distribuição Vertical'
+        TabOrder = 6
+      end
+    end
+    object TabArmadura: TTabSheet
+      Caption = 'Armadura'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox31: TGroupBox
+        Left = 10
+        Height = 226
+        Top = 10
+        Width = 415
+        Caption = 'Armadura longitudinal'
+        TabOrder = 0
+      end
+      object GroupBox32: TGroupBox
+        Left = 10
+        Height = 226
+        Top = 248
+        Width = 415
+        Caption = 'Armadura transversal'
+        TabOrder = 1
+      end
+      object GroupBox33: TGroupBox
+        Left = 8
+        Height = 144
+        Top = 488
+        Width = 415
+        Caption = 'Espaçamento entre barras'
+        TabOrder = 2
+      end
+      object GroupBox34: TGroupBox
+        Left = 10
+        Height = 144
+        Top = 640
+        Width = 415
+        Caption = 'Altura efetiva'
+        TabOrder = 3
+      end
+    end
+    object TabFissuracao: TTabSheet
+      Caption = 'Fissuração'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox35: TGroupBox
+        Left = 10
+        Height = 94
+        Top = 10
+        Width = 415
+        Caption = 'Esforços solicitantes'
+        TabOrder = 0
+      end
+      object GroupBox36: TGroupBox
+        Left = 10
+        Height = 94
+        Top = 120
+        Width = 415
+        Caption = 'Condição da seção'
+        TabOrder = 1
+      end
+      object GroupBox37: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 232
+        Width = 415
+        Caption = 'Propriedades da seção'
+        TabOrder = 2
+      end
+      object GroupBox38: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 384
+        Width = 415
+        Caption = 'Conjunto'
+        TabOrder = 3
+      end
+      object GroupBox39: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 528
+        Width = 415
+        Caption = 'Camadas'
+        TabOrder = 4
+      end
+      object GroupBox40: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 672
+        Width = 415
+        Caption = 'Abertura de fissuras'
+        TabOrder = 5
+      end
+    end
+    object TabDeformacao: TTabSheet
+      Caption = 'Deformação'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox41: TGroupBox
+        Left = 10
+        Height = 94
+        Top = 120
+        Width = 415
+        Caption = 'Condição da seção'
+        TabOrder = 0
+      end
+      object GroupBox42: TGroupBox
+        Left = 10
+        Height = 94
+        Top = 10
+        Width = 415
+        Caption = 'Esforços solicitantes'
+        TabOrder = 1
+      end
+      object GroupBox43: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 232
+        Width = 415
+        Caption = 'Propriedades da seção'
+        TabOrder = 2
+      end
+      object GroupBox44: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 384
+        Width = 415
+        Caption = 'Coeficientes para flecha diferida'
+        TabOrder = 3
+      end
+    end
+    object TabFadiga: TTabSheet
+      Caption = 'Fadiga'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox45: TGroupBox
+        Left = 10
+        Height = 94
+        Top = 120
+        Width = 415
+        Caption = 'Propriedades da seção'
+        TabOrder = 0
+      end
+      object GroupBox46: TGroupBox
+        Left = 10
+        Height = 94
+        Top = 10
+        Width = 415
+        Caption = 'Esforços solicitantes normais'
+        TabOrder = 1
+      end
+      object GroupBox47: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 232
+        Width = 415
+        Caption = 'Tensões nas armaduras longitudinais'
+        TabOrder = 2
+      end
+      object GroupBox48: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 384
+        Width = 415
+        Caption = 'Esforços solicitantes tangenciais'
+        TabOrder = 3
+      end
+      object GroupBox49: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 528
+        Width = 415
+        Caption = 'Tensões nas armaduras transversais'
+        TabOrder = 4
+      end
+    end
+    object TabDetalhamento: TTabSheet
+      Caption = 'Detalhamento'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox50: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 10
+        Width = 415
+        Caption = 'Ancoragem'
+        TabOrder = 0
+      end
+      object GroupBox51: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 160
+        Width = 415
+        Caption = 'Traspasse'
+        TabOrder = 1
+      end
+      object GroupBox52: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 304
+        Width = 415
+        Caption = 'Ganchos'
+        TabOrder = 2
+      end
+    end
+    object TabSobre: TTabSheet
+      Caption = 'Sobre'
+      ClientHeight = 872
+      ClientWidth = 431
+      object GroupBox53: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 10
+        Width = 415
+        Caption = 'Autor'
+        TabOrder = 0
+      end
+      object GroupBox54: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 160
+        Width = 415
+        Caption = 'Licença de Uso'
+        TabOrder = 1
+      end
+      object GroupBox55: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 312
+        Width = 415
+        Caption = 'Direitos'
+        TabOrder = 2
+      end
+      object GroupBox56: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 456
+        Width = 415
+        Caption = 'Termos'
+        TabOrder = 3
+      end
+      object GroupBox57: TGroupBox
+        Left = 10
+        Height = 134
+        Top = 600
+        Width = 415
+        Caption = 'Aviso legal'
+        TabOrder = 4
+      end
+    end
+  end
+end
