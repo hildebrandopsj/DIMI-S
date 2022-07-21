@@ -1,5 +1,7 @@
 # DIMIS (DIMenIonamento de Seções)
-Programa para dimensionamento de seções em concreto armado. Foi inicialmente desenvolvido como uma planilha do software SMath Studio, atualmente uma versão em PASCAL está sendo desenvolvida.
+Programa para dimensionamento de seções em concreto armado.
+
+Foi inicialmente desenvolvido como uma planilha do software SMath Studio e distribuída livremente, atualmente a planilha está sendo reescrita em PASCAL.
 
 Capabilidades:
 - Concretos até 90 MPa
