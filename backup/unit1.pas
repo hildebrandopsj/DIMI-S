@@ -12,10 +12,22 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    cb_Fck1: TComboBox;
+    cb_Fck2: TComboBox;
     cb_Fyk: TComboBox;
     cb_Fywk: TComboBox;
     cb_Fck: TComboBox;
     cb_Alpha_e: TComboBox;
+    lb_Ac: TLabel;
+    lb_Ycg: TLabel;
+    lb_I0: TLabel;
+    lb_W0_inf: TLabel;
+    lb_W0_sup: TLabel;
+    lb_Ac_u: TLabel;
+    lb_Ycg_u: TLabel;
+    lb_I0_u: TLabel;
+    lb_W0_inf_u: TLabel;
+    lb_W0_sup_u: TLabel;
     lb_Fcd_u: TLabel;
     lb_Eci_u: TLabel;
     lb_Ecs_u: TLabel;
@@ -23,6 +35,13 @@ type
     lb_Epsilon_cu_u: TLabel;
     lb_Epsilon_yd_u: TLabel;
     lb_Es_u: TLabel;
+    lb_Bw_u: TLabel;
+    lb_H_u: TLabel;
+    lb_Bf_u: TLabel;
+    lb_Hf_u: TLabel;
+    lb_D_u: TLabel;
+    lb_D_linha_u: TLabel;
+    lb_C_u: TLabel;
     lb_Fywd_u: TLabel;
     lb_Fyd_u: TLabel;
     lb_Fcd1_u: TLabel;
@@ -32,6 +51,15 @@ type
     lb_Fctk_inf_u: TLabel;
     lb_Fctk_sup_u: TLabel;
     lb_Fctd_u: TLabel;
+    lb_Tipo_elemento: TLabel;
+    lb_Geometria: TLabel;
+    lb_H: TLabel;
+    lb_Bf: TLabel;
+    lb_Hf: TLabel;
+    lb_D: TLabel;
+    lb_D_linha: TLabel;
+    lb_C: TLabel;
+    lb_Bw: TLabel;
     lb_Lambda: TLabel;
     lb_Epsilon_c2: TLabel;
     lb_Epsilon_cu: TLabel;
@@ -42,7 +70,19 @@ type
     lb_Fywd: TLabel;
     lb_Es: TLabel;
     lb_Epsilon_yd: TLabel;
+    tb_Ycg: TEdit;
+    tb_I0: TEdit;
+    tb_W0_inf: TEdit;
+    tb_W0_sup: TEdit;
     tb_Epsilon_c2: TEdit;
+    tb_C: TEdit;
+    tb_Bw: TEdit;
+    tb_Ac: TEdit;
+    tb_H: TEdit;
+    tb_Bf: TEdit;
+    tb_Hf: TEdit;
+    tb_D: TEdit;
+    tb_D_linha: TEdit;
     tb_Fyd: TEdit;
     tb_Fywd: TEdit;
     tb_Es: TEdit;
@@ -98,7 +138,7 @@ type
     GroupBox37: TGroupBox;
     GroupBox38: TGroupBox;
     GroupBox39: TGroupBox;
-    GroupBox4: TGroupBox;
+    gb_Aco: TGroupBox;
     GroupBox40: TGroupBox;
     GroupBox41: TGroupBox;
     GroupBox42: TGroupBox;
@@ -109,7 +149,7 @@ type
     GroupBox47: TGroupBox;
     GroupBox48: TGroupBox;
     GroupBox49: TGroupBox;
-    GroupBox5: TGroupBox;
+    gb_Geometria: TGroupBox;
     GroupBox50: TGroupBox;
     GroupBox51: TGroupBox;
     GroupBox52: TGroupBox;
@@ -118,7 +158,7 @@ type
     GroupBox55: TGroupBox;
     GroupBox56: TGroupBox;
     GroupBox57: TGroupBox;
-    GroupBox6: TGroupBox;
+    gb_Propriedades: TGroupBox;
     GroupBox7: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
@@ -157,13 +197,21 @@ type
     procedure cb_FckChange(Sender: TObject);
     procedure cb_FykChange(Sender: TObject);
     procedure cb_FywkChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure tb_BfKeyPress(Sender: TObject; var Key: char);
+    procedure tb_BwKeyPress(Sender: TObject; var Key: char);
+    procedure tb_CKeyPress(Sender: TObject; var Key: char);
     procedure tb_DeltaKeyPress(Sender: TObject; var Key: char);
+    procedure tb_DKeyPress(Sender: TObject; var Key: char);
+    procedure tb_D_linhaKeyPress(Sender: TObject; var Key: char);
     procedure tb_Gama_cKeyPress(Sender: TObject; var Key: char);
     procedure tb_Gama_sKeyPress(Sender: TObject; var Key: char);
+    procedure tb_HfKeyPress(Sender: TObject; var Key: char);
+    procedure tb_HKeyPress(Sender: TObject; var Key: char);
   private
 
   public
-
+    procedure Materiais;
   end;
 
 var
@@ -182,43 +230,7 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
-begin
-// Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
-end;
-
-procedure TForm1.tb_Gama_cKeyPress(Sender: TObject; var Key: char);
-begin
-// Coletar apenas números positivos e converter o ponto decimal
-    if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
-end;
-
-procedure TForm1.tb_DeltaKeyPress(Sender: TObject; var Key: char);
-begin
-// Coletar apenas números positivos e converter o ponto decimal
-    if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
-end;
-
-procedure TForm1.cb_FckChange(Sender: TObject);
+procedure TForm1.Materiais;
 begin
 //Leitura dos coeficientes de ponderação
   Gama_c := StrToFloat(tb_Gama_c.Text);
@@ -319,52 +331,150 @@ begin
    tb_Fywd.Text:=FloatToStrF(Fywd,ffFixed,3,2);
 end;
 
+
+procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
+begin
+  // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.tb_HfKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.tb_HKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.tb_Gama_cKeyPress(Sender: TObject; var Key: char);
+begin
+// Coletar apenas números positivos e converter o ponto decimal
+    if not(key in ['0'..'9','.',',',#8,#13]) then
+   key := #0;
+if key in [',','.'] then
+   key := DefaultFormatSettings.DecimalSeparator;
+if key = DefaultFormatSettings.DecimalSeparator then
+   if pos(key,TEdit(Sender).Text) <> 0 then
+         key := #0;
+end;
+
+procedure TForm1.tb_DeltaKeyPress(Sender: TObject; var Key: char);
+begin
+// Coletar apenas números positivos e converter o ponto decimal
+    if not(key in ['0'..'9','.',',',#8,#13]) then
+   key := #0;
+if key in [',','.'] then
+   key := DefaultFormatSettings.DecimalSeparator;
+if key = DefaultFormatSettings.DecimalSeparator then
+   if pos(key,TEdit(Sender).Text) <> 0 then
+         key := #0;
+end;
+
+procedure TForm1.tb_DKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.tb_D_linhaKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.cb_FckChange(Sender: TObject);
+begin
+  Materiais;
+end;
+
 procedure TForm1.cb_FykChange(Sender: TObject);
 begin
-  case cb_Fyk.ItemIndex of
-    0: Fyk:=250;
-    1: Fyk:=500;
-    2: Fyk:=600;
-  end;
-    Fyd:=Fyk/Gama_s;
-    Es:=210000;
-    Epsilon_yd:=-Fyd/Es;
-    tb_Fyd.Text:=FloatToStrF(Fyd,ffFixed,3,2);
-    tb_Es.Text:=FloatToStrF(Es,ffFixed,3,2);
-    tb_Epsilon_yd.Text:=FloatToStrF(Epsilon_yd*1000,ffFixed,3,2);
+  Materiais;
 end;
 
 procedure TForm1.cb_FywkChange(Sender: TObject);
 begin
-  case cb_Fywk.ItemIndex of
-    0: Fywk:=500;
-    1: Fywk:=600;
-  end;
-    Fywd:=Fywk/Gama_s;
-    tb_Fywd.Text:=FloatToStrF(Fywd,ffFixed,3,2);
+  Materiais;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Materiais;
+end;
+
+procedure TForm1.tb_BfKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+
+procedure TForm1.tb_CKeyPress(Sender: TObject; var Key: char);
+begin
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
 end;
 
 procedure TForm1.cb_Alpha_eChange(Sender: TObject);
 begin
-  //Escolha do Item no Combobox
-  case cb_Alpha_e.ItemIndex of
-    0: Alpha_e:=1.2;
-    1: Alpha_e:=1;
-    2: Alpha_e:=0.9;
-    3: Alpha_e:=0.7;
-  end;
-  //Caso o Alfa e seja alterado, os módulos serão recalculados
-   if Fck <= 50 then
-      begin
-        Eci:=Alpha_e*5600*sqrt(Fck);
-      end
-   else
-      begin
-        Eci:=(21.5*10**3)*Alpha_e*(Fck/10+1.25)**(1/3);
-      end;
-      Ecs:=Alpha_i*Eci;
-   tb_Eci.Text:=FloatToStrF(Eci,ffFixed,3,2);
-   tb_Ecs.Text:=FloatToStrF(Ecs,ffFixed,3,2);
+  Materiais;
 end;
 
 end.
