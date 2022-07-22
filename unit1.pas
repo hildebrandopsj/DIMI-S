@@ -18,6 +18,7 @@ type
     cb_Fywk: TComboBox;
     cb_Fck: TComboBox;
     cb_Alpha_e: TComboBox;
+    tb_Msd: TEdit;
     lb_Ac: TLabel;
     lb_Ycg: TLabel;
     lb_I0: TLabel;
@@ -199,6 +200,7 @@ type
     procedure cb_FywkChange(Sender: TObject);
     procedure cb_GeometriaChange(Sender: TObject);
     procedure cb_Tipo_elementoChange(Sender: TObject);
+    procedure tb_MsdKeyPress(Sender: TObject; var Key: char);
     procedure FormCreate(Sender: TObject);
     procedure tb_BfChange(Sender: TObject);
     procedure tb_BfKeyPress(Sender: TObject; var Key: char);
@@ -241,374 +243,396 @@ implementation
 {$R *.lfm}
 
 { TForm1 }
-
-procedure TForm1.Materiais;
-begin
-//Leitura dos coeficientes de ponderação
-  Gama_c := StrToFloat(tb_Gama_c.Text);
-  Gama_s := StrToFloat(tb_Gama_s.Text);
-  Delta := StrToFloat(tb_Delta.Text);
-//Leitura do Fck
-  case cb_Fck.ItemIndex of
-    0: Fck:=15;
-    1: Fck:=18;
-    2: Fck:=20;
-    3: Fck:=25;
-    4: Fck:=30;
-    5: Fck:=35;
-    6: Fck:=40;
-    7: Fck:=45;
-    8: Fck:=50;
-    9: Fck:=55;
-    10: Fck:=60;
-    11: Fck:=65;
-    12: Fck:=70;
-    13: Fck:=75;
-    14: Fck:=80;
-    15: Fck:=85;
-    16: Fck:=90;
-  end;
-   //Leitura da opção de Alfa e
-  case cb_Alpha_e.ItemIndex of
-    0: Alpha_e:=1.2;
-    1: Alpha_e:=1;
-    2: Alpha_e:=0.9;
-    3: Alpha_e:=0.7;
-  end;
-  //Leitura da opção de Fyk
-  case cb_Fyk.ItemIndex of
-    0: Fyk:=250;
-    1: Fyk:=500;
-    2: Fyk:=600;
-  end;
-  //Leitura da opção de Fyk
-  case cb_Fywk.ItemIndex of
-    0: Fywk:=500;
-    1: Fywk:=600;
-  end;
-//Cálculo dos parâmetros
-   Fcd:=Fck/Gama_c  ;
-   Alpha_v2:= 1-Fck/250;
-   Fcd1:=0.85*Alpha_v2*Fcd;
-   Fcd2:=0.60*Alpha_v2*Fcd;
-   Fcd3:=0.72*Alpha_v2*Fcd;
-   Fctm:=0.3*Fck**(2/3);
-   Fctk_inf:=0.7*Fctm;
-   Fctk_sup:=1.3*Fctm;
-   Fctd:=Fctk_inf/Gama_c;
-   Alpha_i:=0.8+0.2*(Fck/80);
-   if Fck <= 50 then
-      begin
-        Lambda:=0.8;
-        Alpha_c:=0.85;
-        Epsilon_c2:=2/1000;
-        Epsilon_cu:=3.5/1000;
-        Beta_limite:=0.8*Delta-0.35;
-        Eci:=Alpha_e*5600*sqrt(Fck);
-      end
-   else
-      begin
-        Lambda:=0.8-(Fck-50)/400;
-        Alpha_c:=0.85*(1-(Fck-50)/200);
-        Epsilon_c2:=2.6/1000+0.85/1000*(Fck-50)**0.53;
-        Epsilon_cu:=2.6/1000+35/1000*((90-Fck)/100)**4;
-        Beta_limite:=0.8*Delta-0.45;
-        Eci:=(21.5*10**3)*Alpha_e*(Fck/10+1.25)**(1/3);
-      end;
-    Ecs:=Alpha_i*Eci;
-    Fywd:=Fywk/Gama_s;
-    Fyd:=Fyk/Gama_s;
-    Es:=210000;
-    Epsilon_yd:=-Fyd/Es;
-//Apresentação dos resultados no TEdit
-   tb_Fcd.Text:=FloatToStrF(Fcd,ffFixed,3,2);
-   tb_Alpha_v2.Text:=FloatToStrF(Alpha_v2,ffFixed,3,2);
-   tb_Fcd1.Text:=FloatToStrF(Fcd1,ffFixed,3,2);
-   tb_Fcd2.Text:=FloatToStrF(Fcd2,ffFixed,3,2);
-   tb_Fcd3.Text:=FloatToStrF(Fcd3,ffFixed,3,2);
-   tb_Fctm.Text:=FloatToStrF(Fctm,ffFixed,3,2);
-   tb_Fctk_inf.Text:=FloatToStrF(Fctk_inf,ffFixed,3,2);
-   tb_Fctk_sup.Text:=FloatToStrF(Fctk_sup,ffFixed,3,2);
-   tb_Fctd.Text:=FloatToStrF(Fctd,ffFixed,3,2);
-   tb_Alpha_i.Text:=FloatToStrF(Alpha_i,ffFixed,3,2);
-   tb_Eci.Text:=FloatToStrF(Eci,ffFixed,3,2);
-   tb_Ecs.Text:=FloatToStrF(Ecs,ffFixed,3,2);
-   tb_Epsilon_c2.Text:=FloatToStrF(Epsilon_c2*1000,ffFixed,3,2);
-   tb_Epsilon_cu.Text:=FloatToStrF(Epsilon_cu*1000,ffFixed,3,2);
-   tb_Alpha_c.Text:=FloatToStrF(Alpha_c,ffFixed,3,2);
-   tb_Lambda.Text:=FloatToStrF(Lambda,ffFixed,3,2);
-   tb_Fyd.Text:=FloatToStrF(Fyd,ffFixed,3,2);
-   tb_Es.Text:=FloatToStrF(Es,ffFixed,3,2);
-   tb_Epsilon_yd.Text:=FloatToStrF(Epsilon_yd*1000,ffFixed,3,2);
-   tb_Fywd.Text:=FloatToStrF(Fywd,ffFixed,3,2);
-end;
-
-Procedure TForm1.Propriedades_Geometricas;
-begin
-  //Leitura dos dados de geometria
-  Bw:=StrToFloat(tb_Bw.Text);
-  H:=StrToFloat(tb_H.Text);
-  Bf:=StrToFloat(tb_Bf.Text);
-  Hf:=StrToFloat(tb_Hf.Text);
-  D:=StrToFloat(tb_D.Text);
-  D_linha:=StrToFloat(tb_D_linha.Text);
-  //Cálculo das propriedades geométricas
-  case cb_Geometria.ItemIndex of  //what entry (which item) has currently been chosen
-    0: //Seção Retangular
-    begin
-      Ac:=Bw*H;
-      Ycg:=H/2;
-      I0:=(Bw*H**3)/12;
-      W0_inf:=I0/Ycg;
-      W0_sup:=I0/Ycg;
-    end;
-    1: //Seção Tê
-    begin
-      Aw:=H*Bw;
-      Af:=Hf*(Bf-Bw);
-      Ac:=Aw+Af;
-      Sx:=(Aw*H)/2+Af*(H-Hf/2);
-      Ycg:=Sx/Ac;
-      I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+Af*((Hf**2)/12+(H-Ycg-Hf/2)**2);
-      W0_inf:=I0/Ycg;
-      W0_sup:=I0/(H-Ycg);
-    end;
-    2: //Seção Tê Invertido
-    begin
-      Aw:=H*Bw;
-      Af:=Hf*(Bf-Bw);
-      Ac:=Aw+Af;
-      Sx:=(Aw*H)/2+Af*(Hf/2);
-      Ycg:=Sx/Ac;
-      I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+Af*((Hf**2)/12+(Ycg-Hf/2)**2);
-      W0_inf:=I0/Ycg;
-      W0_sup:=I0/(H-Ycg);
-    end;
-    3: //Seção I
-    begin
-      Aw:=H*Bw;
-      Af:=Hf*(Bf-Bw)*2;
-      Ac:=Aw+Af;
-      Sx:=(Aw*H)/2+0.5*Af*(Hf/2)+0.5*Af*(H-Hf/2);
-      Ycg:=Sx/Ac;
-      I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+0.5*Af*((Hf**2)/12+(Ycg-Hf/2)**2)+0.5*Af*((Hf**2)/12+(H-Ycg-Hf/2)**2);
-      W0_inf:=I0/Ycg;
-      W0_sup:=I0/(H-Ycg);
-    end;
-  end;
-  //Apresentação dos dados nos TEdit
-  tb_Ac.Text:=FloatToStrF(Ac,ffFixed,3,2);
-  tb_Ycg.Text:=FloatToStrF(Ycg,ffFixed,3,2);
-  tb_I0.Text:=FloatToStrF(I0,ffFixed,3,2);
-  tb_W0_inf.Text:=FloatToStrF(W0_inf,ffFixed,3,2);
-  tb_W0_sup.Text:=FloatToStrF(W0_sup,ffFixed,3,2);
-end;
-
-procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
-begin
-  // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_HChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
-
-procedure TForm1.tb_HfChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
-
-procedure TForm1.tb_HfKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_HKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_Gama_cKeyPress(Sender: TObject; var Key: char);
-begin
-// Coletar apenas números positivos e converter o ponto decimal
-    if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
-end;
-
-procedure TForm1.tb_DeltaKeyPress(Sender: TObject; var Key: char);
-begin
-// Coletar apenas números positivos e converter o ponto decimal
-    if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
-end;
-
-procedure TForm1.tb_DKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_D_linhaChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
-
-procedure TForm1.tb_D_linhaKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.cb_FckChange(Sender: TObject);
-begin
-  Materiais;
-end;
-
-procedure TForm1.cb_FykChange(Sender: TObject);
-begin
-  Materiais;
-end;
-
-procedure TForm1.cb_FywkChange(Sender: TObject);
-begin
-  Materiais;
-end;
-
-procedure TForm1.cb_GeometriaChange(Sender: TObject);
-begin
-Propriedades_Geometricas;
-end;
-
-procedure TForm1.cb_Tipo_elementoChange(Sender: TObject);
-begin
-  case cb_Tipo_Elemento.ItemIndex of  //what entry (which item) has currently been chosen
-    0: Tipo_elemento:='Viga';
-    1: Tipo_elemento:='Laje';
-  end;
-  if Tipo_elemento = 'Viga' then
-     begin
-         cb_Geometria.Items.Clear;                      //Apagar as escolhas existentes
-         cb_Geometria.Items.Add('Seção Retangular');    //Incluir um item
-         cb_Geometria.Items.Add('Seção Tê');
-         cb_Geometria.Items.Add('Seção Tê Invertido');
-         cb_Geometria.Items.Add('Seção I');
-         cb_Geometria.Text:='Seção Retangular';
-     end
-  else
-  begin
-         cb_Geometria.Items.Clear;                      //Apagar as escolhas existentes
-         cb_Geometria.Items.Add('Seção Retangular');    //Incluir um item
-         cb_Geometria.Text:='Seção Retangular';
-  end;
-end;
-
+//Cálculos preliminares apenas para preenchimento inicial
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   Materiais;
   Propriedades_Geometricas;
 end;
 
-procedure TForm1.tb_BfChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
+{$REGION 'MÓDULO DE MATERIAIS '}
+ //******************************************************************************
+ //                            MÓDULO DE MATERIAIS
+ //******************************************************************************
+ procedure TForm1.Materiais;
+ begin
+ //Leitura dos coeficientes de ponderação
+   Gama_c := StrToFloat(tb_Gama_c.Text);
+   Gama_s := StrToFloat(tb_Gama_s.Text);
+   Delta := StrToFloat(tb_Delta.Text);
+ //Leitura do Fck
+   case cb_Fck.ItemIndex of
+     0: Fck:=15;
+     1: Fck:=18;
+     2: Fck:=20;
+     3: Fck:=25;
+     4: Fck:=30;
+     5: Fck:=35;
+     6: Fck:=40;
+     7: Fck:=45;
+     8: Fck:=50;
+     9: Fck:=55;
+     10: Fck:=60;
+     11: Fck:=65;
+     12: Fck:=70;
+     13: Fck:=75;
+     14: Fck:=80;
+     15: Fck:=85;
+     16: Fck:=90;
+   end;
+ //Leitura da opção de Alfa e
+   case cb_Alpha_e.ItemIndex of
+     0: Alpha_e:=1.2;
+     1: Alpha_e:=1;
+     2: Alpha_e:=0.9;
+     3: Alpha_e:=0.7;
+   end;
+ //Leitura da opção de Fyk
+   case cb_Fyk.ItemIndex of
+     0: Fyk:=250;
+     1: Fyk:=500;
+     2: Fyk:=600;
+   end;
+ //Leitura da opção de Fyk
+   case cb_Fywk.ItemIndex of
+     0: Fywk:=500;
+     1: Fywk:=600;
+   end;
+ //Cálculo dos parâmetros
+    Fcd:=Fck/Gama_c  ;
+    Alpha_v2:= 1-Fck/250;
+    Fcd1:=0.85*Alpha_v2*Fcd;
+    Fcd2:=0.60*Alpha_v2*Fcd;
+    Fcd3:=0.72*Alpha_v2*Fcd;
+    Fctm:=0.3*Fck**(2/3);
+    Fctk_inf:=0.7*Fctm;
+    Fctk_sup:=1.3*Fctm;
+    Fctd:=Fctk_inf/Gama_c;
+    Alpha_i:=0.8+0.2*(Fck/80);
+    if Fck <= 50 then
+       begin
+         Lambda:=0.8;
+         Alpha_c:=0.85;
+         Epsilon_c2:=2/1000;
+         Epsilon_cu:=3.5/1000;
+         Beta_limite:=0.8*Delta-0.35;
+         Eci:=Alpha_e*5600*sqrt(Fck);
+       end
+    else
+       begin
+         Lambda:=0.8-(Fck-50)/400;
+         Alpha_c:=0.85*(1-(Fck-50)/200);
+         Epsilon_c2:=2.6/1000+0.85/1000*(Fck-50)**0.53;
+         Epsilon_cu:=2.6/1000+35/1000*((90-Fck)/100)**4;
+         Beta_limite:=0.8*Delta-0.45;
+         Eci:=(21.5*10**3)*Alpha_e*(Fck/10+1.25)**(1/3);
+       end;
+     Ecs:=Alpha_i*Eci;
+     Fywd:=Fywk/Gama_s;
+     Fyd:=Fyk/Gama_s;
+     Es:=210000;
+     Epsilon_yd:=-Fyd/Es;
+ //Apresentação dos resultados no TEdit
+    tb_Fcd.Text:=FloatToStrF(Fcd,ffFixed,3,2);
+    tb_Alpha_v2.Text:=FloatToStrF(Alpha_v2,ffFixed,3,2);
+    tb_Fcd1.Text:=FloatToStrF(Fcd1,ffFixed,3,2);
+    tb_Fcd2.Text:=FloatToStrF(Fcd2,ffFixed,3,2);
+    tb_Fcd3.Text:=FloatToStrF(Fcd3,ffFixed,3,2);
+    tb_Fctm.Text:=FloatToStrF(Fctm,ffFixed,3,2);
+    tb_Fctk_inf.Text:=FloatToStrF(Fctk_inf,ffFixed,3,2);
+    tb_Fctk_sup.Text:=FloatToStrF(Fctk_sup,ffFixed,3,2);
+    tb_Fctd.Text:=FloatToStrF(Fctd,ffFixed,3,2);
+    tb_Alpha_i.Text:=FloatToStrF(Alpha_i,ffFixed,3,2);
+    tb_Eci.Text:=FloatToStrF(Eci,ffFixed,3,2);
+    tb_Ecs.Text:=FloatToStrF(Ecs,ffFixed,3,2);
+    tb_Epsilon_c2.Text:=FloatToStrF(Epsilon_c2*1000,ffFixed,3,2);
+    tb_Epsilon_cu.Text:=FloatToStrF(Epsilon_cu*1000,ffFixed,3,2);
+    tb_Alpha_c.Text:=FloatToStrF(Alpha_c,ffFixed,3,2);
+    tb_Lambda.Text:=FloatToStrF(Lambda,ffFixed,3,2);
+    tb_Fyd.Text:=FloatToStrF(Fyd,ffFixed,3,2);
+    tb_Es.Text:=FloatToStrF(Es,ffFixed,3,2);
+    tb_Epsilon_yd.Text:=FloatToStrF(Epsilon_yd*1000,ffFixed,3,2);
+    tb_Fywd.Text:=FloatToStrF(Fywd,ffFixed,3,2);
+ end;
+ procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
+ begin
+   // Coletar apenas números positivos e converter o ponto decimal
+       if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+ procedure TForm1.tb_Gama_cKeyPress(Sender: TObject; var Key: char);
+ begin
+ // Coletar apenas números positivos e converter o ponto decimal
+     if not(key in ['0'..'9','.',',',#8,#13]) then
+    key := #0;
+ if key in [',','.'] then
+    key := DefaultFormatSettings.DecimalSeparator;
+ if key = DefaultFormatSettings.DecimalSeparator then
+    if pos(key,TEdit(Sender).Text) <> 0 then
+          key := #0;
+ end;
+ procedure TForm1.tb_DeltaKeyPress(Sender: TObject; var Key: char);
+ begin
+ // Coletar apenas números positivos e converter o ponto decimal
+     if not(key in ['0'..'9','.',',',#8,#13]) then
+    key := #0;
+ if key in [',','.'] then
+    key := DefaultFormatSettings.DecimalSeparator;
+ if key = DefaultFormatSettings.DecimalSeparator then
+    if pos(key,TEdit(Sender).Text) <> 0 then
+          key := #0;
+ end;
 
-procedure TForm1.tb_BfKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
+ procedure TForm1.cb_FckChange(Sender: TObject);
+ begin
+   Materiais;
+ end;
 
-procedure TForm1.tb_BwChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
+ procedure TForm1.cb_Alpha_eChange(Sender: TObject);
+ begin
+   Materiais;
+ end;
 
-procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
+ procedure TForm1.cb_FykChange(Sender: TObject);
+ begin
+   Materiais;
+ end;
 
-procedure TForm1.tb_CKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
+ procedure TForm1.cb_FywkChange(Sender: TObject);
+ begin
+   Materiais;
+ end;
+{$ENDREGION}
 
-procedure TForm1.tb_DChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
+{$REGION 'MÓDULO DE GEOMETRIA'}
+ //******************************************************************************
+ //                            MÓDULO DE GEOMETRIA
+ //******************************************************************************
+ Procedure TForm1.Propriedades_Geometricas;
+ begin
+   //Leitura dos dados de geometria
+   Bw:=StrToFloat(tb_Bw.Text);
+   H:=StrToFloat(tb_H.Text);
+   Bf:=StrToFloat(tb_Bf.Text);
+   Hf:=StrToFloat(tb_Hf.Text);
+   D:=StrToFloat(tb_D.Text);
+   D_linha:=StrToFloat(tb_D_linha.Text);
+   //Cálculo das propriedades geométricas
+   case cb_Geometria.ItemIndex of  //what entry (which item) has currently been chosen
+     0: //Seção Retangular
+     begin
+       Ac:=Bw*H;
+       Ycg:=H/2;
+       I0:=(Bw*H**3)/12;
+       W0_inf:=I0/Ycg;
+       W0_sup:=I0/Ycg;
+     end;
+     1: //Seção Tê
+     begin
+       Aw:=H*Bw;
+       Af:=Hf*(Bf-Bw);
+       Ac:=Aw+Af;
+       Sx:=(Aw*H)/2+Af*(H-Hf/2);
+       Ycg:=Sx/Ac;
+       I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+Af*((Hf**2)/12+(H-Ycg-Hf/2)**2);
+       W0_inf:=I0/Ycg;
+       W0_sup:=I0/(H-Ycg);
+     end;
+     2: //Seção Tê Invertido
+     begin
+       Aw:=H*Bw;
+       Af:=Hf*(Bf-Bw);
+       Ac:=Aw+Af;
+       Sx:=(Aw*H)/2+Af*(Hf/2);
+       Ycg:=Sx/Ac;
+       I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+Af*((Hf**2)/12+(Ycg-Hf/2)**2);
+       W0_inf:=I0/Ycg;
+       W0_sup:=I0/(H-Ycg);
+     end;
+     3: //Seção I
+     begin
+       Aw:=H*Bw;
+       Af:=Hf*(Bf-Bw)*2;
+       Ac:=Aw+Af;
+       Sx:=(Aw*H)/2+0.5*Af*(Hf/2)+0.5*Af*(H-Hf/2);
+       Ycg:=Sx/Ac;
+       I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+0.5*Af*((Hf**2)/12+(Ycg-Hf/2)**2)+0.5*Af*((Hf**2)/12+(H-Ycg-Hf/2)**2);
+       W0_inf:=I0/Ycg;
+       W0_sup:=I0/(H-Ycg);
+     end;
+   end;
+   //Apresentação dos dados nos TEdit
+   tb_Ac.Text:=FloatToStrF(Ac,ffFixed,3,2);
+   tb_Ycg.Text:=FloatToStrF(Ycg,ffFixed,3,2);
+   tb_I0.Text:=FloatToStrF(I0,ffFixed,3,2);
+   tb_W0_inf.Text:=FloatToStrF(W0_inf,ffFixed,3,2);
+   tb_W0_sup.Text:=FloatToStrF(W0_sup,ffFixed,3,2);
+ end;
 
-procedure TForm1.cb_Alpha_eChange(Sender: TObject);
-begin
-  Materiais;
-end;
+ procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+   if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.tb_HKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+       if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.tb_BfKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+   if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.tb_HfKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+       if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.tb_DKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+       if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.tb_D_linhaKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+       if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.tb_CKeyPress(Sender: TObject; var Key: char);
+ begin
+     // Coletar apenas números positivos e converter o ponto decimal
+   if not(key in ['0'..'9','.',',',#8,#13]) then
+      key := #0;
+   if key in [',','.'] then
+      key := DefaultFormatSettings.DecimalSeparator;
+   if key = DefaultFormatSettings.DecimalSeparator then
+      if pos(key,TEdit(Sender).Text) <> 0 then
+            key := #0;
+ end;
+
+ procedure TForm1.cb_Tipo_elementoChange(Sender: TObject);
+ begin
+   case cb_Tipo_Elemento.ItemIndex of  //what entry (which item) has currently been chosen
+     0: Tipo_elemento:='Viga';
+     1: Tipo_elemento:='Laje';
+   end;
+   if Tipo_elemento = 'Viga' then
+      begin
+          cb_Geometria.Items.Clear;                      //Apagar as escolhas existentes
+          cb_Geometria.Items.Add('Seção Retangular');    //Incluir um item
+          cb_Geometria.Items.Add('Seção Tê');
+          cb_Geometria.Items.Add('Seção Tê Invertido');
+          cb_Geometria.Items.Add('Seção I');
+          cb_Geometria.Text:='Seção Retangular';
+      end
+   else
+   begin
+          cb_Geometria.Items.Clear;                      //Apagar as escolhas existentes
+          cb_Geometria.Items.Add('Seção Retangular');    //Incluir um item
+          cb_Geometria.Text:='Seção Retangular';
+   end;
+ end;
 
 
 
+ procedure TForm1.cb_GeometriaChange(Sender: TObject);
+ begin
+ Propriedades_Geometricas;
+ end;
+
+ procedure TForm1.tb_BwChange(Sender: TObject);
+ begin
+   Propriedades_Geometricas;
+ end;
+
+ procedure TForm1.tb_HChange(Sender: TObject);
+ begin
+   Propriedades_Geometricas;
+ end;
+
+ procedure TForm1.tb_BfChange(Sender: TObject);
+ begin
+   Propriedades_Geometricas;
+ end;
+
+ procedure TForm1.tb_HfChange(Sender: TObject);
+ begin
+   Propriedades_Geometricas;
+ end;
+
+ procedure TForm1.tb_DChange(Sender: TObject);
+ begin
+   Propriedades_Geometricas;
+ end;
+
+ procedure TForm1.tb_D_linhaChange(Sender: TObject);
+ begin
+   Propriedades_Geometricas;
+ end;
+{$ENDREGION}
+
+{$REGION 'MÓDULO DE FLEXÃO SIMPLES'}
+ //******************************************************************************
+ //                    MÓDULO DE FLEXÃO SIMPLES
+ //******************************************************************************
+ procedure TForm1.tb_MsdKeyPress(Sender: TObject; var Key: char);
+ begin
+ // Coletar apenas números positivos e converter o ponto decimal
+     if not(key in ['0'..'9','.',',',#8,#13]) then
+        key := #0;
+     if key in [',','.'] then
+        key := DefaultFormatSettings.DecimalSeparator;
+     if key = DefaultFormatSettings.DecimalSeparator then
+        if pos(key,TEdit(Sender).Text) <> 0 then
+              key := #0;
+ end;
+{$ENDREGION}
 end.
-

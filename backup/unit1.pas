@@ -241,7 +241,16 @@ implementation
 {$R *.lfm}
 
 { TForm1 }
+//Cálculos preliminares apenas para preenchimento inicial
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Materiais;
+  Propriedades_Geometricas;
+end;
 
+//******************************************************************************
+//                            MÓDULO DE MATERIAIS
+//******************************************************************************
 procedure TForm1.Materiais;
 begin
 //Leitura dos coeficientes de ponderação
@@ -268,20 +277,20 @@ begin
     15: Fck:=85;
     16: Fck:=90;
   end;
-   //Leitura da opção de Alfa e
+//Leitura da opção de Alfa e
   case cb_Alpha_e.ItemIndex of
     0: Alpha_e:=1.2;
     1: Alpha_e:=1;
     2: Alpha_e:=0.9;
     3: Alpha_e:=0.7;
   end;
-  //Leitura da opção de Fyk
+//Leitura da opção de Fyk
   case cb_Fyk.ItemIndex of
     0: Fyk:=250;
     1: Fyk:=500;
     2: Fyk:=600;
   end;
-  //Leitura da opção de Fyk
+//Leitura da opção de Fyk
   case cb_Fywk.ItemIndex of
     0: Fywk:=500;
     1: Fywk:=600;
@@ -342,7 +351,63 @@ begin
    tb_Epsilon_yd.Text:=FloatToStrF(Epsilon_yd*1000,ffFixed,3,2);
    tb_Fywd.Text:=FloatToStrF(Fywd,ffFixed,3,2);
 end;
+procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
+begin
+  // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
+end;
+procedure TForm1.tb_Gama_cKeyPress(Sender: TObject; var Key: char);
+begin
+// Coletar apenas números positivos e converter o ponto decimal
+    if not(key in ['0'..'9','.',',',#8,#13]) then
+   key := #0;
+if key in [',','.'] then
+   key := DefaultFormatSettings.DecimalSeparator;
+if key = DefaultFormatSettings.DecimalSeparator then
+   if pos(key,TEdit(Sender).Text) <> 0 then
+         key := #0;
+end;
+procedure TForm1.tb_DeltaKeyPress(Sender: TObject; var Key: char);
+begin
+// Coletar apenas números positivos e converter o ponto decimal
+    if not(key in ['0'..'9','.',',',#8,#13]) then
+   key := #0;
+if key in [',','.'] then
+   key := DefaultFormatSettings.DecimalSeparator;
+if key = DefaultFormatSettings.DecimalSeparator then
+   if pos(key,TEdit(Sender).Text) <> 0 then
+         key := #0;
+end;
 
+procedure TForm1.cb_FckChange(Sender: TObject);
+begin
+  Materiais;
+end;
+
+procedure TForm1.cb_Alpha_eChange(Sender: TObject);
+begin
+  Materiais;
+end;
+
+procedure TForm1.cb_FykChange(Sender: TObject);
+begin
+  Materiais;
+end;
+
+procedure TForm1.cb_FywkChange(Sender: TObject);
+begin
+  Materiais;
+end;
+
+//******************************************************************************
+//                            MÓDULO DE GEOMETRIA
+//******************************************************************************
 Procedure TForm1.Propriedades_Geometricas;
 begin
   //Leitura dos dados de geometria
@@ -404,32 +469,10 @@ begin
   tb_W0_sup.Text:=FloatToStrF(W0_sup,ffFixed,3,2);
 end;
 
-procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
-begin
-  // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_HChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
-
-procedure TForm1.tb_HfChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
-
-procedure TForm1.tb_HfKeyPress(Sender: TObject; var Key: char);
+procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
 begin
     // Coletar apenas números positivos e converter o ponto decimal
-      if not(key in ['0'..'9','.',',',#8,#13]) then
+  if not(key in ['0'..'9','.',',',#8,#13]) then
      key := #0;
   if key in [',','.'] then
      key := DefaultFormatSettings.DecimalSeparator;
@@ -450,28 +493,28 @@ begin
            key := #0;
 end;
 
-procedure TForm1.tb_Gama_cKeyPress(Sender: TObject; var Key: char);
+procedure TForm1.tb_BfKeyPress(Sender: TObject; var Key: char);
 begin
-// Coletar apenas números positivos e converter o ponto decimal
-    if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
+    // Coletar apenas números positivos e converter o ponto decimal
+  if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
 end;
 
-procedure TForm1.tb_DeltaKeyPress(Sender: TObject; var Key: char);
+procedure TForm1.tb_HfKeyPress(Sender: TObject; var Key: char);
 begin
-// Coletar apenas números positivos e converter o ponto decimal
-    if not(key in ['0'..'9','.',',',#8,#13]) then
-   key := #0;
-if key in [',','.'] then
-   key := DefaultFormatSettings.DecimalSeparator;
-if key = DefaultFormatSettings.DecimalSeparator then
-   if pos(key,TEdit(Sender).Text) <> 0 then
-         key := #0;
+    // Coletar apenas números positivos e converter o ponto decimal
+      if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
 end;
 
 procedure TForm1.tb_DKeyPress(Sender: TObject; var Key: char);
@@ -486,11 +529,6 @@ begin
            key := #0;
 end;
 
-procedure TForm1.tb_D_linhaChange(Sender: TObject);
-begin
-  Propriedades_Geometricas;
-end;
-
 procedure TForm1.tb_D_linhaKeyPress(Sender: TObject; var Key: char);
 begin
     // Coletar apenas números positivos e converter o ponto decimal
@@ -503,24 +541,16 @@ begin
            key := #0;
 end;
 
-procedure TForm1.cb_FckChange(Sender: TObject);
+procedure TForm1.tb_CKeyPress(Sender: TObject; var Key: char);
 begin
-  Materiais;
-end;
-
-procedure TForm1.cb_FykChange(Sender: TObject);
-begin
-  Materiais;
-end;
-
-procedure TForm1.cb_FywkChange(Sender: TObject);
-begin
-  Materiais;
-end;
-
-procedure TForm1.cb_GeometriaChange(Sender: TObject);
-begin
-Propriedades_Geometricas;
+    // Coletar apenas números positivos e converter o ponto decimal
+  if not(key in ['0'..'9','.',',',#8,#13]) then
+     key := #0;
+  if key in [',','.'] then
+     key := DefaultFormatSettings.DecimalSeparator;
+  if key = DefaultFormatSettings.DecimalSeparator then
+     if pos(key,TEdit(Sender).Text) <> 0 then
+           key := #0;
 end;
 
 procedure TForm1.cb_Tipo_elementoChange(Sender: TObject);
@@ -546,9 +576,18 @@ begin
   end;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TForm1.cb_GeometriaChange(Sender: TObject);
 begin
-  Materiais;
+Propriedades_Geometricas;
+end;
+
+procedure TForm1.tb_BwChange(Sender: TObject);
+begin
+  Propriedades_Geometricas;
+end;
+
+procedure TForm1.tb_HChange(Sender: TObject);
+begin
   Propriedades_Geometricas;
 end;
 
@@ -557,45 +596,9 @@ begin
   Propriedades_Geometricas;
 end;
 
-procedure TForm1.tb_BfKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_BwChange(Sender: TObject);
+procedure TForm1.tb_HfChange(Sender: TObject);
 begin
   Propriedades_Geometricas;
-end;
-
-procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
-end;
-
-procedure TForm1.tb_CKeyPress(Sender: TObject; var Key: char);
-begin
-    // Coletar apenas números positivos e converter o ponto decimal
-  if not(key in ['0'..'9','.',',',#8,#13]) then
-     key := #0;
-  if key in [',','.'] then
-     key := DefaultFormatSettings.DecimalSeparator;
-  if key = DefaultFormatSettings.DecimalSeparator then
-     if pos(key,TEdit(Sender).Text) <> 0 then
-           key := #0;
 end;
 
 procedure TForm1.tb_DChange(Sender: TObject);
@@ -603,12 +606,13 @@ begin
   Propriedades_Geometricas;
 end;
 
-procedure TForm1.cb_Alpha_eChange(Sender: TObject);
+procedure TForm1.tb_D_linhaChange(Sender: TObject);
 begin
-  Materiais;
+  Propriedades_Geometricas;
 end;
 
-
+//******************************************************************************
+//                    MÓDULO DE FLEXÃO SIMPLES
+//******************************************************************************
 
 end.
-
