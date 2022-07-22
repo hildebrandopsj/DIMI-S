@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 934
+  Left = 1310
   Height = 920
-  Top = 55
+  Top = 74
   Width = 483
   BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = bsSingle
@@ -118,7 +118,7 @@ object Form1: TForm1
   object PageControl1: TPageControl
     Left = 10
     Height = 880
-    Top = 10
+    Top = 8
     Width = 462
     ActivePage = TabSecao
     Font.CharSet = ANSI_CHARSET
@@ -1304,7 +1304,7 @@ object Form1: TForm1
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        object cb_Fck1: TComboBox
+        object cb_Tipo_elemento: TComboBox
           Left = 220
           Height = 23
           Top = 0
@@ -1320,13 +1320,13 @@ object Form1: TForm1
             'Viga'
             'Laje'
           )
-          OnChange = cb_FckChange
+          OnChange = cb_Tipo_elementoChange
           ParentFont = False
           ReadOnly = True
           TabOrder = 0
           Text = 'Viga'
         end
-        object cb_Fck2: TComboBox
+        object cb_Geometria: TComboBox
           Left = 220
           Height = 23
           Top = 27
@@ -1337,18 +1337,18 @@ object Form1: TForm1
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ItemHeight = 15
-          ItemIndex = 0
+          ItemIndex = 1
           Items.Strings = (
             'Seção Retangular'
             'Seção Tê'
             'Seção Tê Invertido'
             'Seção I'
           )
-          OnChange = cb_FckChange
+          OnChange = cb_GeometriaChange
           ParentFont = False
           ReadOnly = True
-          TabOrder = 2
-          Text = 'Seção Retangular'
+          TabOrder = 1
+          Text = 'Seção Tê'
         end
         object lb_Tipo_elemento: TLabel
           Left = 10
@@ -1500,10 +1500,11 @@ object Form1: TForm1
           Font.Name = 'Segoe UI'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_BwChange
           OnKeyPress = tb_BwKeyPress
           ParentFont = False
-          TabStop = False
-          TabOrder = 1
+          TabOrder = 2
+          Text = '40'
         end
         object tb_H: TEdit
           Left = 220
@@ -1515,10 +1516,11 @@ object Form1: TForm1
           Font.Name = 'Segoe UI'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_HChange
           OnKeyPress = tb_HKeyPress
           ParentFont = False
-          TabStop = False
           TabOrder = 3
+          Text = '190'
         end
         object tb_Bf: TEdit
           Left = 220
@@ -1530,10 +1532,11 @@ object Form1: TForm1
           Font.Name = 'Segoe UI'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_BfChange
           OnKeyPress = tb_BfKeyPress
           ParentFont = False
-          TabStop = False
           TabOrder = 4
+          Text = '380'
         end
         object tb_Hf: TEdit
           Left = 220
@@ -1545,10 +1548,11 @@ object Form1: TForm1
           Font.Name = 'Segoe UI'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_HfChange
           OnKeyPress = tb_HfKeyPress
           ParentFont = False
-          TabStop = False
           TabOrder = 5
+          Text = '25'
         end
         object tb_D: TEdit
           Left = 220
@@ -1560,10 +1564,11 @@ object Form1: TForm1
           Font.Name = 'Segoe UI'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_DChange
           OnKeyPress = tb_DKeyPress
           ParentFont = False
-          TabStop = False
           TabOrder = 6
+          Text = '171'
         end
         object tb_D_linha: TEdit
           Left = 220
@@ -1575,10 +1580,11 @@ object Form1: TForm1
           Font.Name = 'Segoe UI'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_D_linhaChange
           OnKeyPress = tb_D_linhaKeyPress
           ParentFont = False
-          TabStop = False
           TabOrder = 7
+          Text = '4'
         end
         object tb_C: TEdit
           Left = 220
@@ -1592,8 +1598,8 @@ object Form1: TForm1
           Font.Quality = fqDraft
           OnKeyPress = tb_CKeyPress
           ParentFont = False
-          TabStop = False
           TabOrder = 8
+          Text = '3,5'
         end
         object lb_H_u: TLabel
           Left = 370
