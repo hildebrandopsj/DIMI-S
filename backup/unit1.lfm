@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1310
+  Left = 1213
   Height = 920
-  Top = 74
+  Top = 80
   Width = 483
   BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = bsSingle
@@ -1293,7 +1293,7 @@ object Form1: TForm1
       object gb_Geometria: TGroupBox
         Left = 10
         Height = 265
-        Top = 10
+        Top = 8
         Width = 415
         Caption = 'Geometria'
         ClientHeight = 245
@@ -1927,20 +1927,33 @@ object Form1: TForm1
         Top = 488
         Width = 415
         Caption = 'Seção transversal'
+        ClientHeight = 341
+        ClientWidth = 411
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
         TabOrder = 2
+        object PaintBox1: TPaintBox
+          Left = 10
+          Height = 320
+          Top = 8
+          Width = 377
+        end
       end
     end
     object TabFlexao: TTabSheet
       Caption = 'Flexão Simples'
       ClientHeight = 872
       ClientWidth = 431
-      object GroupBox8: TGroupBox
+      object gb_Es_Flexao_Simples: TGroupBox
         Left = 10
-        Height = 105
+        Height = 80
         Top = 10
         Width = 415
         Caption = 'Esforços Solicitantes'
-        ClientHeight = 85
+        ClientHeight = 60
         ClientWidth = 411
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
@@ -1956,16 +1969,88 @@ object Form1: TForm1
           Font.CharSet = ANSI_CHARSET
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = tb_MsdChange
           OnKeyPress = tb_MsdKeyPress
           ParentFont = False
           TabOrder = 0
           Text = '11325'
         end
+        object lb_Msd: TLabel
+          Left = 10
+          Height = 15
+          Top = 4
+          Width = 34
+          Caption = 'Msd ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Msd_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 4
+          Width = 26
+          Caption = 'kNm'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object lb_Msd_min: TLabel
+          Left = 10
+          Height = 15
+          Top = 32
+          Width = 58
+          Caption = 'Msd.min ='
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object tb_Msd_min: TEdit
+          Left = 220
+          Height = 23
+          Top = 28
+          Width = 140
+          Color = clForm
+          Font.CharSet = ANSI_CHARSET
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnKeyPress = tb_MsdKeyPress
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+          Text = '11325'
+        end
+        object lb_Msd_min_u: TLabel
+          Left = 370
+          Height = 15
+          Top = 32
+          Width = 26
+          Caption = 'kNm'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
       end
       object GroupBox9: TGroupBox
         Left = 10
         Height = 201
-        Top = 128
+        Top = 95
         Width = 415
         Caption = 'Determinação da linha neutra'
         Font.CharSet = ANSI_CHARSET

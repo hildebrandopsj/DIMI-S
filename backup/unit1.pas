@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls, Math;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
+  ExtCtrls, Math;
 
 type
 
@@ -19,6 +20,11 @@ type
     cb_Fck: TComboBox;
     cb_Alpha_e: TComboBox;
     Barra_Status: TStatusBar;
+    lb_Msd: TLabel;
+    lb_Msd_min: TLabel;
+    lb_Msd_u: TLabel;
+    lb_Msd_min_u: TLabel;
+    PaintBox1: TPaintBox;
     tb_Msd: TEdit;
     lb_Ac: TLabel;
     lb_Ycg: TLabel;
@@ -72,6 +78,7 @@ type
     lb_Fywd: TLabel;
     lb_Es: TLabel;
     lb_Epsilon_yd: TLabel;
+    tb_Msd_min: TEdit;
     tb_Ycg: TEdit;
     tb_I0: TEdit;
     tb_W0_inf: TEdit;
@@ -162,7 +169,7 @@ type
     GroupBox57: TGroupBox;
     gb_Propriedades: TGroupBox;
     GroupBox7: TGroupBox;
-    GroupBox8: TGroupBox;
+    gb_Es_Flexao_Simples: TGroupBox;
     GroupBox9: TGroupBox;
     lb_Delta: TLabel;
     lb_Fck: TLabel;
@@ -201,6 +208,7 @@ type
     procedure cb_FywkChange(Sender: TObject);
     procedure cb_GeometriaChange(Sender: TObject);
     procedure cb_Tipo_elementoChange(Sender: TObject);
+    procedure tb_MsdChange(Sender: TObject);
     procedure tb_MsdKeyPress(Sender: TObject; var Key: char);
     procedure FormCreate(Sender: TObject);
     procedure tb_BfChange(Sender: TObject);
@@ -224,6 +232,7 @@ type
   public
     procedure Materiais;
     procedure Propriedades_Geometricas;
+    procedure Flexao_Simples;
   end;
 
 var
@@ -239,6 +248,8 @@ var
   //Variáveis referentes a geometria
   Bw, H, Bf, Hf, D, D_linha, C, Ac, Ycg, I0, W0_inf, W0_sup, Aw, Af,Sx :real;
   Tipo_elemento, Geometria:String;
+  //Variáveis referentes a flexão simples
+  Msd, Msd_min:real;
 implementation
 
 {$R *.lfm}
@@ -249,6 +260,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   Materiais;
   Propriedades_Geometricas;
+  Flexao_Simples;
 end;
 
 
@@ -261,6 +273,7 @@ end;
  //******************************************************************************
  procedure TForm1.Materiais;
  begin
+   try
  //Leitura dos coeficientes de ponderação
    Gama_c := StrToFloat(tb_Gama_c.Text);
    Gama_s := StrToFloat(tb_Gama_s.Text);
@@ -362,6 +375,12 @@ end;
     Barra_Status.Panels[0].text := ' fck =' + FloatToStr(Fck) + ' MPa';
     Barra_Status.Panels[1].text := 'fyd =' + FloatToStrF(Fyd,ffFixed,3,2) + ' MPa';
     Barra_Status.Panels[2].text := 'fywd =' + FloatToStrF(Fywd,ffFixed,3,2) + ' MPa';
+    except
+    on E : EZeroDivide do
+      ShowMessage('Ocorreu uma divisão por zero!');
+    on E: EConvertError do
+      ShowMessage('Existe uma variável em branco. Verifique os dados inseridos');
+    end;
  end;
  procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
  begin
@@ -424,6 +443,7 @@ end;
  //******************************************************************************
  Procedure TForm1.Propriedades_Geometricas;
  begin
+ try
    //Leitura dos dados de geometria
    Bw:=StrToFloat(tb_Bw.Text);
    H:=StrToFloat(tb_H.Text);
@@ -492,6 +512,12 @@ end;
    //Preenchimento da Status Bar
    Barra_Status.Panels[3].text:=Tipo_elemento;
    Barra_Status.Panels[4].text:=Geometria;
+   except
+    on E : EZeroDivide do
+      ShowMessage('Ocorreu uma divisão por zero!');
+    on E: EConvertError do
+      ShowMessage('Existe uma variável em branco. Verifique os dados inseridos');
+    end;
  end;
 
  procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
@@ -654,5 +680,20 @@ end;
         if pos(key,TEdit(Sender).Text) <> 0 then
               key := #0;
  end;
+
+ procedure TForm1.Flexao_Simples;
+ begin
+   //Leitura dos dados de flexão
+   Msd:=StrToFloat(tb_Msd.Text);
+   Msd_min:=(0.8*(Fctk_sup/10)*W0_inf)/100;
+   //Apresentação dos dados nos TEdit
+   tb_Msd_min.Text:=FloatToStrF(Msd_min,ffFixed,3,2);
+end;
+
+procedure TForm1.tb_MsdChange(Sender: TObject);
+begin
+   Flexao_Simples;
+end;
+
 {$ENDREGION}
 end.
