@@ -23,7 +23,7 @@ Foi inicialmente desenvolvido como uma planilha do software SMath Studio e distr
 
 **Módulos transcritos para Pascal:**
 - [X] Materiais
-- [ ] Seção
+- [X] Seção (Resta a etapa de desenho da figura)
 - [ ] Flexão Simples
 - [ ] Flexão Composta
 - [ ] Cortante
