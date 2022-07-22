@@ -120,12 +120,12 @@ object Form1: TForm1
     Height = 880
     Top = 8
     Width = 462
-    ActivePage = TabFlexao
+    ActivePage = TabMateriais
     Font.CharSet = ANSI_CHARSET
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 0
     TabPosition = tpLeft
     object TabMateriais: TTabSheet
@@ -2420,5 +2420,28 @@ object Form1: TForm1
         TabOrder = 4
       end
     end
+  end
+  object Barra_Status: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 897
+    Width = 483
+    Panels = <    
+      item
+        Width = 75
+      end    
+      item
+        Width = 100
+      end    
+      item
+        Width = 110
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 100
+      end>
+    SimplePanel = False
   end
 end

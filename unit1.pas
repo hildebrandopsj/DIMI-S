@@ -18,6 +18,7 @@ type
     cb_Fywk: TComboBox;
     cb_Fck: TComboBox;
     cb_Alpha_e: TComboBox;
+    Barra_Status: TStatusBar;
     tb_Msd: TEdit;
     lb_Ac: TLabel;
     lb_Ycg: TLabel;
@@ -250,6 +251,10 @@ begin
   Propriedades_Geometricas;
 end;
 
+
+
+
+
 {$REGION 'MÓDULO DE MATERIAIS '}
  //******************************************************************************
  //                            MÓDULO DE MATERIAIS
@@ -353,6 +358,10 @@ end;
     tb_Es.Text:=FloatToStrF(Es,ffFixed,3,2);
     tb_Epsilon_yd.Text:=FloatToStrF(Epsilon_yd*1000,ffFixed,3,2);
     tb_Fywd.Text:=FloatToStrF(Fywd,ffFixed,3,2);
+  //Atualização da Status Bar
+    Barra_Status.Panels[0].text := ' fck =' + FloatToStr(Fck) + ' MPa';
+    Barra_Status.Panels[1].text := 'fyd =' + FloatToStrF(Fyd,ffFixed,3,2) + ' MPa';
+    Barra_Status.Panels[2].text := 'fywd =' + FloatToStrF(Fywd,ffFixed,3,2) + ' MPa';
  end;
  procedure TForm1.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
  begin
@@ -423,6 +432,10 @@ end;
    D:=StrToFloat(tb_D.Text);
    D_linha:=StrToFloat(tb_D_linha.Text);
    //Cálculo das propriedades geométricas
+   case cb_Tipo_Elemento.ItemIndex of
+     0: Tipo_elemento:='Viga';
+     1: Tipo_elemento:='Laje';
+     end;
    case cb_Geometria.ItemIndex of  //what entry (which item) has currently been chosen
      0: //Seção Retangular
      begin
@@ -431,6 +444,7 @@ end;
        I0:=(Bw*H**3)/12;
        W0_inf:=I0/Ycg;
        W0_sup:=I0/Ycg;
+       Geometria:='Seção Retangular';
      end;
      1: //Seção Tê
      begin
@@ -442,6 +456,7 @@ end;
        I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+Af*((Hf**2)/12+(H-Ycg-Hf/2)**2);
        W0_inf:=I0/Ycg;
        W0_sup:=I0/(H-Ycg);
+       Geometria:='Seção Tê';
      end;
      2: //Seção Tê Invertido
      begin
@@ -453,6 +468,7 @@ end;
        I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+Af*((Hf**2)/12+(Ycg-Hf/2)**2);
        W0_inf:=I0/Ycg;
        W0_sup:=I0/(H-Ycg);
+       Geometria:='Seção Tê Invertido';
      end;
      3: //Seção I
      begin
@@ -464,6 +480,7 @@ end;
        I0:=Aw*((H**2)/12+(Ycg-H/2)**2)+0.5*Af*((Hf**2)/12+(Ycg-Hf/2)**2)+0.5*Af*((Hf**2)/12+(H-Ycg-Hf/2)**2);
        W0_inf:=I0/Ycg;
        W0_sup:=I0/(H-Ycg);
+       Geometria:='Seção I';
      end;
    end;
    //Apresentação dos dados nos TEdit
@@ -472,6 +489,9 @@ end;
    tb_I0.Text:=FloatToStrF(I0,ffFixed,3,2);
    tb_W0_inf.Text:=FloatToStrF(W0_inf,ffFixed,3,2);
    tb_W0_sup.Text:=FloatToStrF(W0_sup,ffFixed,3,2);
+   //Preenchimento da Status Bar
+   Barra_Status.Panels[3].text:=Tipo_elemento;
+   Barra_Status.Panels[4].text:=Geometria;
  end;
 
  procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
@@ -560,11 +580,11 @@ end;
 
  procedure TForm1.cb_Tipo_elementoChange(Sender: TObject);
  begin
-   case cb_Tipo_Elemento.ItemIndex of  //what entry (which item) has currently been chosen
+     case cb_Tipo_Elemento.ItemIndex of
      0: Tipo_elemento:='Viga';
      1: Tipo_elemento:='Laje';
-   end;
-   if Tipo_elemento = 'Viga' then
+     end;
+      if Tipo_elemento = 'Viga' then
       begin
           cb_Geometria.Items.Clear;                      //Apagar as escolhas existentes
           cb_Geometria.Items.Add('Seção Retangular');    //Incluir um item
@@ -572,16 +592,16 @@ end;
           cb_Geometria.Items.Add('Seção Tê Invertido');
           cb_Geometria.Items.Add('Seção I');
           cb_Geometria.Text:='Seção Retangular';
+          Propriedades_Geometricas;                       //Atualizar as propriedades
       end
    else
    begin
           cb_Geometria.Items.Clear;                      //Apagar as escolhas existentes
           cb_Geometria.Items.Add('Seção Retangular');    //Incluir um item
           cb_Geometria.Text:='Seção Retangular';
+          Propriedades_Geometricas;                      //Atualizar as propriedades
    end;
  end;
-
-
 
  procedure TForm1.cb_GeometriaChange(Sender: TObject);
  begin
