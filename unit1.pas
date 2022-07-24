@@ -22,6 +22,15 @@ type
     Barra_Status: TStatusBar;
     lb_Msd: TLabel;
     lb_Msd_min: TLabel;
+    lb_X: TLabel;
+    lb_Secao: TLabel;
+    lb_Beta: TLabel;
+    lb_Beta_23: TLabel;
+    lb_Beta_limite: TLabel;
+    lb_Beta_34: TLabel;
+    lb_Dominio: TLabel;
+    lb_Verificacao_Flexao: TLabel;
+    lb_X_u: TLabel;
     lb_Msd_u: TLabel;
     lb_Msd_min_u: TLabel;
     PaintBox1: TPaintBox;
@@ -79,6 +88,14 @@ type
     lb_Es: TLabel;
     lb_Epsilon_yd: TLabel;
     tb_Msd_min: TEdit;
+    tb_Beta: TEdit;
+    tb_Beta_23: TEdit;
+    tb_Beta_limite: TEdit;
+    tb_Beta_34: TEdit;
+    tb_Dominio: TEdit;
+    tb_Verificacao_Flexao: TEdit;
+    tb_X: TEdit;
+    tb_Secao: TEdit;
     tb_Ycg: TEdit;
     tb_I0: TEdit;
     tb_W0_inf: TEdit;
@@ -170,7 +187,7 @@ type
     gb_Propriedades: TGroupBox;
     GroupBox7: TGroupBox;
     gb_Es_Flexao_Simples: TGroupBox;
-    GroupBox9: TGroupBox;
+    gb_Linha_neutra: TGroupBox;
     lb_Delta: TLabel;
     lb_Fck: TLabel;
     lb_Fctd: TLabel;
@@ -244,14 +261,17 @@ var
   Fck, Fcd, Fcd1, Fcd2, Fcd3, Alpha_v2, Fctm, Fctk_inf, Fctk_sup:real;
   Fctd, Alpha_e, Alpha_i, Eci, Ecs :real;
   //Variáveis referentes ao aço
-  Fyk, Fyd, Fywk, Fywd, Es, Epsilon_yd: real;
+  Fyk, Fyd, Fywk, Fywd, Es, Epsilon_yd, Epsilon_s2, Epsilon_s1: real;
+  Rsd2, Rsd1, Sigma_sd2, Sigma_sd1:real;
   //Variáveis referentes a geometria
   Bw, H, Bf, Hf, D, D_linha, C, Ac, Ycg, I0, W0_inf, W0_sup, Aw, Af,Sx :real;
   Tipo_elemento, Geometria:String;
   //Variáveis referentes a flexão simples
-  Msd, Msd_min:real;
+  Msd, Msd_min, X, Y, Mcfd, Rcfd, Mcwd, Rcwd, Beta, Beta_23, Beta_34:real;
+  X_min, X_23, X_34, X_limite, Y_min:real;
+  Mcfd_min, Rcfd_min, Mcwd_min, Rcwd_min, Delta_Msd:real;
+  Secao, Dominio, Verificacao_Flexao:String;
 implementation
-
 {$R *.lfm}
 
 { TForm1 }
@@ -262,10 +282,6 @@ begin
   Propriedades_Geometricas;
   Flexao_Simples;
 end;
-
-
-
-
 
 {$REGION 'MÓDULO DE MATERIAIS '}
  //******************************************************************************
@@ -512,6 +528,7 @@ end;
    //Preenchimento da Status Bar
    Barra_Status.Panels[3].text:=Tipo_elemento;
    Barra_Status.Panels[4].text:=Geometria;
+
    except
     on E : EZeroDivide do
       ShowMessage('Ocorreu uma divisão por zero!');
@@ -520,7 +537,7 @@ end;
     end;
  end;
 
- procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
+  procedure TForm1.tb_BwKeyPress(Sender: TObject; var Key: char);
  begin
      // Coletar apenas números positivos e converter o ponto decimal
    if not(key in ['0'..'9','.',',',#8,#13]) then
@@ -683,11 +700,229 @@ end;
 
  procedure TForm1.Flexao_Simples;
  begin
+ try
    //Leitura dos dados de flexão
    Msd:=StrToFloat(tb_Msd.Text);
+   //Conversões
+   Msd:=100*Msd;
    Msd_min:=(0.8*(Fctk_sup/10)*W0_inf)/100;
+   //Determinação da linha neutra
+   X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+   Y:=Lambda*X;
+   case  Geometria of
+   'Seção Tê':
+         if Y > Hf then
+         begin
+             Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+             Mcwd:=Msd-Rcfd*(D-Hf/2);
+             X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Mcwd/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+             secao:='Seção Tê Verdadeira';
+         end
+         else
+             begin
+             X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+             Rcwd:=0;
+             Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
+             secao:='Seção Tê Falsa';
+         end;
+   'Seção Tê Invertido':
+         if Y > H-Hf then
+         begin
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*(H-Hf);
+             Mcfd:=Msd-Rcwd*(D-(H-Hf)/2);
+             X:=(D-(H-Hf))*(1/Lambda-sqrt(1/(Lambda**2)-Mcfd/(0.50*Alpha_c*(Fcd/10)*Bf*((D-(H-Hf))**2)*(Lambda**2))))+(H-Hf);
+             Rcwd:=Alpha_c*(Fcd/10)*Bf*Lambda*(X-(H-Hf));
+             Secao:='Seção Tê Verdadeira';
+         end
+         else
+             begin
+             X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+             Rcfd:=0;
+             Secao:='Seção Tê Falsa';
+         end;
+   'Seção I':
+         if Y > Hf then
+         begin
+             Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+             Mcwd:=Msd-Rcfd*(D-Hf/2);
+             X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Mcwd/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+             Secao:='Seção Tê Verdadeira';
+         end
+         else
+             begin
+             X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+             Rcwd:=0;
+             Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
+             Secao:='Seção Tê Falsa';
+         end;
+      'Seção Retangular':
+         begin
+             Rcfd:=0;
+             X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+             Secao:='Seção Retangular';
+         end
+   end;
+   //Relações da linha neutra
+   Beta:=X/D;
+   Beta_23:=Epsilon_cu/(Epsilon_cu+0.01);
+   Beta_34:=Epsilon_cu/(Epsilon_cu+abs(Epsilon_yd));
+   X_23:=Beta_23*D;
+   X_34:=Beta_34*D;
+   X_limite:=Beta_limite*D;
+   //Dominios de Deformação
+   if X<0 then
+      Dominio:='1'
+   else if (0<X) and (X<X_23) then
+      Dominio:='2'
+   else if (X_23<X) and (X<X_34) then
+      Dominio:='3'
+   else if (X_34<X) and (X<D) then
+      Dominio:='4'
+   else if (D<X) and (X<H) then
+      Dominio:='4a'
+   else
+      Dominio:='5';
+   //Verificação da Ductilidade
+   if X<X_limite then
+     Verificacao_Flexao:='Ductilidade atendida'
+   else
+     Verificacao_Flexao:='Limite ultrapassado';
+   //Determinação da linha neutra para o momento mínimo
+   X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+   Y_min:=Lambda*X_min;
+   case  Geometria of
+   'Seção Tê':
+         if Y_min > Hf then
+         begin
+             Rcfd_min:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+             Mcwd_min:=(Msd_min*100)-Rcfd_min*(D-Hf/2);
+             X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-Mcwd_min/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd_min:=Alpha_c*(Fcd/10)*Bw*Lambda*X_min;
+         end
+         else
+             begin
+             X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+             Rcwd_min:=0;
+             Rcfd_min:=Alpha_c*(Fcd/10)*Bf*Lambda*X_min;
+         end;
+   'Seção Tê Invertido':
+         if Y_min > H-Hf then
+         begin
+             Rcwd_min:=Alpha_c*(Fcd/10)*Bw*(H-Hf);
+             Mcfd_min:=(Msd_min*100)-Rcwd_min*(D-(H-Hf)/2);
+             X_min:=(D-(H-Hf))*(1/Lambda-sqrt(1/(Lambda**2)-Mcfd_min/(0.50*Alpha_c*(Fcd/10)*Bf*((D-(H-Hf))**2)*(Lambda**2))))+(H-Hf);
+             Rcwd:=Alpha_c*(Fcd/10)*Bf*Lambda*(X_min-(H-Hf));
+         end
+         else
+             begin
+             X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd_min:=Alpha_c*(Fcd/10)*Bw*Lambda*X_min;
+             Rcfd_min:=0;
+         end;
+   'Seção I':
+         if Y_min > Hf then
+         begin
+             Rcfd_min:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+             Mcwd_min:=(Msd_min*100)-Rcfd_min*(D-Hf/2);
+             X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-Mcwd_min/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd_min:=Alpha_c*(Fcd/10)*Bw*Lambda*X_min;
+         end
+         else
+             begin
+             X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+             Rcwd_min:=0;
+             Rcfd_min:=Alpha_c*(Fcd/10)*Bf*Lambda*X_min;
+         end;
+      'Seção Retangular':
+         begin
+             Rcfd_min:=0;
+             X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+             Rcwd_min:=Alpha_c*(Fcd/10)*Bw*Lambda*X_min;
+         end
+   end;
+   //Determinação das áreas de armadura no caso de armadura dupla
+   if (Geometria='Seção Tê') and ((Dominio='4') or (X>X_limite)) then
+   begin
+       X:=X_limite;
+       Y:=Lambda*X;
+       if Y > Hf then
+       begin
+          Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+          Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+          Mcwd:=Rcwd*(D-0.5*Lambda*X);
+          Mcfd:=Rcfd*(D-0.5*Hf);
+          Delta_Msd:=Msd-Mcfd-Mcwd;
+          Rsd2:=Delta_Msd/(D-D_linha);
+          Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+          if Epsilon_s2 >= Epsilon_yd then
+             Sigma_sd2:=Fyd
+          else
+          Sigma_sd2:=Epsilon_s2*Es/10;
+       end
+       else
+          Rcwd:=0;
+          Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
+          Mcwd:=0;
+          Mcfd:=Rcfd*(D-0.5*Lambda*X);
+          Delta_Msd:=Msd-Mcfd-Mcwd;
+          Rsd2:=Delta_Msd/(D-D_linha);
+          Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+          if Epsilon_s2 >= Epsilon_yd then
+             Sigma_sd2:=Fyd
+          else
+             Sigma_sd2:=Epsilon_s2*Es/10;
+   end;
+   if (Geometria='Seção Tê Invertido') and ((Dominio='4') or (X>X_limite)) then{ #todo : Terminar de equacionar }
+   begin
+   X:=X_limite;
+   Y:=Lambda*X;
+   if Y >H-Hf then
+   begin
+      Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+      Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+      Mcwd:=Rcwd*(D-0.5*Lambda*X);
+      Mcfd:=Rcfd*(D-0.5*Hf);
+      Delta_Msd:=Msd-Mcfd-Mcwd;
+      Rsd2:=Delta_Msd/(D-D_linha);
+      Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+      if Epsilon_s2 >= Epsilon_yd then
+         Sigma_sd2:=Fyd
+      else
+      Sigma_sd2:=Epsilon_s2*Es/10;
+   end
+   else
+      Rcwd:=0;
+      Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
+      Mcwd:=0;
+      Mcfd:=Rcfd*(D-0.5*Lambda*X);
+      Delta_Msd:=Msd-Mcfd-Mcwd;
+      Rsd2:=Delta_Msd/(D-D_linha);
+      Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+      if Epsilon_s2 >= Epsilon_yd then
+         Sigma_sd2:=Fyd
+      else
+         Sigma_sd2:=Epsilon_s2*Es/10;
+   end;
    //Apresentação dos dados nos TEdit
    tb_Msd_min.Text:=FloatToStrF(Msd_min,ffFixed,3,2);
+   tb_X.Text:=FloatToStrF(X,ffFixed,3,2);
+   tb_Beta.Text:=FloatToStrF(Beta,ffFixed,3,3);
+   tb_Beta_23.Text:=FloatToStrF(Beta_23,ffFixed,3,3);
+   tb_Beta_limite.Text:=FloatToStrF(Beta_limite,ffFixed,3,3);
+   tb_Beta_34.Text:=FloatToStrF(Beta_34,ffFixed,3,3);
+   tb_Secao.Text:=Secao;
+   tb_Dominio.Text:=Dominio;
+   tb_Verificacao_Flexao.Text:=Verificacao_Flexao;
+ except
+     on E: EConvertError do
+     ShowMessage('Existe uma variável em branco. Verifique os dados inseridos');
+     on E: EInvalidOp do
+     ShowMessage('Não há solução para o momento aplicado');
+ end;
 end;
 
 procedure TForm1.tb_MsdChange(Sender: TObject);
