@@ -23,7 +23,7 @@ type
     lb_As1_u: TLabel;
     lb_As1: TLabel;
     lb_As_max_u: TLabel;
-    lb_As_min1: TLabel;
+    lb_As_pele: TLabel;
     lb_As_min_u: TLabel;
     lb_As_max: TLabel;
     lb_As_min: TLabel;
@@ -151,7 +151,7 @@ type
     tb_Fctm: TEdit;
     gb_Coeficientes: TGroupBox;
     GroupBox10: TGroupBox;
-    GroupBox11: TGroupBox;
+    gb_Auxiliar: TGroupBox;
     GroupBox12: TGroupBox;
     GroupBox13: TGroupBox;
     GroupBox14: TGroupBox;

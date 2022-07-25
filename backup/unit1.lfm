@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1567
+  Left = 1937
   Height = 920
-  Top = 49
+  Top = 55
   Width = 483
   BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = bsSingle
@@ -2523,13 +2523,13 @@ object Form1: TForm1
           ParentFont = False
         end
       end
-      object GroupBox11: TGroupBox
+      object gb_Auxiliar: TGroupBox
         Left = 10
-        Height = 73
+        Height = 50
         Top = 752
         Width = 415
         Caption = 'Armaduras auxiliares'
-        ClientHeight = 53
+        ClientHeight = 30
         ClientWidth = 411
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
@@ -2537,7 +2537,7 @@ object Form1: TForm1
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 3
-        object lb_As_min1: TLabel
+        object lb_As_pele: TLabel
           Left = 10
           Height = 15
           Top = 4
