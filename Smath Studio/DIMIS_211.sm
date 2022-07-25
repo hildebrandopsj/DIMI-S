@@ -4,7 +4,7 @@
   <settings ppi="96">
     <identity>
       <id>34f4ebdf-c81c-4fe6-8467-d8467b50fc14</id>
-      <revision>276</revision>
+      <revision>277</revision>
     </identity>
     <metadata lang="rus">
       <author>Hildebrando</author>
@@ -5353,7 +5353,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="19692" width="26" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="19674" width="362" height="98" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5384,7 +5384,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="19746" width="111" height="39" color="#000000" fontSize="10">
+      <region left="18" top="19809" width="111" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5404,7 +5404,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="19791" width="127" height="39" color="#000000" fontSize="10">
+      <region left="18" top="19854" width="127" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5424,7 +5424,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="19845" width="186" height="39" color="#000000" fontSize="10">
+      <region left="18" top="19908" width="186" height="39" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5450,7 +5450,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="19908" width="138" height="39" color="#000000" fontSize="10">
+      <region left="18" top="19971" width="138" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5470,11 +5470,11 @@
           </result>
         </math>
       </region>
-      <region top="19953" color="#000000">
+      <region top="20016" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="19962" color="#000000">
+    <region top="20025" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -5482,7 +5482,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="19980" width="95" height="39" color="#000000" fontSize="10">
+      <region left="18" top="20043" width="95" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5500,7 +5500,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="20025" width="167" height="44" color="#000000" fontSize="10">
+      <region left="18" top="20088" width="167" height="44" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5522,7 +5522,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="20070" width="177" height="53" color="#000000" fontSize="10">
+      <region left="18" top="20133" width="177" height="53" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5546,7 +5546,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="20160" width="306" height="81" color="#000000" fontSize="10">
+      <region left="18" top="20223" width="306" height="81" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5572,7 +5572,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="20268" width="634" height="109" color="#000000" fontSize="10">
+      <region left="18" top="20331" width="634" height="109" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5602,11 +5602,11 @@
           </result>
         </math>
       </region>
-      <region top="20403" color="#000000">
+      <region top="20466" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="20421" color="#000000">
+    <region top="20484" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -5614,7 +5614,7 @@
           </content>
         </title>
       </area>
-      <region left="9" top="20439" width="327" height="189" color="#000000" fontSize="10">
+      <region left="9" top="20502" width="327" height="189" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5670,11 +5670,11 @@
           </result>
         </math>
       </region>
-      <region top="20646" color="#000000">
+      <region top="20709" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="20673" color="#000000">
+    <region top="20736" color="#000000">
       <area single="true" collapsed="true">
         <title lang="cpp">
           <content>
@@ -5683,7 +5683,7 @@
         </title>
       </area>
     </region>
-    <region top="20700" color="#000000">
+    <region top="20763" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -5691,7 +5691,7 @@
           </content>
         </title>
       </area>
-      <region left="0" top="20718" width="0" height="0" color="#000000">
+      <region left="0" top="20781" width="0" height="0" color="#000000">
         <regions type="header" start="0" count="1">
           <region left="0" top="93" width="674" height="24" color="#000000" fontSize="10">
       <math trailingZeros="true">
@@ -5711,7 +5711,7 @@
     </region>
   </regions>
       </region>
-      <region left="18" top="20736" width="79" height="30" color="#000000" fontSize="10">
+      <region left="18" top="20799" width="79" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5727,7 +5727,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="20799" width="103" height="31" color="#000000" fontSize="10">
+      <region left="18" top="20862" width="103" height="31" color="#000000" fontSize="10">
         <math optimize="2" decimalPlaces="4">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -5746,7 +5746,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="20844" width="155" height="108" color="#000000" fontSize="10">
+      <region left="18" top="20907" width="155" height="108" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5773,7 +5773,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="20997" width="472" height="163" color="#000000" fontSize="10">
+      <region left="18" top="21060" width="472" height="163" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">A.c.FCN</e>
@@ -5853,7 +5853,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="21168" width="272" height="55" color="#000000" fontSize="10">
+      <region left="18" top="21231" width="272" height="55" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5878,7 +5878,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="21258" width="291" height="57" color="#000000" fontSize="10">
+      <region left="18" top="21321" width="291" height="57" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5906,11 +5906,11 @@
           </result>
         </math>
       </region>
-      <region top="21384" color="#000000">
+      <region top="21447" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="21411" color="#000000">
+    <region top="21474" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -5918,7 +5918,7 @@
           </content>
         </title>
       </area>
-      <region left="36" top="21438" width="121" height="47" color="#000000" fontSize="10">
+      <region left="36" top="21501" width="121" height="47" color="#000000" fontSize="10">
         <math decimalPlaces="3" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5937,7 +5937,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="21519" width="121" height="53" color="#000000" fontSize="10">
+      <region left="36" top="21582" width="121" height="53" color="#000000" fontSize="10">
         <math decimalPlaces="3" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -5956,7 +5956,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="21600" width="560" height="165" color="#000000" fontSize="10">
+      <region left="36" top="21663" width="560" height="165" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6067,7 +6067,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="21816" width="572" height="163" color="#000000" fontSize="10">
+      <region left="36" top="21879" width="572" height="163" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6172,7 +6172,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="22032" width="127" height="47" color="#000000" fontSize="10">
+      <region left="36" top="22095" width="127" height="47" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6191,7 +6191,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="22113" width="127" height="47" color="#000000" fontSize="10">
+      <region left="36" top="22176" width="127" height="47" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6210,7 +6210,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="22194" width="121" height="47" color="#000000" fontSize="10">
+      <region left="36" top="22257" width="121" height="47" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6229,7 +6229,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="22275" width="121" height="47" color="#000000" fontSize="10">
+      <region left="36" top="22338" width="121" height="47" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6248,11 +6248,11 @@
           </result>
         </math>
       </region>
-      <region top="22347" color="#000000">
+      <region top="22410" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="22374" color="#000000">
+    <region top="22437" color="#000000">
       <area collapsed="true">
         <title lang="cpp">
           <content>
@@ -6260,7 +6260,7 @@
           </content>
         </title>
       </area>
-      <region left="27" top="22410" width="181" height="41" color="#000000" fontSize="10">
+      <region left="27" top="22473" width="181" height="41" color="#000000" fontSize="10">
         <math decimalPlaces="3">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6281,7 +6281,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="22482" width="262" height="32" color="#000000" fontSize="10">
+      <region left="27" top="22545" width="262" height="32" color="#000000" fontSize="10">
         <math decimalPlaces="4" exponentialThreshold="7" ignoreUnits="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6302,7 +6302,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="22545" width="194" height="30" color="#000000" fontSize="10">
+      <region left="27" top="22608" width="194" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -6324,7 +6324,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="22608" width="831" height="1913" color="#000000" fontSize="10">
+      <region left="27" top="22671" width="831" height="1913" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand" style="string">Seção Tê</e>
@@ -6906,7 +6906,7 @@
           </input>
         </math>
       </region>
-      <region left="36" top="24543" width="81" height="32" color="#000000" fontSize="10">
+      <region left="36" top="24606" width="81" height="32" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">M.sd</e>
@@ -6916,7 +6916,7 @@
           </input>
         </math>
       </region>
-      <region left="36" top="24606" width="160" height="32" color="#000000" fontSize="10">
+      <region left="36" top="24669" width="160" height="32" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">β.lim</e>
@@ -6929,7 +6929,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="24642" width="176" height="32" color="#000000" fontSize="10">
+      <region left="36" top="24705" width="176" height="32" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">β'.lim</e>
@@ -6942,21 +6942,21 @@
           </result>
         </math>
       </region>
-      <region left="36" top="24678" width="157" height="23" color="#000000" fontSize="10">
+      <region left="36" top="24741" width="157" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Limites entre as zonas</p>
           </content>
         </text>
       </region>
-      <region left="36" top="24705" width="76" height="23" color="#000000" fontSize="10">
+      <region left="36" top="24768" width="76" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Limite AB</p>
           </content>
         </text>
       </region>
-      <region left="36" top="24732" width="252" height="31" color="#000000" fontSize="10">
+      <region left="36" top="24795" width="252" height="31" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7">
           <input>
             <e type="operand">μ.AB</e>
@@ -6976,14 +6976,14 @@
           </result>
         </math>
       </region>
-      <region left="36" top="24786" width="76" height="23" color="#000000" fontSize="10">
+      <region left="36" top="24849" width="76" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Limite BC</p>
           </content>
         </text>
       </region>
-      <region left="36" top="24813" width="284" height="30" color="#000000" fontSize="10">
+      <region left="36" top="24876" width="284" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7">
           <input>
             <e type="operand">μ.BC</e>
@@ -7004,14 +7004,14 @@
           </result>
         </math>
       </region>
-      <region left="36" top="24858" width="76" height="23" color="#000000" fontSize="10">
+      <region left="36" top="24921" width="76" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Limite CD</p>
           </content>
         </text>
       </region>
-      <region left="36" top="24894" width="318" height="32" color="#000000" fontSize="10">
+      <region left="36" top="24957" width="318" height="32" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7">
           <input>
             <e type="operand">μ.CD</e>
@@ -7035,14 +7035,14 @@
           </result>
         </math>
       </region>
-      <region left="36" top="24939" width="166" height="23" color="#000000" fontSize="10">
+      <region left="36" top="25002" width="166" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Coordenada do ponto B</p>
           </content>
         </text>
       </region>
-      <region left="36" top="24975" width="276" height="30" color="#000000" fontSize="10">
+      <region left="36" top="25038" width="276" height="30" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">μ.B</e>
@@ -7062,7 +7062,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25011" width="250" height="32" color="#000000" fontSize="10">
+      <region left="36" top="25074" width="250" height="32" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">μ.B</e>
@@ -7081,14 +7081,14 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25056" width="80" height="23" color="#000000" fontSize="10">
+      <region left="36" top="25119" width="80" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Limite DE:</p>
           </content>
         </text>
       </region>
-      <region left="36" top="25083" width="129" height="30" color="#000000" fontSize="10">
+      <region left="36" top="25146" width="129" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7">
           <input>
             <e type="operand">μ.DE</e>
@@ -7103,14 +7103,14 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25128" width="125" height="23" color="#000000" fontSize="10">
+      <region left="36" top="25191" width="125" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: bold;">Limite da zona O:</p>
           </content>
         </text>
       </region>
-      <region left="36" top="25164" width="180" height="139" color="#000000" fontSize="10">
+      <region left="36" top="25227" width="180" height="139" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">y.BO</e>
@@ -7144,7 +7144,7 @@
           </input>
         </math>
       </region>
-      <region left="36" top="25308" width="232" height="32" color="#000000" fontSize="10">
+      <region left="36" top="25371" width="232" height="32" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7">
           <input>
             <e type="operand">μ.BO</e>
@@ -7164,7 +7164,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25344" width="232" height="32" color="#000000" fontSize="10">
+      <region left="36" top="25407" width="232" height="32" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7">
           <input>
             <e type="operand">μ.DO</e>
@@ -7184,7 +7184,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25389" width="197" height="53" color="#000000" fontSize="10">
+      <region left="36" top="25452" width="197" height="53" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">β.23</e>
@@ -7204,7 +7204,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25452" width="195" height="55" color="#000000" fontSize="10">
+      <region left="36" top="25515" width="195" height="55" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">β.34</e>
@@ -7225,7 +7225,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="25542" width="397" height="422" color="#000000" fontSize="10">
+      <region left="36" top="25605" width="397" height="422" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -7375,7 +7375,7 @@
           </input>
         </math>
       </region>
-      <region left="45" top="26046" width="581" height="544" color="#000000" fontSize="10">
+      <region left="45" top="26109" width="581" height="544" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -7545,7 +7545,7 @@
           </input>
         </math>
       </region>
-      <region left="45" top="26640" width="542" height="670" color="#000000" fontSize="10">
+      <region left="45" top="26703" width="542" height="670" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -7743,7 +7743,7 @@
           </input>
         </math>
       </region>
-      <region left="45" top="27342" width="395" height="183" color="#000000" fontSize="10">
+      <region left="45" top="27405" width="395" height="183" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">σ.s1d</e>
@@ -7787,7 +7787,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="27540" width="342" height="183" color="#000000" fontSize="10">
+      <region left="45" top="27603" width="342" height="183" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">σ.s2d</e>
@@ -7830,7 +7830,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="27738" width="114" height="30" color="#000000" fontSize="10">
+      <region left="45" top="27801" width="114" height="30" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">σ.cd</e>
@@ -7841,7 +7841,7 @@
           </input>
         </math>
       </region>
-      <region left="45" top="27774" width="146" height="53" color="#000000" fontSize="10">
+      <region left="45" top="27837" width="146" height="53" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">α.1</e>
@@ -7856,7 +7856,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="27837" width="102" height="53" color="#000000" fontSize="10">
+      <region left="45" top="27900" width="102" height="53" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">α.2</e>
@@ -7870,7 +7870,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="27900" width="302" height="111" color="#000000" fontSize="10">
+      <region left="45" top="27963" width="302" height="111" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">ρ.1</e>
@@ -7911,7 +7911,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28026" width="338" height="112" color="#000000" fontSize="10">
+      <region left="45" top="28089" width="338" height="112" color="#000000" fontSize="10">
         <math>
           <input>
             <e type="operand">ρ.2</e>
@@ -7953,11 +7953,11 @@
           </result>
         </math>
       </region>
-      <region top="28161" color="#000000">
+      <region top="28224" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="28179" color="#000000">
+    <region top="28242" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -7965,7 +7965,7 @@
           </content>
         </title>
       </area>
-      <region left="45" top="28206" width="188" height="24" color="#000000" fontSize="10">
+      <region left="45" top="28269" width="188" height="24" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -7980,7 +7980,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28260" width="108" height="30" color="#000000" fontSize="10">
+      <region left="45" top="28323" width="108" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -7996,7 +7996,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28323" width="108" height="30" color="#000000" fontSize="10">
+      <region left="45" top="28386" width="108" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8012,7 +8012,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28386" width="88" height="24" color="#000000" fontSize="10">
+      <region left="45" top="28449" width="88" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8030,7 +8030,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28440" width="88" height="24" color="#000000" fontSize="10">
+      <region left="45" top="28503" width="88" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8048,7 +8048,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28494" width="358" height="232" color="#000000" fontSize="10">
+      <region left="45" top="28557" width="358" height="232" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8121,7 +8121,7 @@
           </input>
         </math>
       </region>
-      <region left="45" top="28755" width="212" height="24" color="#000000" fontSize="10">
+      <region left="45" top="28818" width="212" height="24" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8136,7 +8136,7 @@
           </result>
         </math>
       </region>
-      <region left="45" top="28809" width="84" height="24" color="#000000" fontSize="10">
+      <region left="45" top="28872" width="84" height="24" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8151,11 +8151,11 @@
           </result>
         </math>
       </region>
-      <region top="28863" color="#000000">
+      <region top="28926" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="28881" color="#000000">
+    <region top="28944" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -8163,7 +8163,7 @@
           </content>
         </title>
       </area>
-      <region left="36" top="28908" width="75" height="30" color="#000000" fontSize="10">
+      <region left="36" top="28971" width="75" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8181,7 +8181,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="28962" width="96" height="30" color="#000000" fontSize="10">
+      <region left="36" top="29025" width="96" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8200,7 +8200,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="29025" width="50" height="30" color="#000000" fontSize="10">
+      <region left="36" top="29088" width="50" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8215,7 +8215,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="29079" width="95" height="30" color="#000000" fontSize="10">
+      <region left="36" top="29142" width="95" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8231,7 +8231,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="29142" width="172" height="39" color="#000000" fontSize="10">
+      <region left="36" top="29205" width="172" height="39" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8255,7 +8255,7 @@
           </result>
         </math>
       </region>
-      <region left="36" top="29214" width="172" height="39" color="#000000" fontSize="10">
+      <region left="36" top="29277" width="172" height="39" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8279,11 +8279,11 @@
           </result>
         </math>
       </region>
-      <region top="29277" color="#000000">
+      <region top="29340" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="29295" color="#000000">
+    <region top="29358" color="#000000">
       <area single="true" collapsed="true">
         <title lang="por">
           <content>
@@ -8292,7 +8292,7 @@
         </title>
       </area>
     </region>
-    <region top="29313" color="#000000">
+    <region top="29376" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -8300,7 +8300,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="29340" width="103" height="30" color="#000000" fontSize="10">
+      <region left="18" top="29403" width="103" height="30" color="#000000" fontSize="10">
         <math optimize="2" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8316,7 +8316,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="29394" width="79" height="30" color="#000000" fontSize="10">
+      <region left="18" top="29457" width="79" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8332,7 +8332,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="29457" width="123" height="85" color="#000000" fontSize="10">
+      <region left="18" top="29520" width="123" height="85" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <input>
             <e type="operand">N.cp</e>
@@ -8348,11 +8348,11 @@
           </input>
         </math>
       </region>
-      <region top="29538" color="#000000">
+      <region top="29601" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="29556" color="#000000">
+    <region top="29619" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -8360,7 +8360,7 @@
           </content>
         </title>
       </area>
-      <region left="27" top="29574" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="27" top="29637" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="MDC" inputColumn="1" selected="2" output="Element" outputColumn="1" layout="DropDownList" items="3" firstItem="0" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"1"</li>
@@ -8376,7 +8376,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="27" top="29637" width="112" height="35" color="#000000" fontSize="10">
+      <region left="27" top="29700" width="112" height="35" color="#000000" fontSize="10">
         <numericupdown settings="" value="30" decimalPlaces="0" increment="1" increment_ALT="1" incrementType_ALT="Add" increment_SHIFT="1" incrementType_SHIFT="Add" increment_ALTSHIFT="1" incrementType_ALTSHIFT="Add" maxValue="45" minValue="30" useMaxValue="true" useMinValue="true">
           <description active="true" position="Right" lang="eng">
             <content>
@@ -8388,7 +8388,7 @@
           </input>
         </numericupdown>
       </region>
-      <region left="27" top="29691" width="112" height="35" color="#000000" fontSize="10">
+      <region left="27" top="29754" width="112" height="35" color="#000000" fontSize="10">
         <numericupdown settings="" value="90" decimalPlaces="0" increment="1" increment_ALT="1" incrementType_ALT="Add" increment_SHIFT="1" incrementType_SHIFT="Add" increment_ALTSHIFT="1" incrementType_ALTSHIFT="Add" maxValue="90" minValue="45" useMaxValue="true" useMinValue="true">
           <description active="true" position="Right" lang="eng">
             <content>
@@ -8400,7 +8400,7 @@
           </input>
         </numericupdown>
       </region>
-      <region left="27" top="29745" width="133" height="112" color="#000000" fontSize="10">
+      <region left="27" top="29808" width="133" height="112" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8436,11 +8436,11 @@
           </input>
         </math>
       </region>
-      <region top="29880" color="#000000">
+      <region top="29943" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="29898" color="#000000">
+    <region top="29961" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -8448,7 +8448,7 @@
           </content>
         </title>
       </area>
-      <region left="27" top="29916" width="168" height="320" color="#000000" fontSize="10">
+      <region left="27" top="29979" width="168" height="320" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8514,7 +8514,7 @@
           </input>
         </math>
       </region>
-      <region left="27" top="30258" width="468" height="36" color="#000000" fontSize="10">
+      <region left="27" top="30321" width="468" height="36" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8553,7 +8553,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="30321" width="224" height="402" color="#000000" fontSize="10">
+      <region left="27" top="30384" width="224" height="402" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8631,7 +8631,7 @@
           </input>
         </math>
       </region>
-      <region left="27" top="30753" width="709" height="189" color="#000000" fontSize="10">
+      <region left="27" top="30816" width="709" height="189" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8727,7 +8727,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="30969" width="119" height="53" color="#000000" fontSize="10">
+      <region left="27" top="31032" width="119" height="53" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8747,7 +8747,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="31050" width="50" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="27" top="31113" width="50" height="24" color="#000000" fontSize="10" showInputData="false">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8770,11 +8770,11 @@
           </result>
         </math>
       </region>
-      <region top="31095" color="#000000">
+      <region top="31158" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="31113" color="#000000">
+    <region top="31176" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -8782,7 +8782,7 @@
           </content>
         </title>
       </area>
-      <region left="27" top="31140" width="552" height="43" color="#000000" fontSize="10">
+      <region left="27" top="31203" width="552" height="43" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8824,7 +8824,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="31221" width="111" height="53" color="#000000" fontSize="10">
+      <region left="27" top="31284" width="111" height="53" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8844,7 +8844,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="31302" width="90" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="27" top="31365" width="90" height="24" color="#000000" fontSize="10" showInputData="false">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8867,7 +8867,7 @@
           </result>
         </math>
       </region>
-      <region left="27" top="31365" width="241" height="30" color="#000000" fontSize="10">
+      <region left="27" top="31428" width="241" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8893,7 +8893,7 @@
           </result>
         </math>
       </region>
-      <region top="31419" color="#000000">
+      <region top="31482" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -8901,7 +8901,7 @@
             </content>
           </title>
         </area>
-        <region left="27" top="31437" width="317" height="311" color="#000000" fontSize="10">
+        <region left="27" top="31500" width="317" height="311" color="#000000" fontSize="10">
           <math>
             <description active="true" position="Top" lang="eng">
               <content>
@@ -8957,11 +8957,11 @@
             </input>
           </math>
         </region>
-        <region top="31770" color="#000000">
+        <region top="31833" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="27" top="31788" width="117" height="30" color="#000000" fontSize="10">
+      <region left="27" top="31851" width="117" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -8979,11 +8979,11 @@
           </result>
         </math>
       </region>
-      <region top="31842" color="#000000">
+      <region top="31905" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="31869" color="#000000">
+    <region top="31932" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -8991,7 +8991,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="31896" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="31959" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="tp_ref" inputColumn="1" selected="1" output="Element" outputColumn="1" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Estribos"</li>
@@ -9006,7 +9006,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="31968" width="432" height="336" color="#000000" fontSize="10">
+      <region left="18" top="32031" width="432" height="336" color="#000000" fontSize="10">
         <math decimalPlaces="0" exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9106,7 +9106,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="32328" width="400" height="270" color="#000000" fontSize="10">
+      <region left="18" top="32391" width="400" height="270" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9176,7 +9176,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="32625" width="125" height="30" color="#000000" fontSize="10">
+      <region left="18" top="32688" width="125" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9194,7 +9194,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="32688" width="123" height="50" color="#000000" fontSize="10">
+      <region left="18" top="32751" width="123" height="50" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9216,7 +9216,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="32769" width="140" height="50" color="#000000" fontSize="10">
+      <region left="18" top="32832" width="140" height="50" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9238,7 +9238,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="32841" width="245" height="52" color="#000000" fontSize="10">
+      <region left="18" top="32904" width="245" height="52" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9262,11 +9262,11 @@
           </result>
         </math>
       </region>
-      <region top="32931" color="#000000">
+      <region top="32994" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="32958" color="#000000">
+    <region top="33021" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -9274,7 +9274,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="32976" width="262" height="361" color="#000000" fontSize="10">
+      <region left="18" top="33039" width="262" height="361" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9364,7 +9364,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="33363" width="115" height="30" color="#000000" fontSize="10">
+      <region left="18" top="33426" width="115" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -9382,7 +9382,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="33399" width="123" height="30" color="#000000" fontSize="10">
+      <region left="18" top="33462" width="123" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -9400,11 +9400,11 @@
           </result>
         </math>
       </region>
-      <region top="33435" color="#000000">
+      <region top="33498" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="33453" color="#000000">
+    <region top="33516" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -9412,7 +9412,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="33480" width="356" height="294" color="#000000" fontSize="10">
+      <region left="18" top="33543" width="356" height="294" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9484,7 +9484,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="33804" width="102" height="30" color="#000000" fontSize="10">
+      <region left="18" top="33867" width="102" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9502,7 +9502,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="33858" width="149" height="30" color="#000000" fontSize="10">
+      <region left="18" top="33921" width="149" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9520,11 +9520,11 @@
           </result>
         </math>
       </region>
-      <region top="33912" color="#000000">
+      <region top="33975" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="33930" color="#000000">
+    <region top="33993" color="#000000">
       <area single="true" collapsed="true">
         <title lang="por">
           <content>
@@ -9533,7 +9533,7 @@
         </title>
       </area>
     </region>
-    <region top="33957" color="#000000">
+    <region top="34020" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -9541,7 +9541,7 @@
           </content>
         </title>
       </area>
-      <region left="27" top="33975" width="91" height="30" color="#000000" fontSize="10">
+      <region left="27" top="34038" width="91" height="30" color="#000000" fontSize="10">
         <math optimize="2" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9559,11 +9559,11 @@
           </input>
         </math>
       </region>
-      <region top="34020" color="#000000">
+      <region top="34083" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="34047" color="#000000">
+    <region top="34110" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -9571,7 +9571,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="34065" width="227" height="35" color="#000000" fontSize="10">
+      <region left="18" top="34128" width="227" height="35" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9597,7 +9597,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="34128" width="141" height="39" color="#000000" fontSize="10">
+      <region left="18" top="34191" width="141" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9617,7 +9617,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="34191" width="193" height="32" color="#000000" fontSize="10">
+      <region left="18" top="34254" width="193" height="32" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9642,7 +9642,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="34254" width="119" height="35" color="#000000" fontSize="10">
+      <region left="18" top="34317" width="119" height="35" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9662,7 +9662,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="34317" width="238" height="256" color="#000000" fontSize="10">
+      <region left="18" top="34380" width="238" height="256" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9715,7 +9715,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="34614" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="34677" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="tab_h.e" inputColumn="1" selected="1" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Ac\002F\u"</li>
@@ -9731,7 +9731,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="34695" width="159" height="227" color="#000000" fontSize="10">
+      <region left="18" top="34758" width="159" height="227" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9781,7 +9781,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="34956" width="102" height="30" color="#000000" fontSize="10">
+      <region left="18" top="35019" width="102" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9799,7 +9799,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35019" width="119" height="47" color="#000000" fontSize="10">
+      <region left="18" top="35082" width="119" height="47" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9819,7 +9819,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35082" width="188" height="39" color="#000000" fontSize="10">
+      <region left="18" top="35145" width="188" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9843,7 +9843,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35154" width="206" height="32" color="#000000" fontSize="10">
+      <region left="18" top="35217" width="206" height="32" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9868,11 +9868,11 @@
           </result>
         </math>
       </region>
-      <region top="35208" color="#000000">
+      <region top="35271" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="35226" color="#000000">
+    <region top="35289" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -9880,7 +9880,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="35244" width="421" height="33" color="#000000" fontSize="10">
+      <region left="18" top="35307" width="421" height="33" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -9916,7 +9916,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35280" width="103" height="53" color="#000000" fontSize="10">
+      <region left="18" top="35343" width="103" height="53" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -9936,7 +9936,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35334" width="161" height="53" color="#000000" fontSize="10">
+      <region left="18" top="35397" width="161" height="53" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -9960,7 +9960,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35388" width="90" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="35451" width="90" height="24" color="#000000" fontSize="10" showInputData="false">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -9994,11 +9994,11 @@
           </result>
         </math>
       </region>
-      <region top="35433" color="#000000">
+      <region top="35496" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="35451" color="#000000">
+    <region top="35514" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -10006,7 +10006,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="35478" width="279" height="57" color="#000000" fontSize="10">
+      <region left="18" top="35541" width="279" height="57" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="por">
             <content>
@@ -10039,7 +10039,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35559" width="321" height="63" color="#000000" fontSize="10">
+      <region left="18" top="35622" width="321" height="63" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="por">
             <content>
@@ -10075,7 +10075,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35649" width="254" height="63" color="#000000" fontSize="10">
+      <region left="18" top="35712" width="254" height="63" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10101,11 +10101,11 @@
           </result>
         </math>
       </region>
-      <region top="35739" color="#000000">
+      <region top="35802" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="35757" color="#000000">
+    <region top="35820" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -10113,7 +10113,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="35775" width="260" height="57" color="#000000" fontSize="10">
+      <region left="18" top="35838" width="260" height="57" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="por">
             <content>
@@ -10146,7 +10146,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35838" width="249" height="56" color="#000000" fontSize="10">
+      <region left="18" top="35901" width="249" height="56" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="por">
             <content>
@@ -10176,11 +10176,11 @@
           </result>
         </math>
       </region>
-      <region top="35892" color="#000000">
+      <region top="35955" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="35910" color="#000000">
+    <region top="35973" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -10188,7 +10188,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="35937" width="136" height="39" color="#000000" fontSize="10">
+      <region left="18" top="36000" width="136" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -10210,7 +10210,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="35982" width="161" height="39" color="#000000" fontSize="10">
+      <region left="18" top="36045" width="161" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -10232,11 +10232,11 @@
           </result>
         </math>
       </region>
-      <region top="36027" color="#000000">
+      <region top="36090" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="36045" color="#000000">
+    <region top="36108" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -10244,7 +10244,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="36072" width="136" height="39" color="#000000" fontSize="10">
+      <region left="18" top="36135" width="136" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -10266,7 +10266,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="36117" width="161" height="39" color="#000000" fontSize="10">
+      <region left="18" top="36180" width="161" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -10288,7 +10288,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="36162" width="136" height="39" color="#000000" fontSize="10">
+      <region left="18" top="36225" width="136" height="39" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -10308,11 +10308,11 @@
           </result>
         </math>
       </region>
-      <region top="36198" color="#000000">
+      <region top="36261" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="36225" color="#000000">
+    <region top="36288" color="#000000">
       <area single="true" collapsed="true">
         <title lang="cpp">
           <content>
@@ -10321,7 +10321,7 @@
         </title>
       </area>
     </region>
-    <region top="36243" color="#000000">
+    <region top="36306" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -10329,7 +10329,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="36261" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36324" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10353,7 +10353,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="36351" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36414" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10377,7 +10377,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="36441" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36504" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10401,7 +10401,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="36531" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36594" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10425,7 +10425,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="36621" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36684" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10449,7 +10449,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="36711" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36774" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10473,7 +10473,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="36801" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="36864" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="8" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="5" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -10497,11 +10497,11 @@
           </input>
         </comboboxlist>
       </region>
-      <region top="36891" color="#000000">
+      <region top="36954" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="36909" color="#000000">
+    <region top="36972" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -10509,7 +10509,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="36936" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="36999" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10525,7 +10525,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="36990" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="37053" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10541,7 +10541,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="37044" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="37107" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10557,7 +10557,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="37098" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="37161" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10573,7 +10573,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="37152" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="37215" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10589,7 +10589,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="37206" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="37269" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10605,7 +10605,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="37260" width="57" height="33" color="#000000" fontSize="10">
+      <region left="18" top="37323" width="57" height="33" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10621,7 +10621,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="37341" width="113" height="254" color="#000000" fontSize="10">
+      <region left="18" top="37404" width="113" height="254" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10679,11 +10679,11 @@
           </input>
         </math>
       </region>
-      <region top="37629" color="#000000">
+      <region top="37692" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="37656" color="#000000">
+    <region top="37719" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -10691,7 +10691,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="37683" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="37746" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="Ad.ag" inputColumn="1" selected="3" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Brita\0020\0"</li>
@@ -10709,7 +10709,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="37746" width="206" height="77" color="#000000" fontSize="10">
+      <region left="18" top="37809" width="206" height="77" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10739,7 +10739,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="37854" width="206" height="77" color="#000000" fontSize="10">
+      <region left="18" top="37917" width="206" height="77" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -10769,7 +10769,7 @@
           </result>
         </math>
       </region>
-      <region top="37953" color="#000000">
+      <region top="38016" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -10777,7 +10777,7 @@
             </content>
           </title>
         </area>
-        <region left="18" top="38016" width="418" height="300" color="#000000" fontSize="10">
+        <region left="18" top="38079" width="418" height="300" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -10886,7 +10886,7 @@
             </input>
           </math>
         </region>
-        <region left="18" top="38358" width="722" height="670" color="#000000" fontSize="10">
+        <region left="18" top="38421" width="722" height="670" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -11207,7 +11207,7 @@
             </input>
           </math>
         </region>
-        <region left="36" top="39060" width="143" height="37" color="#000000" fontSize="10">
+        <region left="36" top="39123" width="143" height="37" color="#000000" fontSize="10">
           <math decimalPlaces="4">
             <input>
               <e type="operand">A.cr.total</e>
@@ -11217,7 +11217,7 @@
             </input>
           </math>
         </region>
-        <region left="36" top="39096" width="379" height="279" color="#000000" fontSize="10">
+        <region left="36" top="39159" width="379" height="279" color="#000000" fontSize="10">
           <math decimalPlaces="4">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -11275,7 +11275,7 @@
             </input>
           </math>
         </region>
-        <region left="36" top="39411" width="322" height="45" color="#000000" fontSize="10">
+        <region left="36" top="39474" width="322" height="45" color="#000000" fontSize="10">
           <math decimalPlaces="4">
             <input>
               <e type="operand">Cabeçalho.Acr</e>
@@ -11294,7 +11294,7 @@
             </input>
           </math>
         </region>
-        <region left="36" top="39456" width="280" height="425" color="#000000" fontSize="10">
+        <region left="36" top="39519" width="280" height="425" color="#000000" fontSize="10">
           <math decimalPlaces="4">
             <input>
               <e type="operand">Tabela.Acr</e>
@@ -11431,7 +11431,7 @@
             </input>
           </math>
         </region>
-        <region left="72" top="39915" width="386" height="403" color="#000000" fontSize="10">
+        <region left="72" top="39978" width="386" height="403" color="#000000" fontSize="10">
           <math decimalPlaces="4">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -11649,11 +11649,11 @@
             </input>
           </math>
         </region>
-        <region top="40410" color="#000000">
+        <region top="40473" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="9" top="40428" width="115" height="39" color="#000000" fontSize="10">
+      <region left="9" top="40491" width="115" height="39" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11673,7 +11673,7 @@
           </result>
         </math>
       </region>
-      <region left="9" top="40491" width="426" height="88" color="#000000" fontSize="10">
+      <region left="9" top="40554" width="426" height="88" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11695,11 +11695,11 @@
           </result>
         </math>
       </region>
-      <region top="40599" color="#000000">
+      <region top="40662" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="40617" color="#000000">
+    <region top="40680" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -11707,7 +11707,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="40644" width="121" height="30" color="#000000" fontSize="10">
+      <region left="18" top="40707" width="121" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11725,7 +11725,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="40707" width="182" height="30" color="#000000" fontSize="10">
+      <region left="18" top="40770" width="182" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11747,7 +11747,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="40770" width="120" height="44" color="#000000" fontSize="10">
+      <region left="18" top="40833" width="120" height="44" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11767,11 +11767,11 @@
           </result>
         </math>
       </region>
-      <region top="40833" color="#000000">
+      <region top="40896" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="40860" color="#000000">
+    <region top="40923" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -11779,7 +11779,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="40887" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="40950" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="bitolas" inputColumn="1" selected="4" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="3" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"5\0020\mm"</li>
@@ -11803,7 +11803,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="40986" width="52" height="35" color="#000000" fontSize="10">
+      <region left="18" top="41049" width="52" height="35" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11817,7 +11817,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="41040" width="88" height="24" color="#000000" fontSize="10">
+      <region left="18" top="41103" width="88" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11833,7 +11833,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="41094" width="231" height="111" color="#000000" fontSize="10">
+      <region left="18" top="41157" width="231" height="111" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -11873,11 +11873,11 @@
           </result>
         </math>
       </region>
-      <region top="41238" color="#000000">
+      <region top="41301" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="41310" color="#000000">
+    <region top="41373" color="#000000">
       <area single="true" collapsed="true">
         <title lang="cpp">
           <content>
@@ -11886,7 +11886,7 @@
         </title>
       </area>
     </region>
-    <region left="9" top="41355" width="426" height="239" color="#000000" fontSize="10" showInputData="false">
+    <region left="9" top="41418" width="426" height="239" color="#000000" fontSize="10" showInputData="false">
       <table id="1" elementsOnDataSizeChange="10,10" focus="0,0;5,6" bgColor="White" borderSize="1,1" borderStyle="Solid,Solid" borderColor="Black,Black" frameBorderSize="1,1,1,1" frameBorderStyle="Solid,Solid,Solid,Solid" frameBorderColor="Black,Black,Black,Black" resizeFrame="5px #0080FF" resizeFrameInner="#000000 alpha:0" resizeFrameOuter="#0A0A0A alpha:130">
         <inputs>
           <e regions="columns">A.sd</e>
@@ -12535,7 +12535,7 @@
         </input>
       </table>
     </region>
-    <region left="9" top="41607" width="424" height="239" color="#000000" fontSize="10" showInputData="false">
+    <region left="9" top="41670" width="424" height="239" color="#000000" fontSize="10" showInputData="false">
       <table id="2" elementsOnDataSizeChange="10,10" focus="0,0;3,6" bgColor="White" borderSize="1,1" borderStyle="Solid,Solid" borderColor="Black,Black" frameBorderSize="1,1,1,1" frameBorderStyle="Solid,Solid,Solid,Solid" frameBorderColor="Black,Black,Black,Black" resizeFrame="5px #0080FF" resizeFrameInner="#000000 alpha:0" resizeFrameOuter="#0A0A0A alpha:130">
         <inputs>
           <e regions="columns">A.sd</e>
@@ -13168,7 +13168,7 @@
         </input>
       </table>
     </region>
-    <region top="41913" color="#000000">
+    <region top="41976" color="#000000">
       <area single="true" collapsed="true">
         <title lang="por">
           <content>
@@ -13177,7 +13177,7 @@
         </title>
       </area>
     </region>
-    <region top="41931" color="#000000">
+    <region top="41994" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -13185,7 +13185,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="41949" width="139" height="30" color="#000000" fontSize="10">
+      <region left="18" top="42012" width="139" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -13203,11 +13203,11 @@
           </input>
         </math>
       </region>
-      <region top="42003" color="#000000">
+      <region top="42066" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="42012" color="#000000">
+    <region top="42075" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -13215,7 +13215,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="42039" width="488" height="99" color="#000000" fontSize="10">
+      <region left="18" top="42102" width="488" height="99" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -13266,7 +13266,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="42183" width="288" height="91" color="#000000" fontSize="10">
+      <region left="18" top="42246" width="288" height="91" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -13305,7 +13305,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="42282" width="146" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="42345" width="146" height="24" color="#000000" fontSize="10" showInputData="false">
         <math>
           <description active="true" position="Left" lang="eng">
             <content>
@@ -13328,11 +13328,11 @@
           </result>
         </math>
       </region>
-      <region top="42318" color="#000000">
+      <region top="42381" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="42327" color="#000000">
+    <region top="42390" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -13340,7 +13340,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="42345" width="60" height="30" color="#000000" fontSize="10">
+      <region left="18" top="42408" width="60" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -13354,7 +13354,7 @@
           </input>
         </math>
       </region>
-      <region top="42381" color="#000000">
+      <region top="42444" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -13362,7 +13362,7 @@
             </content>
           </title>
         </area>
-        <region left="0" top="42399" width="836" height="3504" color="#000000" fontSize="10">
+        <region left="0" top="42462" width="836" height="3504" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -14534,11 +14534,11 @@
             </input>
           </math>
         </region>
-        <region top="45945" color="#000000">
+        <region top="46008" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="18" top="45963" width="102" height="30" color="#000000" fontSize="10">
+      <region left="18" top="46026" width="102" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14556,7 +14556,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="45999" width="110" height="30" color="#000000" fontSize="10">
+      <region left="18" top="46062" width="110" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14574,7 +14574,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46035" width="160" height="39" color="#000000" fontSize="10">
+      <region left="18" top="46098" width="160" height="39" color="#000000" fontSize="10">
         <math exponentialThreshold="8" trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14594,7 +14594,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46080" width="212" height="24" color="#000000" fontSize="10">
+      <region left="18" top="46143" width="212" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14609,11 +14609,11 @@
           </result>
         </math>
       </region>
-      <region top="46116" color="#000000">
+      <region top="46179" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="46152" color="#000000">
+    <region top="46215" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -14621,7 +14621,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="46170" width="173" height="39" color="#000000" fontSize="10">
+      <region left="18" top="46233" width="173" height="39" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14641,7 +14641,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46224" width="170" height="58" color="#000000" fontSize="10">
+      <region left="18" top="46287" width="170" height="58" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14663,7 +14663,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46287" width="276" height="145" color="#000000" fontSize="10">
+      <region left="18" top="46350" width="276" height="145" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -14702,7 +14702,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46458" width="180" height="55" color="#000000" fontSize="10">
+      <region left="18" top="46521" width="180" height="55" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -14727,11 +14727,11 @@
           </result>
         </math>
       </region>
-      <region top="46539" color="#000000">
+      <region top="46602" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="46557" color="#000000">
+    <region top="46620" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -14739,7 +14739,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="46584" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="46647" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="Camada" inputColumn="1" selected="1" output="Element" outputColumn="1" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"1"</li>
@@ -14760,7 +14760,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="46683" width="272" height="31" color="#000000" fontSize="10">
+      <region left="18" top="46746" width="272" height="31" color="#000000" fontSize="10">
         <math optimize="2" decimalPlaces="4" matrixOptions="0,0,6,1">
           <input>
             <e type="operand">camada.i</e>
@@ -14772,7 +14772,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="46719" width="170" height="39" color="#000000" fontSize="10">
+      <region left="18" top="46782" width="170" height="39" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -14794,7 +14794,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46791" width="204" height="48" color="#000000" fontSize="10">
+      <region left="18" top="46854" width="204" height="48" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -14818,7 +14818,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46863" width="195" height="48" color="#000000" fontSize="10">
+      <region left="18" top="46926" width="195" height="48" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14842,7 +14842,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46908" width="136" height="53" color="#000000" fontSize="10">
+      <region left="18" top="46971" width="136" height="53" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14864,7 +14864,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="46971" width="127" height="30" color="#000000" fontSize="10">
+      <region left="18" top="47034" width="127" height="30" color="#000000" fontSize="10">
         <math optimize="2" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -14880,11 +14880,11 @@
           </input>
         </math>
       </region>
-      <region top="47025" color="#000000">
+      <region top="47088" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="47052" color="#000000">
+    <region top="47115" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -14892,7 +14892,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="47079" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="47142" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="tp_an" inputColumn="1" selected="1" output="Element" outputColumn="1" layout="DropDownList" items="5" firstItem="0" font="Arial, 9.75pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Conjunto"</li>
@@ -14908,7 +14908,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="47151" width="108" height="30" color="#000000" fontSize="10">
+      <region left="18" top="47214" width="108" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -14924,7 +14924,7 @@
           </input>
         </math>
       </region>
-      <region top="47187" color="#000000">
+      <region top="47250" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -14932,7 +14932,7 @@
             </content>
           </title>
         </area>
-        <region left="18" top="47205" width="272" height="499" color="#000000" fontSize="10">
+        <region left="18" top="47268" width="272" height="499" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -15069,11 +15069,11 @@
             </input>
           </math>
         </region>
-        <region top="47754" color="#000000">
+        <region top="47817" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="18" top="47772" width="109" height="30" color="#000000" fontSize="10">
+      <region left="18" top="47835" width="109" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -15091,7 +15091,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="47826" width="109" height="30" color="#000000" fontSize="10">
+      <region left="18" top="47889" width="109" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -15109,7 +15109,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="47889" width="102" height="30" color="#000000" fontSize="10">
+      <region left="18" top="47952" width="102" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="3" exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -15127,7 +15127,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="47952" width="258" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="48015" width="258" height="24" color="#000000" fontSize="10" showInputData="false">
         <math decimalPlaces="4">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -15155,11 +15155,11 @@
           </result>
         </math>
       </region>
-      <region top="47979" color="#000000">
+      <region top="48042" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="48006" color="#000000">
+    <region top="48069" color="#000000">
       <area single="true" collapsed="true">
         <title lang="por">
           <content>
@@ -15168,7 +15168,7 @@
         </title>
       </area>
     </region>
-    <region top="48042" color="#000000">
+    <region top="48105" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -15176,7 +15176,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="48069" width="110" height="31" color="#000000" fontSize="10">
+      <region left="18" top="48132" width="110" height="31" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -15195,11 +15195,11 @@
           </input>
         </math>
       </region>
-      <region top="48123" color="#000000">
+      <region top="48186" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="48141" color="#000000">
+    <region top="48204" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -15207,7 +15207,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="48159" width="495" height="99" color="#000000" fontSize="10">
+      <region left="18" top="48222" width="495" height="99" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -15258,7 +15258,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="48294" width="286" height="91" color="#000000" fontSize="10">
+      <region left="18" top="48357" width="286" height="91" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Left" lang="eng">
             <content>
@@ -15297,7 +15297,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="48402" width="178" height="24" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="48465" width="178" height="24" color="#000000" fontSize="10" showInputData="false">
         <math decimalPlaces="4">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -15320,11 +15320,11 @@
           </result>
         </math>
       </region>
-      <region top="48438" color="#000000">
+      <region top="48501" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="48456" color="#000000">
+    <region top="48519" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -15332,7 +15332,7 @@
           </content>
         </title>
       </area>
-      <region top="48483" color="#000000">
+      <region top="48546" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -15340,7 +15340,7 @@
             </content>
           </title>
         </area>
-        <region left="18" top="48510" width="842" height="3580" color="#000000" fontSize="10">
+        <region left="18" top="48573" width="842" height="3580" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -16530,11 +16530,11 @@
             </input>
           </math>
         </region>
-        <region top="52137" color="#000000">
+        <region top="52200" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="18" top="52155" width="74" height="30" color="#000000" fontSize="10">
+      <region left="18" top="52218" width="74" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16549,7 +16549,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52191" width="110" height="30" color="#000000" fontSize="10">
+      <region left="18" top="52254" width="110" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16567,7 +16567,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52227" width="110" height="30" color="#000000" fontSize="10">
+      <region left="18" top="52290" width="110" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16585,7 +16585,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52281" width="160" height="39" color="#000000" fontSize="10">
+      <region left="18" top="52344" width="160" height="39" color="#000000" fontSize="10">
         <math exponentialThreshold="8" trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16605,7 +16605,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52326" width="124" height="24" color="#000000" fontSize="10">
+      <region left="18" top="52389" width="124" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16620,7 +16620,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52362" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="52425" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="An" inputColumn="1" selected="1" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Viga"</li>
@@ -16636,7 +16636,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="52434" width="44" height="24" color="#000000" fontSize="10">
+      <region left="18" top="52497" width="44" height="24" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16651,7 +16651,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52488" width="437" height="154" color="#000000" fontSize="10">
+      <region left="18" top="52551" width="437" height="154" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16706,7 +16706,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52659" width="85" height="53" color="#000000" fontSize="10">
+      <region left="18" top="52722" width="85" height="53" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16723,11 +16723,11 @@
           </result>
         </math>
       </region>
-      <region top="52713" color="#000000">
+      <region top="52776" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="52731" color="#000000">
+    <region top="52794" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -16735,7 +16735,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="52758" width="60" height="30" color="#000000" fontSize="10">
+      <region left="18" top="52821" width="60" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16749,7 +16749,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="52812" width="52" height="30" color="#000000" fontSize="10">
+      <region left="18" top="52875" width="52" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16763,7 +16763,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="52866" width="89" height="39" color="#000000" fontSize="10">
+      <region left="18" top="52929" width="89" height="39" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16781,7 +16781,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="52929" width="145" height="53" color="#000000" fontSize="10">
+      <region left="18" top="52992" width="145" height="53" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16805,7 +16805,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="52983" width="193" height="32" color="#000000" fontSize="10">
+      <region left="18" top="53046" width="193" height="32" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16826,7 +16826,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="53037" width="163" height="41" color="#000000" fontSize="10">
+      <region left="18" top="53100" width="163" height="41" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16849,11 +16849,11 @@
           </result>
         </math>
       </region>
-      <region top="53073" color="#000000">
+      <region top="53136" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="53100" color="#000000">
+    <region top="53163" color="#000000">
       <area single="true" collapsed="true">
         <title lang="cpp">
           <content>
@@ -16862,7 +16862,7 @@
         </title>
       </area>
     </region>
-    <region top="53136" color="#000000">
+    <region top="53199" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -16870,7 +16870,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="53154" width="171" height="30" color="#000000" fontSize="10">
+      <region left="18" top="53217" width="171" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16888,7 +16888,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="53208" width="171" height="30" color="#000000" fontSize="10">
+      <region left="18" top="53271" width="171" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -16906,11 +16906,11 @@
           </input>
         </math>
       </region>
-      <region top="53262" color="#000000">
+      <region top="53325" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="53298" color="#000000">
+    <region top="53361" color="#000000">
       <area collapsed="false">
         <title lang="por">
           <content>
@@ -16918,7 +16918,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="53316" width="60" height="30" color="#000000" fontSize="10">
+      <region left="18" top="53379" width="60" height="30" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -16932,7 +16932,7 @@
           </input>
         </math>
       </region>
-      <region top="53352" color="#000000">
+      <region top="53415" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -16940,7 +16940,7 @@
             </content>
           </title>
         </area>
-        <region left="18" top="53388" width="845" height="3308" color="#000000" fontSize="10">
+        <region left="18" top="53451" width="845" height="3308" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -18075,11 +18075,11 @@
             </input>
           </math>
         </region>
-        <region top="56817" color="#000000">
+        <region top="56880" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="18" top="56835" width="102" height="30" color="#000000" fontSize="10">
+      <region left="18" top="56898" width="102" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -18097,7 +18097,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="56871" width="110" height="30" color="#000000" fontSize="10">
+      <region left="18" top="56934" width="110" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -18115,7 +18115,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="56907" width="160" height="39" color="#000000" fontSize="10">
+      <region left="18" top="56970" width="160" height="39" color="#000000" fontSize="10">
         <math exponentialThreshold="8" trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -18135,7 +18135,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="56952" width="212" height="24" color="#000000" fontSize="10">
+      <region left="18" top="57015" width="212" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Left" lang="eng">
             <content>
@@ -18150,11 +18150,11 @@
           </result>
         </math>
       </region>
-      <region top="56979" color="#000000">
+      <region top="57042" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="56997" color="#000000">
+    <region top="57060" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -18162,7 +18162,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="57024" width="323" height="145" color="#000000" fontSize="10">
+      <region left="18" top="57087" width="323" height="145" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18201,7 +18201,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="57213" width="323" height="145" color="#000000" fontSize="10">
+      <region left="18" top="57276" width="323" height="145" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18240,7 +18240,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="57384" width="261" height="30" color="#000000" fontSize="10">
+      <region left="18" top="57447" width="261" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18262,7 +18262,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="57456" width="129" height="30" color="#000000" fontSize="10">
+      <region left="18" top="57519" width="129" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18278,7 +18278,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="57528" width="206" height="79" color="#000000" fontSize="10">
+      <region left="18" top="57591" width="206" height="79" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18298,11 +18298,11 @@
           </result>
         </math>
       </region>
-      <region top="57636" color="#000000">
+      <region top="57699" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="57663" color="#000000">
+    <region top="57726" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -18310,7 +18310,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="57690" width="171" height="31" color="#000000" fontSize="10">
+      <region left="18" top="57753" width="171" height="31" color="#000000" fontSize="10">
         <math optimize="2" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18327,7 +18327,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="57753" width="163" height="31" color="#000000" fontSize="10">
+      <region left="18" top="57816" width="163" height="31" color="#000000" fontSize="10">
         <math optimize="2" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18344,7 +18344,7 @@
           </input>
         </math>
       </region>
-      <region top="57816" color="#000000">
+      <region top="57879" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -18352,7 +18352,7 @@
             </content>
           </title>
         </area>
-        <region left="18" top="57843" width="707" height="251" color="#000000" fontSize="10">
+        <region left="18" top="57906" width="707" height="251" color="#000000" fontSize="10">
           <math exponentialThreshold="7">
             <description active="true" position="Top" lang="eng">
               <content>
@@ -18434,15 +18434,15 @@
             </input>
           </math>
         </region>
-        <region top="58113" color="#000000">
+        <region top="58176" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region top="58131" color="#000000">
+      <region top="58194" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="58158" color="#000000">
+    <region top="58221" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -18450,7 +18450,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="58185" width="210" height="30" color="#000000" fontSize="10">
+      <region left="18" top="58248" width="210" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18472,7 +18472,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58266" width="259" height="79" color="#000000" fontSize="10">
+      <region left="18" top="58329" width="259" height="79" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18500,7 +18500,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58392" width="342" height="85" color="#000000" fontSize="10">
+      <region left="18" top="58455" width="342" height="85" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18529,7 +18529,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58509" width="334" height="85" color="#000000" fontSize="10">
+      <region left="18" top="58572" width="334" height="85" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18558,7 +18558,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58635" width="341" height="59" color="#000000" fontSize="10">
+      <region left="18" top="58698" width="341" height="59" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18587,7 +18587,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58716" width="341" height="59" color="#000000" fontSize="10">
+      <region left="18" top="58779" width="341" height="59" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18616,7 +18616,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58806" width="261" height="30" color="#000000" fontSize="10">
+      <region left="18" top="58869" width="261" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18638,7 +18638,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="58878" width="129" height="30" color="#000000" fontSize="10">
+      <region left="18" top="58941" width="129" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18654,7 +18654,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="58950" width="206" height="79" color="#000000" fontSize="10">
+      <region left="18" top="59013" width="206" height="79" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18674,11 +18674,11 @@
           </result>
         </math>
       </region>
-      <region top="59058" color="#000000">
+      <region top="59121" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="59076" color="#000000">
+    <region top="59139" color="#000000">
       <area single="true" collapsed="true">
         <title lang="cpp">
           <content>
@@ -18687,7 +18687,7 @@
         </title>
       </area>
     </region>
-    <region top="59094" color="#000000">
+    <region top="59157" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -18695,7 +18695,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="59121" width="210" height="38" color="#000000" fontSize="10">
+      <region left="18" top="59184" width="210" height="38" color="#000000" fontSize="10">
         <comboboxlist input="Camada" inputColumn="1" selected="1" output="Element" outputColumn="1" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"1"</li>
@@ -18716,7 +18716,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="59211" width="272" height="31" color="#000000" fontSize="10">
+      <region left="18" top="59274" width="272" height="31" color="#000000" fontSize="10">
         <math optimize="2" decimalPlaces="4" matrixOptions="0,0,6,1">
           <input>
             <e type="operand">camada.i</e>
@@ -18728,7 +18728,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="59247" width="183" height="39" color="#000000" fontSize="10">
+      <region left="18" top="59310" width="183" height="39" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18750,7 +18750,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="59319" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="59382" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="Aα" inputColumn="1" selected="1" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Reta"</li>
@@ -18767,7 +18767,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="59391" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="59454" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="Aη.2" inputColumn="1" selected="1" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"Boa\0020\aderência"</li>
@@ -18783,7 +18783,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="59463" width="74" height="24" color="#000000" fontSize="10">
+      <region left="18" top="59526" width="74" height="24" color="#000000" fontSize="10">
         <math optimize="2" exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18799,7 +18799,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="59517" width="46" height="24" color="#000000" fontSize="10">
+      <region left="18" top="59580" width="46" height="24" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18813,7 +18813,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="59571" width="44" height="24" color="#000000" fontSize="10">
+      <region left="18" top="59634" width="44" height="24" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18828,7 +18828,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="59634" width="344" height="113" color="#000000" fontSize="10">
+      <region left="18" top="59697" width="344" height="113" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -18872,7 +18872,7 @@
           </result>
         </math>
       </region>
-      <region top="59778" color="#000000">
+      <region top="59841" color="#000000">
         <area collapsed="true">
           <title lang="por">
             <content>
@@ -18880,7 +18880,7 @@
             </content>
           </title>
         </area>
-        <region left="18" top="59796" width="227" height="520" color="#000000" fontSize="10">
+        <region left="18" top="59859" width="227" height="520" color="#000000" fontSize="10">
           <math>
             <description active="true" position="Top" lang="eng">
               <content>
@@ -19005,11 +19005,11 @@
             </input>
           </math>
         </region>
-        <region top="60354" color="#000000">
+        <region top="60417" color="#000000">
           <area terminator="true" />
         </region>
       </region>
-      <region left="18" top="60372" width="109" height="30" color="#000000" fontSize="10">
+      <region left="18" top="60435" width="109" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19027,7 +19027,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="60435" width="102" height="30" color="#000000" fontSize="10">
+      <region left="18" top="60498" width="102" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19045,7 +19045,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="60489" width="153" height="30" color="#000000" fontSize="10">
+      <region left="18" top="60552" width="153" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19065,7 +19065,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="60543" width="128" height="30" color="#000000" fontSize="10">
+      <region left="18" top="60606" width="128" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19083,7 +19083,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="60597" width="109" height="30" color="#000000" fontSize="10">
+      <region left="18" top="60660" width="109" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19101,11 +19101,11 @@
           </result>
         </math>
       </region>
-      <region top="60651" color="#000000">
+      <region top="60714" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="60678" color="#000000">
+    <region top="60741" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19113,7 +19113,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="60705" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="60768" width="210" height="38" color="#000000" fontSize="10" showInputData="false">
         <comboboxlist input="Aα0t" inputColumn="1" selected="1" output="Element" outputColumn="2" layout="DropDownList" items="5" firstItem="0" font="Courier New, 10pt" optimization="numeric" decimalPlaces="15" exponentialThreshold="15" significantFigures="0" fractions="decimal" trailingZeros="false" overrideDP="true">
           <ul>
             <li>"\2264\\0020\20"</li>
@@ -19132,7 +19132,7 @@
           </input>
         </comboboxlist>
       </region>
-      <region left="18" top="60777" width="73" height="30" color="#000000" fontSize="10">
+      <region left="18" top="60840" width="73" height="30" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19147,7 +19147,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="60840" width="219" height="199" color="#000000" fontSize="10">
+      <region left="18" top="60903" width="219" height="199" color="#000000" fontSize="10">
         <math>
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19201,7 +19201,7 @@
           </input>
         </math>
       </region>
-      <region left="18" top="61065" width="109" height="30" color="#000000" fontSize="10">
+      <region left="18" top="61128" width="109" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19219,7 +19219,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61128" width="109" height="30" color="#000000" fontSize="10">
+      <region left="18" top="61191" width="109" height="30" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19237,7 +19237,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61182" width="134" height="30" color="#000000" fontSize="10">
+      <region left="18" top="61245" width="134" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19255,7 +19255,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61245" width="134" height="30" color="#000000" fontSize="10">
+      <region left="18" top="61308" width="134" height="30" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19273,11 +19273,11 @@
           </result>
         </math>
       </region>
-      <region top="61308" color="#000000">
+      <region top="61371" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="61335" color="#000000">
+    <region top="61398" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19285,7 +19285,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="61362" width="96" height="24" color="#000000" fontSize="10">
+      <region left="18" top="61425" width="96" height="24" color="#000000" fontSize="10">
         <math trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19303,7 +19303,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61416" width="96" height="24" color="#000000" fontSize="10">
+      <region left="18" top="61479" width="96" height="24" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19321,7 +19321,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61470" width="321" height="49" color="#000000" fontSize="10">
+      <region left="18" top="61533" width="321" height="49" color="#000000" fontSize="10">
         <math exponentialThreshold="7" trailingZeros="true">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19357,11 +19357,11 @@
           </result>
         </math>
       </region>
-      <region top="61560" color="#000000">
+      <region top="61623" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="61596" color="#000000">
+    <region top="61659" color="#000000">
       <area single="true" collapsed="true">
         <title lang="cpp">
           <content>
@@ -19370,7 +19370,7 @@
         </title>
       </area>
     </region>
-    <region top="61623" color="#000000">
+    <region top="61686" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19378,7 +19378,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="61650" width="293" height="26" color="#000000" fontSize="10" showInputData="false">
+      <region left="18" top="61713" width="293" height="26" color="#000000" fontSize="10" showInputData="false">
         <hyperlink dl="mailto:engenharia@pereirasantos.eng.br" flags="" sd="true" width="283" height="18">
           <description active="true" position="Right" lang="eng">
             <content>
@@ -19390,7 +19390,7 @@
           </input>
         </hyperlink>
       </region>
-      <region left="18" top="61686" width="189" height="27" color="#000000" fontSize="10">
+      <region left="18" top="61749" width="189" height="27" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng" width="145">
             <content>
@@ -19410,7 +19410,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61740" width="190" height="24" color="#000000" fontSize="10">
+      <region left="18" top="61803" width="190" height="24" color="#000000" fontSize="10">
         <math decimalPlaces="4">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19427,7 +19427,7 @@
           </result>
         </math>
       </region>
-      <region left="18" top="61794" width="249" height="26" color="#000000" fontSize="10">
+      <region left="18" top="61857" width="249" height="26" color="#000000" fontSize="10">
         <math exponentialThreshold="7">
           <description active="true" position="Top" lang="eng">
             <content>
@@ -19443,11 +19443,11 @@
           </result>
         </math>
       </region>
-      <region top="61848" color="#000000">
+      <region top="61911" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="61866" color="#000000">
+    <region top="61929" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19455,14 +19455,14 @@
           </content>
         </title>
       </area>
-      <region left="0" top="61893" width="285" height="23" color="#000000" fontSize="10">
+      <region left="0" top="61956" width="285" height="23" color="#000000" fontSize="10">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p>Atribuição-Compartilha Igual 4.0 Internacional</p>
           </content>
         </text>
       </region>
-      <region left="0" top="61920" width="508" height="26" color="#000000" fontSize="10" showInputData="false">
+      <region left="0" top="61983" width="508" height="26" color="#000000" fontSize="10" showInputData="false">
         <hyperlink dl="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR" flags="" sd="true" width="498" height="18">
           <description active="true" position="Right" lang="eng">
             <content>
@@ -19474,11 +19474,11 @@
           </input>
         </hyperlink>
       </region>
-      <region top="61947" color="#000000">
+      <region top="62010" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="61965" color="#000000">
+    <region top="62028" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19486,7 +19486,7 @@
           </content>
         </title>
       </area>
-      <region left="18" top="61983" width="98" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62046" width="98" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: normal;">
@@ -19495,39 +19495,39 @@
           </content>
         </text>
       </region>
-      <region left="18" top="62001" width="403" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62064" width="403" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="text-decoration: none; font-style: normal; font-weight: normal;">— Copiar e redistribuir o material em qualquer suporte ou formato</p>
           </content>
         </text>
       </region>
-      <region left="18" top="62019" width="64" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62082" width="64" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: normal;">Adaptar:</p>
           </content>
         </text>
       </region>
-      <region left="18" top="62037" width="565" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62100" width="565" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-style: normal; font-weight: normal;">— Remixar, transformar, e criar a partir do material para qualquer fim, mesmo que comercial.</p>
           </content>
         </text>
       </region>
-      <region left="18" top="62064" width="560" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62127" width="560" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: normal;">O licenciante não pode revogar estes direitos desde que você respeite os termos da licença.</p>
           </content>
         </text>
       </region>
-      <region top="62091" color="#000000">
+      <region top="62154" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="62118" color="#000000">
+    <region top="62181" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19535,39 +19535,39 @@
           </content>
         </title>
       </area>
-      <region left="18" top="62136" width="77" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62199" width="77" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: normal;">Atribuição </p>
           </content>
         </text>
       </region>
-      <region left="18" top="62154" width="745" height="38" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62217" width="745" height="38" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-style: normal;">— Você deve dar o crédito apropriado, prover um link para a licença e indicar se mudanças foram feitas. Você deve fazê-lo em qualquer circunstância razoável, mas de nenhuma maneira que sugira que o licenciante apoia você ou o seu uso.</p>
           </content>
         </text>
       </region>
-      <region left="18" top="62199" width="122" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62262" width="122" height="23" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-weight: normal;">Compartilha Igual:</p>
           </content>
         </text>
       </region>
-      <region left="18" top="62217" width="736" height="38" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62280" width="736" height="38" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p style="font-style: normal;">— Se você remixar, transformar, ou criar a partir do material, tem de distribuir as suas contribuições sob a mesma licença que o original. </p>
           </content>
         </text>
       </region>
-      <region top="62253" color="#000000">
+      <region top="62316" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="62280" color="#000000">
+    <region top="62343" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19575,18 +19575,18 @@
           </content>
         </title>
       </area>
-      <region left="18" top="62298" width="740" height="38" color="#000000" fontSize="10" isBreakable="false">
+      <region left="18" top="62361" width="740" height="38" color="#000000" fontSize="10" isBreakable="false">
         <text lang="cpp" fontFamily="Arial" fontSize="10">
           <content>
             <p>Este script deve ser utilizado com cuidado, o autor não assume responsabilidade por qualquer dano resultante de seu uso ou mau uso.</p>
           </content>
         </text>
       </region>
-      <region top="62334" color="#000000">
+      <region top="62397" color="#000000">
         <area terminator="true" />
       </region>
     </region>
-    <region top="62352" color="#000000">
+    <region top="62415" color="#000000">
       <area collapsed="false">
         <title lang="cpp">
           <content>
@@ -19594,14 +19594,14 @@
           </content>
         </title>
       </area>
-      <region left="9" top="62379" width="671" height="23" color="#000000" fontSize="10">
+      <region left="9" top="62442" width="671" height="23" color="#000000" fontSize="10">
         <text lang="cpp" width="671" fontFamily="Arial" fontSize="10">
           <content>
             <p>O módulo de geometria utilizado neste programa foi desenvolvido por Davide Carpi.</p>
           </content>
         </text>
       </region>
-      <region left="18" top="62415" width="28" height="26" color="#000000" fontSize="10">
+      <region left="18" top="62478" width="28" height="26" color="#000000" fontSize="10">
         <hyperlink dl="https://en.smath.com/forum/yaf_postsm51436_PolyProperties.aspx" flags="" sd="false" width="18" height="18">
           <description active="true" position="Right" lang="eng">
             <content>
@@ -19613,7 +19613,7 @@
           </input>
         </hyperlink>
       </region>
-      <region top="62478" color="#000000">
+      <region top="62541" color="#000000">
         <area terminator="true" />
       </region>
     </region>

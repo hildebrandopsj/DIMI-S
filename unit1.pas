@@ -20,8 +20,18 @@ type
     cb_Fck: TComboBox;
     cb_Alpha_e: TComboBox;
     Barra_Status: TStatusBar;
+    lb_As1_u: TLabel;
+    lb_As1: TLabel;
+    lb_As_max_u: TLabel;
+    lb_As_pele: TLabel;
+    lb_As_min_u: TLabel;
+    lb_As_max: TLabel;
+    lb_As_min: TLabel;
+    lb_As_pele_u: TLabel;
+    lb_Aviso: TLabel;
     lb_Msd: TLabel;
     lb_Msd_min: TLabel;
+    lb_Tipo_armacao: TLabel;
     lb_X: TLabel;
     lb_Secao: TLabel;
     lb_Beta: TLabel;
@@ -30,10 +40,16 @@ type
     lb_Beta_34: TLabel;
     lb_Dominio: TLabel;
     lb_Verificacao_Flexao: TLabel;
+    lb_As2: TLabel;
     lb_X_u: TLabel;
     lb_Msd_u: TLabel;
     lb_Msd_min_u: TLabel;
+    lb_As2_u: TLabel;
     PaintBox1: TPaintBox;
+    tb_As1: TEdit;
+    tb_As_max: TEdit;
+    tb_As_min: TEdit;
+    tb_As_pele: TEdit;
     tb_Msd: TEdit;
     lb_Ac: TLabel;
     lb_Ycg: TLabel;
@@ -94,8 +110,10 @@ type
     tb_Beta_34: TEdit;
     tb_Dominio: TEdit;
     tb_Verificacao_Flexao: TEdit;
+    tb_Tipo_armacao: TEdit;
     tb_X: TEdit;
     tb_Secao: TEdit;
+    tb_As2: TEdit;
     tb_Ycg: TEdit;
     tb_I0: TEdit;
     tb_W0_inf: TEdit;
@@ -133,7 +151,7 @@ type
     tb_Fctm: TEdit;
     gb_Coeficientes: TGroupBox;
     GroupBox10: TGroupBox;
-    GroupBox11: TGroupBox;
+    gb_Auxiliar: TGroupBox;
     GroupBox12: TGroupBox;
     GroupBox13: TGroupBox;
     GroupBox14: TGroupBox;
@@ -262,15 +280,15 @@ var
   Fctd, Alpha_e, Alpha_i, Eci, Ecs :real;
   //Variáveis referentes ao aço
   Fyk, Fyd, Fywk, Fywd, Es, Epsilon_yd, Epsilon_s2, Epsilon_s1: real;
-  Rsd2, Rsd1, Sigma_sd2, Sigma_sd1:real;
+  Rsd2, Rsd1, Sigma_sd2, Sigma_sd1, As1, As2, As_max, As_pele, As_min:real;
   //Variáveis referentes a geometria
   Bw, H, Bf, Hf, D, D_linha, C, Ac, Ycg, I0, W0_inf, W0_sup, Aw, Af,Sx :real;
   Tipo_elemento, Geometria:String;
   //Variáveis referentes a flexão simples
   Msd, Msd_min, X, Y, Mcfd, Rcfd, Mcwd, Rcwd, Beta, Beta_23, Beta_34:real;
-  X_min, X_23, X_34, X_limite, Y_min:real;
+  X_min, X_23, X_34, X_limite,X_aviso, Y_min:real;
   Mcfd_min, Rcfd_min, Mcwd_min, Rcwd_min, Delta_Msd:real;
-  Secao, Dominio, Verificacao_Flexao:String;
+  Secao, Dominio, Verificacao_Flexao, Tipo_armacao:String;
 implementation
 {$R *.lfm}
 
@@ -706,11 +724,14 @@ end;
    //Conversões
    Msd:=100*Msd;
    Msd_min:=(0.8*(Fctk_sup/10)*W0_inf)/100;
+   //Função da linha neutra
+
    //Determinação da linha neutra
-   X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
-   Y:=Lambda*X;
    case  Geometria of
    'Seção Tê':
+   begin
+         X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+         Y:=Lambda*X;    { #todo : Calcular o valor de X dentro de cada caso da geometria e depois avaliar seu resultado }
          if Y > Hf then
          begin
              Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
@@ -726,7 +747,11 @@ end;
              Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
              secao:='Seção Tê Falsa';
          end;
+   end;
    'Seção Tê Invertido':
+   begin
+         X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+         Y:=Lambda*X;
          if Y > H-Hf then
          begin
              Rcwd:=Alpha_c*(Fcd/10)*Bw*(H-Hf);
@@ -742,7 +767,11 @@ end;
              Rcfd:=0;
              Secao:='Seção Tê Falsa';
          end;
+   end;
    'Seção I':
+   begin
+         X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+         Y:=Lambda*X;
          if Y > Hf then
          begin
              Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
@@ -758,13 +787,14 @@ end;
              Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
              Secao:='Seção Tê Falsa';
          end;
+   end;
       'Seção Retangular':
          begin
              Rcfd:=0;
              X:=D*(1/Lambda-sqrt(1/(Lambda**2)-Msd/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
              Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
              Secao:='Seção Retangular';
-         end
+         end;
    end;
    //Relações da linha neutra
    Beta:=X/D;
@@ -773,6 +803,8 @@ end;
    X_23:=Beta_23*D;
    X_34:=Beta_34*D;
    X_limite:=Beta_limite*D;
+   //Para verificação do limite de armadura dupla e emissão de aviso
+   X_aviso:=X;
    //Dominios de Deformação
    if X<0 then
       Dominio:='1'
@@ -792,10 +824,11 @@ end;
    else
      Verificacao_Flexao:='Limite ultrapassado';
    //Determinação da linha neutra para o momento mínimo
-   X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
-   Y_min:=Lambda*X_min;
    case  Geometria of
    'Seção Tê':
+      begin
+      X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+      Y_min:=Lambda*X_min;
          if Y_min > Hf then
          begin
              Rcfd_min:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
@@ -809,7 +842,11 @@ end;
              Rcwd_min:=0;
              Rcfd_min:=Alpha_c*(Fcd/10)*Bf*Lambda*X_min;
          end;
+        end;
    'Seção Tê Invertido':
+      begin
+         X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bw*(D**2)*(Lambda**2))));
+         Y_min:=Lambda*X_min;
          if Y_min > H-Hf then
          begin
              Rcwd_min:=Alpha_c*(Fcd/10)*Bw*(H-Hf);
@@ -823,7 +860,11 @@ end;
              Rcwd_min:=Alpha_c*(Fcd/10)*Bw*Lambda*X_min;
              Rcfd_min:=0;
          end;
+      end;
    'Seção I':
+      begin
+         X_min:=D*(1/Lambda-sqrt(1/(Lambda**2)-(Msd_min*100)/(0.50*Alpha_c*(Fcd/10)*Bf*(D**2)*(Lambda**2))));
+         Y_min:=Lambda*X_min;
          if Y_min > Hf then
          begin
              Rcfd_min:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
@@ -837,6 +878,7 @@ end;
              Rcwd_min:=0;
              Rcfd_min:=Alpha_c*(Fcd/10)*Bf*Lambda*X_min;
          end;
+       end;
       'Seção Retangular':
          begin
              Rcfd_min:=0;
@@ -849,20 +891,21 @@ end;
    begin
        X:=X_limite;
        Y:=Lambda*X;
+       Tipo_armacao:='Armadura Dupla';
        if Y > Hf then
-       begin
-          Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
-          Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
-          Mcwd:=Rcwd*(D-0.5*Lambda*X);
-          Mcfd:=Rcfd*(D-0.5*Hf);
-          Delta_Msd:=Msd-Mcfd-Mcwd;
-          Rsd2:=Delta_Msd/(D-D_linha);
-          Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
-          if Epsilon_s2 >= Epsilon_yd then
-             Sigma_sd2:=Fyd
-          else
-          Sigma_sd2:=Epsilon_s2*Es/10;
-       end
+          begin
+               Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+               Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+               Mcwd:=Rcwd*(D-0.5*Lambda*X);
+               Mcfd:=Rcfd*(D-0.5*Hf);
+               Delta_Msd:=Msd-Mcfd-Mcwd;
+               Rsd2:=Delta_Msd/(D-D_linha);
+               Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+               if Epsilon_s2 >= Epsilon_yd then
+                  Sigma_sd2:=Fyd
+               else
+                  Sigma_sd2:=Epsilon_s2*(Es/10);
+          end
        else
           Rcwd:=0;
           Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
@@ -874,39 +917,130 @@ end;
           if Epsilon_s2 >= Epsilon_yd then
              Sigma_sd2:=Fyd
           else
-             Sigma_sd2:=Epsilon_s2*Es/10;
-   end;
-   if (Geometria='Seção Tê Invertido') and ((Dominio='4') or (X>X_limite)) then{ #todo : Terminar de equacionar }
-   begin
-   X:=X_limite;
-   Y:=Lambda*X;
-   if Y >H-Hf then
-   begin
-      Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
-      Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
-      Mcwd:=Rcwd*(D-0.5*Lambda*X);
-      Mcfd:=Rcfd*(D-0.5*Hf);
-      Delta_Msd:=Msd-Mcfd-Mcwd;
-      Rsd2:=Delta_Msd/(D-D_linha);
-      Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
-      if Epsilon_s2 >= Epsilon_yd then
-         Sigma_sd2:=Fyd
-      else
-      Sigma_sd2:=Epsilon_s2*Es/10;
+             Sigma_sd2:=Epsilon_s2*(Es/10);
+       As2:=Rsd2/Sigma_sd2;
+       Rsd1:=Rsd2+Rcfd+Rcwd;
+       As1:=Rsd1/(Fyd/10);
    end
+   else if (Geometria='Seção Tê Invertido') and ((Dominio='4') or (X>X_limite)) then
+   begin
+       X:=X_limite;
+       Y:=Lambda*X;
+       Tipo_armacao:='Armadura Dupla';
+       if Y >H-Hf then
+          begin
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+             Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+             Mcwd:=Rcwd*(D-0.5*Lambda*X);
+             Mcfd:=Rcfd*(D-0.5*Hf);
+             Delta_Msd:=Msd-Mcfd-Mcwd;
+             Rsd2:=Delta_Msd/(D-D_linha);
+             Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+             if Epsilon_s2 >= Epsilon_yd then
+                Sigma_sd2:=Fyd
+             else
+                Sigma_sd2:=Epsilon_s2*Es/10;
+          end
+       else
+           Rcwd:=Alpha_c*(Fcd/10)*Bw*(H-Hf);
+           Rcfd:=Alpha_c*(Fcd/10)*Bf*(X-(H-Hf));
+           Mcwd:=Rcwd*(D-(H-Hf)/2);
+           Mcfd:=Rcfd*(D-(X-(H-Hf))/2);
+           Delta_Msd:=Msd-Mcfd-Mcwd;
+           Rsd2:=Delta_Msd/(D-D_linha);
+           Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+           if Epsilon_s2 >= Epsilon_yd then
+              Sigma_sd2:=Fyd
+           else
+              Sigma_sd2:=Epsilon_s2*Es/10;
+       As2:=Rsd2/Sigma_sd2;
+       Rsd1:=Rsd2+Rcfd+Rcwd;
+       As1:=Rsd1/(Fyd/10);
+   end
+   else if (Geometria='Seção I') and ((Dominio='4') or (X>X_limite)) then
+      begin
+          X:=X_limite;
+          Y:=Lambda*X;
+          Tipo_armacao:='Armadura Dupla';
+          if Y > Hf then
+          begin
+             Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+             Rcfd:=Alpha_c*(Fcd/10)*(Bf-Bw)*Hf;
+             Mcwd:=Rcwd*(D-0.5*Lambda*X);
+             Mcfd:=Rcfd*(D-0.5*Hf);
+             Delta_Msd:=Msd-Mcfd-Mcwd;
+             Rsd2:=Delta_Msd/(D-D_linha);
+             Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+             if Epsilon_s2 >= Epsilon_yd then
+                Sigma_sd2:=Fyd
+             else
+             Sigma_sd2:=Epsilon_s2*(Es/10);
+          end
+          else
+             Rcwd:=0;
+             Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
+             Mcwd:=0;
+             Mcfd:=Rcfd*(D-0.5*Lambda*X);
+             Delta_Msd:=Msd-Mcfd-Mcwd;
+             Rsd2:=Delta_Msd/(D-D_linha);
+             Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+             if Epsilon_s2 >= Epsilon_yd then
+                Sigma_sd2:=Fyd
+             else
+                Sigma_sd2:=Epsilon_s2*(Es/10);
+      end
+   else if (Geometria='Seção Retangular') and ((Dominio='4') or (X>X_limite)) then
+      begin
+          X:=X_limite;
+          Y:=Lambda*X;
+          Tipo_armacao:='Armadura Dupla';
+          Rcwd:=Alpha_c*(Fcd/10)*Bw*Lambda*X;
+          Rcfd:=0;
+          Mcwd:=Rcwd*(D-0.5*Lambda*X);
+          Mcfd:=0;
+          Delta_Msd:=Msd-Mcfd-Mcwd;
+          Rsd2:=Delta_Msd/(D-D_linha);
+          Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
+          if Epsilon_s2 >= Epsilon_yd then
+             Sigma_sd2:=(Fyd/10)
+          else
+             Sigma_sd2:=Epsilon_s2*(Es/10);
+          As2:=Rsd2/Sigma_sd2;
+          Rsd1:=Rsd2+Rcfd+Rcwd;
+          As1:=Rsd1/(Fyd/10);
+      end
    else
-      Rcwd:=0;
-      Rcfd:=Alpha_c*(Fcd/10)*Bf*Lambda*X;
-      Mcwd:=0;
-      Mcfd:=Rcfd*(D-0.5*Lambda*X);
-      Delta_Msd:=Msd-Mcfd-Mcwd;
-      Rsd2:=Delta_Msd/(D-D_linha);
-      Epsilon_s2:=(Epsilon_cu*(X-D_linha))/X ;
-      if Epsilon_s2 >= Epsilon_yd then
-         Sigma_sd2:=Fyd
+      begin
+          Tipo_armacao:='Armadura Simples';
+          Rsd1:=Rcwd+Rcfd;
+          As2:=0;
+          As1:=Rsd1/(Fyd/10);
+          Delta_Msd:=0;
+      end;
+   //Aviso de armadura dupla em excesso
+ if (X_aviso/d >= 0.9) or (Delta_Msd >=0.30*Msd) then
+    begin
+      lb_Aviso.Font.color:=clRed;
+      lb_Aviso.Caption:='β > 0,9 ou ΔMsd ≥ 0,30 Msd, não recomenda-se usar armadura dupla';
+    end
+ else
+    begin
+      lb_Aviso.Caption:='';
+    end;
+   //Valores limites de armadura
+   As_max:=(4/100)*Ac;
+   if  (Rcwd_min+Rcfd_min)/(Fyd/10)<(0.15/100)*Ac then
+      As_min:=(0.15/100)*Ac
+   else
+      As_min:=(Rcwd_min+Rcfd_min)/(Fyd/10);
+   //Armaduras auxiliares
+   if Tipo_elemento='Viga' then
+      if (0.1/100)*Ac > 5 then
+         As_pele:=(5/100)*h
       else
-         Sigma_sd2:=Epsilon_s2*Es/10;
-   end;
+         As_pele:=(0.1/100)*Ac
+    else
+         As_pele:=0;
    //Apresentação dos dados nos TEdit
    tb_Msd_min.Text:=FloatToStrF(Msd_min,ffFixed,3,2);
    tb_X.Text:=FloatToStrF(X,ffFixed,3,2);
@@ -917,12 +1051,19 @@ end;
    tb_Secao.Text:=Secao;
    tb_Dominio.Text:=Dominio;
    tb_Verificacao_Flexao.Text:=Verificacao_Flexao;
- except
+   tb_Tipo_armacao.Text:=Tipo_armacao;
+   tb_As1.Text:=FloatToStrF(As1,ffFixed,3,2);
+   tb_As2.Text:=FloatToStrF(As2,ffFixed,3,2);
+   tb_As_max.Text:=FloatToStrF(As_max,ffFixed,3,2);
+   tb_As_min.Text:=FloatToStrF(As_min,ffFixed,3,2);
+   tb_As_pele.Text:=FloatToStrF(As_pele,ffFixed,3,2);
+ //Tratamento de erros encontrados
+except
      on E: EConvertError do
      ShowMessage('Existe uma variável em branco. Verifique os dados inseridos');
      on E: EInvalidOp do
      ShowMessage('Não há solução para o momento aplicado');
- end;
+end;
 end;
 
 procedure TForm1.tb_MsdChange(Sender: TObject);
@@ -931,4 +1072,6 @@ begin
 end;
 
 {$ENDREGION}
+
+
 end.
