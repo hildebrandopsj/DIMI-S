@@ -4,7 +4,7 @@
   <settings ppi="96">
     <identity>
       <id>34f4ebdf-c81c-4fe6-8467-d8467b50fc14</id>
-      <revision>277</revision>
+      <revision>278</revision>
     </identity>
     <metadata lang="rus">
       <author>Hildebrando</author>
@@ -3054,7 +3054,7 @@
         </title>
       </area>
       <region top="10890" color="#000000">
-        <area collapsed="false">
+        <area collapsed="true">
           <title lang="por">
             <content>
               <p>Algoritmo</p>
@@ -4318,7 +4318,7 @@
         </title>
       </area>
       <region top="15471" color="#000000">
-        <area collapsed="false">
+        <area collapsed="true">
           <title lang="por">
             <content>
               <p>Algoritmo</p>

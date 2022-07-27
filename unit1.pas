@@ -46,6 +46,8 @@ type
     lb_Msd_min_u: TLabel;
     lb_As2_u: TLabel;
     PaintBox1: TPaintBox;
+    rb_modelo_1: TRadioButton;
+    RadioButton2: TRadioButton;
     tb_As1: TEdit;
     tb_As_max: TEdit;
     tb_As_min: TEdit;
@@ -1072,6 +1074,13 @@ begin
 end;
 
 {$ENDREGION}
+
+//******************************************************************************
+//                    MÓDULO DE CISALHAMENTO
+//******************************************************************************
+
+
+
 
 
 end.
