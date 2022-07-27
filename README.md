@@ -24,7 +24,7 @@ Foi inicialmente desenvolvido como uma planilha do software SMath Studio e distr
 **Módulos transcritos para Pascal:**
 - [X] Materiais
 - [X] Seção (Resta a etapa de desenho da figura)
-- [ ] Flexão Simples
+- [X] Flexão Simples (Fase de testes)
 - [ ] Flexão Composta
 - [ ] Cortante
 - [ ] Torção
