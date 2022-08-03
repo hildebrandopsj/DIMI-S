@@ -1,12 +1,12 @@
 object Form1: TForm1
-  Left = 1937
-  Height = 920
-  Top = 55
+  Left = 1514
+  Height = 961
+  Top = 23
   Width = 483
   BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = bsSingle
   Caption = 'DIMensIonamento de Seções'
-  ClientHeight = 920
+  ClientHeight = 961
   ClientWidth = 483
   Icon.Data = {
     BE0C00000000010001002020000001001800A80C000016000000280000002000
@@ -115,23 +115,41 @@ object Form1: TForm1
   }
   OnCreate = FormCreate
   LCLVersion = '2.2.2.0'
+  object Barra_Status: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 938
+    Width = 483
+    Panels = <    
+      item
+        Width = 75
+      end    
+      item
+        Width = 100
+      end    
+      item
+        Width = 110
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 100
+      end>
+    SimplePanel = False
+  end
   object PageControl1: TPageControl
-    Left = 10
-    Height = 880
-    Top = 8
-    Width = 462
-    ActivePage = TabMateriais
-    Font.CharSet = ANSI_CHARSET
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentFont = False
+    Left = 8
+    Height = 864
+    Top = 56
+    Width = 466
+    ActivePage = TabSheet1
     TabIndex = 0
-    TabOrder = 0
-    TabPosition = tpLeft
-    object TabMateriais: TTabSheet
+    TabOrder = 1
+    object TabSheet1: TTabSheet
       Caption = 'Materiais'
-      ClientHeight = 872
-      ClientWidth = 431
+      ClientHeight = 836
+      ClientWidth = 458
       object gb_Coeficientes: TGroupBox
         Left = 10
         Height = 110
@@ -1286,10 +1304,10 @@ object Form1: TForm1
         end
       end
     end
-    object TabSecao: TTabSheet
-      Caption = 'Seção'
-      ClientHeight = 872
-      ClientWidth = 431
+    object TabSheet4: TTabSheet
+      Caption = 'Geometria'
+      ClientHeight = 836
+      ClientWidth = 458
       object gb_Geometria: TGroupBox
         Left = 10
         Height = 265
@@ -1943,1084 +1961,4832 @@ object Form1: TForm1
         end
       end
     end
-    object TabFlexao: TTabSheet
-      Caption = 'Flexão Simples'
-      ClientHeight = 872
-      ClientWidth = 431
-      object gb_Es_Flexao_Simples: TGroupBox
-        Left = 10
-        Height = 80
-        Top = 10
-        Width = 415
-        Caption = 'Esforços Solicitantes'
-        ClientHeight = 60
-        ClientWidth = 411
+    object TabSheet2: TTabSheet
+      Caption = 'Estado Limite Último'
+      ClientHeight = 836
+      ClientWidth = 458
+      object PageControl2: TPageControl
+        Left = 0
+        Height = 880
+        Top = 0
+        Width = 462
+        ActivePage = TabTorcao
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
-        Font.Style = [fsBold]
         ParentFont = False
+        TabIndex = 3
         TabOrder = 0
-        object tb_Msd: TEdit
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 140
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnChange = tb_MsdChange
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          TabOrder = 0
-          Text = '11325'
+        TabPosition = tpLeft
+        object TabFlexao: TTabSheet
+          Caption = 'Flexão Simples'
+          ClientHeight = 872
+          ClientWidth = 431
+          object gb_Es_Flexao_Simples: TGroupBox
+            Left = 10
+            Height = 80
+            Top = 10
+            Width = 415
+            Caption = 'Esforços Solicitantes'
+            ClientHeight = 60
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object tb_Msd: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnChange = tb_MsdChange
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              TabOrder = 0
+              Text = '11325'
+            end
+            object lb_Msd: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 34
+              Caption = 'Msd ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min: TLabel
+              Left = 10
+              Height = 15
+              Top = 32
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min: TEdit
+              Left = 220
+              Height = 23
+              Top = 28
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_Msd_min_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 32
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object gb_Linha_neutra: TGroupBox
+            Left = 10
+            Height = 240
+            Top = 95
+            Width = 415
+            Caption = 'Determinação da linha neutra'
+            ClientHeight = 220
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_X: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_X_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 31
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Secao: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 138
+              Caption = 'Dimensionamento como: '
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Secao: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_Beta: TLabel
+              Left = 10
+              Height = 15
+              Top = 58
+              Width = 18
+              Caption = 'β ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Beta_23: TLabel
+              Left = 10
+              Height = 15
+              Top = 85
+              Width = 38
+              Caption = 'β 2/3 ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Beta_limite: TLabel
+              Left = 10
+              Height = 15
+              Top = 112
+              Width = 38
+              Caption = 'β lim ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Beta_34: TLabel
+              Left = 10
+              Height = 15
+              Top = 139
+              Width = 38
+              Caption = 'β 3/4 ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Dominio: TLabel
+              Left = 10
+              Height = 15
+              Top = 166
+              Width = 132
+              Caption = 'Domínio de deformação:'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Verificacao_Flexao: TLabel
+              Left = 10
+              Height = 15
+              Top = 193
+              Width = 138
+              Caption = 'Verificação da ductilidade:'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Beta: TEdit
+              Left = 220
+              Height = 23
+              Top = 54
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+            end
+            object tb_Beta_23: TEdit
+              Left = 220
+              Height = 23
+              Top = 81
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 3
+            end
+            object tb_Beta_limite: TEdit
+              Left = 220
+              Height = 23
+              Top = 108
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 4
+            end
+            object tb_Beta_34: TEdit
+              Left = 220
+              Height = 23
+              Top = 135
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 5
+            end
+            object tb_Dominio: TEdit
+              Left = 220
+              Height = 23
+              Top = 162
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 6
+            end
+            object tb_Verificacao_Flexao: TEdit
+              Left = 220
+              Height = 23
+              Top = 189
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 7
+            end
+          end
+          object GroupBox10: TGroupBox
+            Left = 10
+            Height = 185
+            Top = 344
+            Width = 415
+            Caption = 'Armaduras de equilíbrio geral'
+            ClientHeight = 165
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Tipo_armacao: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 93
+              Caption = 'Tipo de Armação:'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Tipo_armacao: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_As2_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 31
+              Width = 21
+              Caption = 'cm²'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_As2: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_As2: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 30
+              Caption = 'As2 ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_As1: TLabel
+              Left = 10
+              Height = 15
+              Top = 58
+              Width = 30
+              Caption = 'As1 ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_As1: TEdit
+              Left = 220
+              Height = 23
+              Top = 54
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+            end
+            object lb_As1_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 58
+              Width = 21
+              Caption = 'cm²'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_As_max: TLabel
+              Left = 10
+              Height = 15
+              Top = 85
+              Width = 71
+              Caption = 'As máximo ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_As_max: TEdit
+              Left = 220
+              Height = 23
+              Top = 81
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 3
+            end
+            object lb_As_max_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 85
+              Width = 21
+              Caption = 'cm²'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_As_min: TLabel
+              Left = 10
+              Height = 15
+              Top = 112
+              Width = 69
+              Caption = 'As mínimo ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_As_min: TEdit
+              Left = 220
+              Height = 23
+              Top = 108
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 4
+            end
+            object lb_As_min_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 112
+              Width = 21
+              Caption = 'cm²'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Aviso: TLabel
+              Left = 10
+              Height = 1
+              Top = 139
+              Width = 1
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object gb_Auxiliar: TGroupBox
+            Left = 10
+            Height = 50
+            Top = 752
+            Width = 415
+            Caption = 'Armaduras auxiliares'
+            ClientHeight = 30
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object lb_As_pele: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 49
+              Caption = 'As pele ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_As_pele: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_As_pele_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 21
+              Caption = 'cm²'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox12: TGroupBox
+            Left = 10
+            Height = 201
+            Top = 534
+            Width = 415
+            Caption = 'Armaduras adotadas'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+          end
+          object Button1: TButton
+            Left = 304
+            Height = 25
+            Top = 680
+            Width = 75
+            Caption = 'Armaduras'
+            TabOrder = 5
+          end
         end
-        object lb_Msd: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 34
-          Caption = 'Msd ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
+        object TabFCN: TTabSheet
+          Caption = 'Flexão Composta'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox13: TGroupBox
+            Left = 10
+            Height = 174
+            Top = 10
+            Width = 415
+            Caption = 'Esforços Solicitantes'
+            ClientHeight = 154
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object lb_Msd_min7: TLabel
+              Left = 10
+              Height = 15
+              Top = 9
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min8: TLabel
+              Left = 38
+              Height = 15
+              Top = 37
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min9: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min10: TLabel
+              Left = 94
+              Height = 15
+              Top = 93
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min11: TLabel
+              Left = 122
+              Height = 15
+              Top = 121
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd4: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd5: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd6: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object tb_Fcd7: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+            object tb_Fcd8: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 4
+            end
+          end
+          object GroupBox14: TGroupBox
+            Left = 10
+            Height = 121
+            Top = 224
+            Width = 415
+            Caption = 'Coeficientes'
+            ClientHeight = 101
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_Msd_min12: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min13: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min14: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min15: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min16: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min17: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min18: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min19: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd9: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd10: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd11: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object tb_Fcd12: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+            object tb_Fcd13: TEdit
+              Left = 248
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 4
+            end
+            object tb_Fcd14: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 5
+            end
+            object tb_Fcd15: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 6
+            end
+            object tb_Fcd16: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 7
+            end
+          end
+          object GroupBox15: TGroupBox
+            Left = 10
+            Height = 121
+            Top = 368
+            Width = 415
+            Caption = 'Determinação da linha neutra'
+            ClientHeight = 101
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Msd_min20: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min21: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min22: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min23: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min24: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min25: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min26: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd17: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd18: TEdit
+              Left = 248
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd19: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object tb_Fcd20: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+            object tb_Fcd21: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 4
+            end
+            object tb_Fcd22: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 5
+            end
+            object tb_Fcd23: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 6
+            end
+          end
+          object GroupBox16: TGroupBox
+            Left = 10
+            Height = 121
+            Top = 512
+            Width = 415
+            Caption = 'Armaduras de equilíbrio geral'
+            ClientHeight = 101
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object lb_Msd_min27: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min28: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min29: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min30: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min31: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min32: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd24: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd25: TEdit
+              Left = 248
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd26: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object tb_Fcd27: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+            object tb_Fcd28: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 4
+            end
+            object tb_Fcd29: TEdit
+              Left = 271
+              Height = 23
+              Top = 78
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 5
+            end
+          end
         end
-        object lb_Msd_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 4
-          Width = 26
-          Caption = 'kNm'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
+        object TabCortante: TTabSheet
+          Caption = 'Cortante'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox17: TGroupBox
+            Left = 10
+            Height = 85
+            Top = 10
+            Width = 415
+            Caption = 'Esforços Solicitantes'
+            ClientHeight = 65
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object lb_Vsd: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 30
+              Caption = 'Vsd ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Vsd: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnChange = tb_MsdChange
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              TabOrder = 0
+              Text = '2233'
+            end
+            object lb_Vsd_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 15
+              Caption = 'kN'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Ncp: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 33
+              Caption = 'Ncp ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Ncp: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnChange = tb_MsdChange
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              TabOrder = 1
+              Text = '0'
+            end
+            object lb_Ncp_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 31
+              Width = 15
+              Caption = 'kN'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox18: TGroupBox
+            Left = 10
+            Height = 80
+            Top = 100
+            Width = 415
+            Caption = 'Modelo de Cálculo'
+            ClientHeight = 60
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object rb_modelo_2: TRadioButton
+              Left = 10
+              Height = 19
+              Top = 29
+              Width = 70
+              Caption = 'Modelo II'
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+              TabOrder = 0
+            end
+            object rb_modelo_1: TRadioButton
+              Left = 10
+              Height = 19
+              Top = 2
+              Width = 67
+              Caption = 'Modelo I'
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+              TabOrder = 1
+            end
+            object FloatSpinEdit2: TFloatSpinEdit
+              Left = 296
+              Height = 23
+              Top = 27
+              Width = 105
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              MaxValue = 90
+              MinValue = 45
+              ParentFont = False
+              TabOrder = 2
+              Value = 45
+            end
+            object FloatSpinEdit1: TFloatSpinEdit
+              Left = 296
+              Height = 23
+              Top = 0
+              Width = 105
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              MaxValue = 45
+              MinValue = 30
+              ParentFont = False
+              TabOrder = 3
+              Value = 30
+            end
+            object lb_Theta: TLabel
+              Left = 100
+              Height = 15
+              Top = 4
+              Width = 187
+              Caption = 'Ângulo de inclinação das bielas (θ):'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Theta1: TLabel
+              Left = 88
+              Height = 15
+              Top = 31
+              Width = 199
+              Caption = 'Ângulo de inclinação dos estribos (α):'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox19: TGroupBox
+            Left = 10
+            Height = 121
+            Top = 180
+            Width = 415
+            Caption = 'Dispensa da armadura transversal'
+            ClientHeight = 101
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object tb_X1: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_X_u1: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X1: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X2: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_X_u2: TLabel
+              Left = 370
+              Height = 15
+              Top = 31
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X2: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X3: TEdit
+              Left = 220
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+            end
+            object lb_X_u3: TLabel
+              Left = 366
+              Height = 15
+              Top = 59
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X3: TLabel
+              Left = 10
+              Height = 15
+              Top = 59
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox20: TGroupBox
+            Left = 10
+            Height = 180
+            Top = 300
+            Width = 415
+            Caption = 'Verificações do concreto'
+            ClientHeight = 160
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object tb_X4: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_X_u4: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X4: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X5: TEdit
+              Left = 220
+              Height = 23
+              Top = 28
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_X_u5: TLabel
+              Left = 366
+              Height = 15
+              Top = 32
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X5: TLabel
+              Left = 10
+              Height = 15
+              Top = 32
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X6: TEdit
+              Left = 220
+              Height = 23
+              Top = 58
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+            end
+            object lb_X_u6: TLabel
+              Left = 366
+              Height = 15
+              Top = 62
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X6: TLabel
+              Left = 10
+              Height = 15
+              Top = 62
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X7: TEdit
+              Left = 220
+              Height = 23
+              Top = 105
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 3
+            end
+            object lb_X_u7: TLabel
+              Left = 366
+              Height = 15
+              Top = 109
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X7: TLabel
+              Left = 10
+              Height = 15
+              Top = 109
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X8: TEdit
+              Left = 220
+              Height = 23
+              Top = 133
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 4
+            end
+            object lb_X_u8: TLabel
+              Left = 366
+              Height = 15
+              Top = 137
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X8: TLabel
+              Left = 10
+              Height = 15
+              Top = 137
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox21: TGroupBox
+            Left = 10
+            Height = 185
+            Top = 480
+            Width = 415
+            Caption = 'Armaduras de equilíbrio geral'
+            ClientHeight = 165
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+            object tb_X9: TEdit
+              Left = 220
+              Height = 23
+              Top = -1
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_X_u9: TLabel
+              Left = 366
+              Height = 15
+              Top = 3
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X9: TLabel
+              Left = 10
+              Height = 15
+              Top = 3
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X10: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_X_u10: TLabel
+              Left = 366
+              Height = 15
+              Top = 31
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X10: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X11: TEdit
+              Left = 220
+              Height = 23
+              Top = 58
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+            end
+            object lb_X_u11: TLabel
+              Left = 366
+              Height = 15
+              Top = 62
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X11: TLabel
+              Left = 10
+              Height = 15
+              Top = 62
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X12: TEdit
+              Left = 219
+              Height = 23
+              Top = 89
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 3
+            end
+            object lb_X_u12: TLabel
+              Left = 365
+              Height = 15
+              Top = 93
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X12: TLabel
+              Left = 9
+              Height = 15
+              Top = 93
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X13: TEdit
+              Left = 220
+              Height = 23
+              Top = 117
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 4
+            end
+            object lb_X_u13: TLabel
+              Left = 366
+              Height = 15
+              Top = 121
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X13: TLabel
+              Left = 10
+              Height = 15
+              Top = 121
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox22: TGroupBox
+            Left = 10
+            Height = 73
+            Top = 672
+            Width = 415
+            Caption = 'Espaçamentos máximos'
+            ClientHeight = 53
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 5
+            object tb_X14: TEdit
+              Left = 219
+              Height = 23
+              Top = -1
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_X_u14: TLabel
+              Left = 365
+              Height = 15
+              Top = 7
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X14: TLabel
+              Left = 9
+              Height = 15
+              Top = 7
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X15: TEdit
+              Left = 219
+              Height = 23
+              Top = 25
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_X_u15: TLabel
+              Left = 365
+              Height = 15
+              Top = 33
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X15: TLabel
+              Left = 9
+              Height = 15
+              Top = 33
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox23: TGroupBox
+            Left = 10
+            Height = 73
+            Top = 752
+            Width = 415
+            Caption = 'Decalagem (al)'
+            ClientHeight = 53
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 6
+            object tb_X16: TEdit
+              Left = 219
+              Height = 23
+              Top = 0
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_X_u16: TLabel
+              Left = 365
+              Height = 15
+              Top = 7
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X16: TLabel
+              Left = 9
+              Height = 15
+              Top = 7
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_X17: TLabel
+              Left = 9
+              Height = 15
+              Top = 34
+              Width = 17
+              Caption = 'x ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_X17: TEdit
+              Left = 219
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_X_u17: TLabel
+              Left = 365
+              Height = 15
+              Top = 34
+              Width = 17
+              Caption = 'cm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object Button2: TButton
+            Left = 272
+            Height = 25
+            Top = 832
+            Width = 75
+            Caption = 'Armaduras'
+            TabOrder = 7
+          end
         end
-        object lb_Msd_min: TLabel
-          Left = 10
-          Height = 15
-          Top = 32
-          Width = 58
-          Caption = 'Msd.min ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Msd_min: TEdit
-          Left = 220
-          Height = 23
-          Top = 28
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 1
-        end
-        object lb_Msd_min_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 32
-          Width = 26
-          Caption = 'kNm'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
+        object TabTorcao: TTabSheet
+          Caption = 'Torção'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox25: TGroupBox
+            Left = 10
+            Height = 233
+            Top = 72
+            Width = 415
+            Caption = 'Parede equivalente'
+            ClientHeight = 213
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object lb_Msd_min1: TLabel
+              Left = 10
+              Height = 15
+              Top = 9
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min1: TEdit
+              Left = 220
+              Height = 23
+              Top = 5
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object lb_Msd_min_u1: TLabel
+              Left = 370
+              Height = 15
+              Top = 9
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min2: TLabel
+              Left = 10
+              Height = 15
+              Top = 37
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min2: TEdit
+              Left = 220
+              Height = 23
+              Top = 33
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object lb_Msd_min_u2: TLabel
+              Left = 370
+              Height = 15
+              Top = 37
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min3: TLabel
+              Left = 10
+              Height = 15
+              Top = 64
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min3: TEdit
+              Left = 220
+              Height = 23
+              Top = 60
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+            end
+            object lb_Msd_min_u3: TLabel
+              Left = 370
+              Height = 15
+              Top = 64
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min4: TLabel
+              Left = 10
+              Height = 15
+              Top = 93
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min4: TEdit
+              Left = 220
+              Height = 23
+              Top = 89
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 3
+            end
+            object lb_Msd_min_u4: TLabel
+              Left = 370
+              Height = 15
+              Top = 93
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min5: TLabel
+              Left = 10
+              Height = 15
+              Top = 122
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min5: TEdit
+              Left = 220
+              Height = 23
+              Top = 118
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 4
+            end
+            object lb_Msd_min_u5: TLabel
+              Left = 370
+              Height = 15
+              Top = 122
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min6: TLabel
+              Left = 10
+              Height = 15
+              Top = 151
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Msd_min6: TEdit
+              Left = 220
+              Height = 23
+              Top = 147
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 5
+            end
+            object lb_Msd_min_u6: TLabel
+              Left = 370
+              Height = 15
+              Top = 151
+              Width = 26
+              Caption = 'kNm'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min33: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min34: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min35: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox26: TGroupBox
+            Left = 10
+            Height = 145
+            Top = 312
+            Width = 415
+            Caption = 'Verificações do concreto'
+            ClientHeight = 125
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_Msd_min36: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min37: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min38: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min39: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd30: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd31: TEdit
+              Left = 248
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd32: TEdit
+              Left = 271
+              Height = 23
+              Top = 83
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object tb_Fcd33: TEdit
+              Left = 271
+              Height = 23
+              Top = 83
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+          end
+          object GroupBox27: TGroupBox
+            Left = 10
+            Height = 105
+            Top = 472
+            Width = 415
+            Caption = 'Armaduras transversais de equilíbrio geral'
+            ClientHeight = 85
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Msd_min40: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min41: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min42: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd34: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd35: TEdit
+              Left = 248
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd36: TEdit
+              Left = 271
+              Height = 23
+              Top = 62
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+          end
+          object GroupBox28: TGroupBox
+            Left = 10
+            Height = 105
+            Top = 592
+            Width = 415
+            Caption = 'Armaduras longitudinais de equilíbrio geral'
+            ClientHeight = 85
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object lb_Msd_min43: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min44: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd37: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd38: TEdit
+              Left = 248
+              Height = 23
+              Top = 55
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+          end
+          object GroupBox29: TGroupBox
+            Left = 10
+            Height = 64
+            Top = 704
+            Width = 415
+            Caption = 'Distribuição Horizontal'
+            ClientHeight = 44
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+            object lb_Msd_min45: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min46: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd39: TEdit
+              Left = 220
+              Height = 23
+              Top = 21
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd40: TEdit
+              Left = 220
+              Height = 23
+              Top = 21
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+          end
+          object GroupBox30: TGroupBox
+            Left = 10
+            Height = 64
+            Top = 784
+            Width = 415
+            Caption = 'Distribuição Vertical'
+            ClientHeight = 44
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 5
+            object lb_Msd_min47: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min48: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Fcd41: TEdit
+              Left = 220
+              Height = 23
+              Top = 21
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fcd42: TEdit
+              Left = 220
+              Height = 23
+              Top = 21
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Fcd43: TEdit
+              Left = 220
+              Height = 23
+              Top = 21
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+          end
+          object GroupBox24: TGroupBox
+            Left = 10
+            Height = 53
+            Top = 10
+            Width = 415
+            Caption = 'Esforços Solicitantes'
+            ClientHeight = 33
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 6
+            object lb_Vsd1: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 30
+              Caption = 'Vsd ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Vsd1: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Font.CharSet = ANSI_CHARSET
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnChange = tb_MsdChange
+              OnKeyPress = tb_MsdKeyPress
+              ParentFont = False
+              TabOrder = 0
+              Text = '2233'
+            end
+            object lb_Vsd_u1: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 15
+              Caption = 'kN'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
         end
       end
-      object gb_Linha_neutra: TGroupBox
-        Left = 10
-        Height = 240
-        Top = 95
-        Width = 415
-        Caption = 'Determinação da linha neutra'
-        ClientHeight = 220
-        ClientWidth = 411
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Estado Limite de Serviço'
+      ClientHeight = 836
+      ClientWidth = 458
+      object PageControl3: TPageControl
+        Left = 0
+        Height = 880
+        Top = 0
+        Width = 462
+        ActivePage = TabFissuracao1
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
-        Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 1
-        object lb_X: TLabel
-          Left = 10
-          Height = 15
-          Top = 31
-          Width = 17
-          Caption = 'x ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_X: TEdit
-          Left = 220
-          Height = 23
-          Top = 27
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 0
-        end
-        object lb_X_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 31
-          Width = 17
-          Caption = 'cm'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Secao: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 138
-          Caption = 'Dimensionamento como: '
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Secao: TEdit
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 1
-        end
-        object lb_Beta: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 18
-          Caption = 'β ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Beta_23: TLabel
-          Left = 10
-          Height = 15
-          Top = 85
-          Width = 38
-          Caption = 'β 2/3 ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Beta_limite: TLabel
-          Left = 10
-          Height = 15
-          Top = 112
-          Width = 38
-          Caption = 'β lim ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Beta_34: TLabel
-          Left = 10
-          Height = 15
-          Top = 139
-          Width = 38
-          Caption = 'β 3/4 ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Dominio: TLabel
-          Left = 10
-          Height = 15
-          Top = 166
-          Width = 132
-          Caption = 'Domínio de deformação:'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Verificacao_Flexao: TLabel
-          Left = 10
-          Height = 15
-          Top = 193
-          Width = 138
-          Caption = 'Verificação da ductilidade:'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Beta: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 2
-        end
-        object tb_Beta_23: TEdit
-          Left = 220
-          Height = 23
-          Top = 81
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 3
-        end
-        object tb_Beta_limite: TEdit
-          Left = 220
-          Height = 23
-          Top = 108
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 4
-        end
-        object tb_Beta_34: TEdit
-          Left = 220
-          Height = 23
-          Top = 135
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 5
-        end
-        object tb_Dominio: TEdit
-          Left = 220
-          Height = 23
-          Top = 162
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 6
-        end
-        object tb_Verificacao_Flexao: TEdit
-          Left = 220
-          Height = 23
-          Top = 189
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 7
-        end
-      end
-      object GroupBox10: TGroupBox
-        Left = 10
-        Height = 185
-        Top = 344
-        Width = 415
-        Caption = 'Armaduras de equilíbrio geral'
-        ClientHeight = 165
-        ClientWidth = 411
-        Font.CharSet = ANSI_CHARSET
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 2
-        object lb_Tipo_armacao: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 93
-          Caption = 'Tipo de Armação:'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Tipo_armacao: TEdit
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 0
-        end
-        object lb_As2_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 31
-          Width = 21
-          Caption = 'cm²'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_As2: TEdit
-          Left = 220
-          Height = 23
-          Top = 27
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 1
-        end
-        object lb_As2: TLabel
-          Left = 10
-          Height = 15
-          Top = 31
-          Width = 30
-          Caption = 'As2 ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_As1: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 30
-          Caption = 'As1 ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_As1: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 2
-        end
-        object lb_As1_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 58
-          Width = 21
-          Caption = 'cm²'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_As_max: TLabel
-          Left = 10
-          Height = 15
-          Top = 85
-          Width = 71
-          Caption = 'As máximo ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_As_max: TEdit
-          Left = 220
-          Height = 23
-          Top = 81
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 3
-        end
-        object lb_As_max_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 85
-          Width = 21
-          Caption = 'cm²'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_As_min: TLabel
-          Left = 10
-          Height = 15
-          Top = 112
-          Width = 69
-          Caption = 'As mínimo ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_As_min: TEdit
-          Left = 220
-          Height = 23
-          Top = 108
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 4
-        end
-        object lb_As_min_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 112
-          Width = 21
-          Caption = 'cm²'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Aviso: TLabel
-          Left = 10
-          Height = 1
-          Top = 139
-          Width = 1
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-      end
-      object gb_Auxiliar: TGroupBox
-        Left = 10
-        Height = 50
-        Top = 752
-        Width = 415
-        Caption = 'Armaduras auxiliares'
-        ClientHeight = 30
-        ClientWidth = 411
-        Font.CharSet = ANSI_CHARSET
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 3
-        object lb_As_pele: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 49
-          Caption = 'As pele ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_As_pele: TEdit
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_MsdKeyPress
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 0
-        end
-        object lb_As_pele_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 4
-          Width = 21
-          Caption = 'cm²'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-      end
-      object GroupBox12: TGroupBox
-        Left = 10
-        Height = 201
-        Top = 534
-        Width = 415
-        Caption = 'Armaduras adotadas'
-        Font.CharSet = ANSI_CHARSET
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 4
-      end
-    end
-    object TabFCN: TTabSheet
-      Caption = 'Flexão Composta'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox13: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 10
-        Width = 415
-        Caption = 'Esforços Solicitantes'
+        TabIndex = 0
         TabOrder = 0
-      end
-      object GroupBox14: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 144
-        Width = 415
-        Caption = 'Coeficientes'
-        TabOrder = 1
-      end
-      object GroupBox15: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 272
-        Width = 415
-        Caption = 'Determinação da linha neutra'
-        TabOrder = 2
-      end
-      object GroupBox16: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 408
-        Width = 415
-        Caption = 'Armaduras de equilíbrio geral'
-        TabOrder = 3
+        TabPosition = tpLeft
+        object TabFissuracao1: TTabSheet
+          Caption = 'Fissuração'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox77: TGroupBox
+            Left = 10
+            Height = 94
+            Top = 10
+            Width = 415
+            Caption = 'Esforços solicitantes'
+            ClientHeight = 74
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object lb_Msd_min199: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox78: TGroupBox
+            Left = 10
+            Height = 94
+            Top = 120
+            Width = 415
+            Caption = 'Condição da seção'
+            ClientHeight = 74
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_Msd_min200: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min201: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min202: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox79: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 232
+            Width = 415
+            Caption = 'Propriedades da seção'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Msd_min203: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min204: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min205: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min206: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min207: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox80: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 384
+            Width = 415
+            Caption = 'Conjunto'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object lb_Msd_min208: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min209: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min210: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min211: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox81: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 528
+            Width = 415
+            Caption = 'Camadas'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+            object lb_Msd_min212: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min213: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min214: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min215: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min216: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min217: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox82: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 672
+            Width = 415
+            Caption = 'Abertura de fissuras'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 5
+            object lb_Msd_min218: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min219: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min220: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min221: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min222: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min223: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+        object TabDeformacao1: TTabSheet
+          Caption = 'Deformação'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox83: TGroupBox
+            Left = 10
+            Height = 94
+            Top = 120
+            Width = 415
+            Caption = 'Condição da seção'
+            ClientHeight = 74
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object lb_Msd_min224: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min225: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min226: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox84: TGroupBox
+            Left = 10
+            Height = 94
+            Top = 10
+            Width = 415
+            Caption = 'Esforços solicitantes'
+            ClientHeight = 74
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_Msd_min227: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox85: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 232
+            Width = 415
+            Caption = 'Propriedades da seção'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Msd_min228: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min229: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min230: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min231: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min232: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min233: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min234: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min235: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min236: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox86: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 384
+            Width = 415
+            Caption = 'Coeficientes para flecha diferida'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object lb_Msd_min237: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min238: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min239: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min240: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min241: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min242: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+        object TabSobre1: TTabSheet
+          Caption = 'Sobre'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox95: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 10
+            Width = 415
+            Caption = 'Autor'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+          end
+          object GroupBox96: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 160
+            Width = 415
+            Caption = 'Licença de Uso'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+          end
+          object GroupBox97: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 312
+            Width = 415
+            Caption = 'Direitos'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+          end
+          object GroupBox98: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 456
+            Width = 415
+            Caption = 'Termos'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+          end
+          object GroupBox99: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 600
+            Width = 415
+            Caption = 'Aviso legal'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+          end
+        end
+        object TabArmadura1: TTabSheet
+          Caption = 'Armadura'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox100: TGroupBox
+            Left = 10
+            Height = 226
+            Top = 10
+            Width = 415
+            Caption = 'Armadura longitudinal'
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+          end
+          object GroupBox101: TGroupBox
+            Left = 10
+            Height = 226
+            Top = 248
+            Width = 415
+            Caption = 'Armadura transversal'
+            ClientHeight = 206
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_Msd_min288: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min289: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min290: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min291: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox102: TGroupBox
+            Left = 8
+            Height = 144
+            Top = 488
+            Width = 415
+            Caption = 'Espaçamento entre barras'
+            ClientHeight = 124
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Msd_min292: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min293: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min294: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min295: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min296: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox103: TGroupBox
+            Left = 10
+            Height = 144
+            Top = 640
+            Width = 415
+            Caption = 'Altura efetiva'
+            ClientHeight = 124
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object lb_Msd_min297: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min298: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min299: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+        object TabDetalhamento1: TTabSheet
+          Caption = 'Detalhamento'
+          ClientHeight = 872
+          ClientWidth = 431
+          object GroupBox92: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 10
+            Width = 415
+            Caption = 'Ancoragem'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object lb_Msd_min266: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min267: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min268: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min269: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min270: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min271: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min272: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min273: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min274: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min275: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min276: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min277: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min278: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox93: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 160
+            Width = 415
+            Caption = 'Traspasse'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object lb_Msd_min279: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min280: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min281: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min282: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min283: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min284: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object GroupBox94: TGroupBox
+            Left = 10
+            Height = 134
+            Top = 304
+            Width = 415
+            Caption = 'Ganchos'
+            ClientHeight = 114
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Msd_min285: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min286: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Msd_min287: TLabel
+              Left = 66
+              Height = 15
+              Top = 65
+              Width = 58
+              Caption = 'Msd.min ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
       end
     end
-    object TabCortante: TTabSheet
-      Caption = 'Cortante'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox17: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 10
-        Width = 415
-        Caption = 'Esforços Solicitantes'
-        TabOrder = 0
-      end
-      object GroupBox18: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 144
-        Width = 415
-        Caption = 'Modelo de Cálculo'
-        TabOrder = 1
-      end
-      object GroupBox19: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 280
-        Width = 415
-        Caption = 'Dispensa da armadura transversal'
-        TabOrder = 2
-      end
-      object GroupBox20: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 408
-        Width = 415
-        Caption = 'Verificações do concreto'
-        TabOrder = 3
-      end
-      object GroupBox21: TGroupBox
-        Left = 10
-        Height = 121
-        Top = 544
-        Width = 415
-        Caption = 'Armaduras de equilíbrio geral'
-        TabOrder = 4
-      end
-      object GroupBox22: TGroupBox
-        Left = 10
-        Height = 73
-        Top = 672
-        Width = 415
-        Caption = 'Espaçamentos máximos'
-        TabOrder = 5
-      end
-      object GroupBox23: TGroupBox
-        Left = 10
-        Height = 73
-        Top = 752
-        Width = 415
-        Caption = 'Decalagem (al)'
-        TabOrder = 6
-      end
-    end
-    object TabTorcao: TTabSheet
-      Caption = 'Torção'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox24: TGroupBox
-        Left = 10
-        Height = 65
-        Top = 10
-        Width = 415
-        Caption = 'Esforços Solicitantes'
-        TabOrder = 0
-      end
-      object GroupBox25: TGroupBox
-        Left = 10
-        Height = 209
-        Top = 88
-        Width = 415
-        Caption = 'Parede equivalente'
-        TabOrder = 1
-      end
-      object GroupBox26: TGroupBox
-        Left = 10
-        Height = 145
-        Top = 312
-        Width = 415
-        Caption = 'Verificações do concreto'
-        TabOrder = 2
-      end
-      object GroupBox27: TGroupBox
-        Left = 10
-        Height = 105
-        Top = 472
-        Width = 415
-        Caption = 'Armaduras transversais de equilíbrio geral'
-        TabOrder = 3
-      end
-      object GroupBox28: TGroupBox
-        Left = 10
-        Height = 105
-        Top = 592
-        Width = 415
-        Caption = 'Armaduras longitudinais de equilíbrio geral'
-        TabOrder = 4
-      end
-      object GroupBox29: TGroupBox
-        Left = 10
-        Height = 64
-        Top = 704
-        Width = 415
-        Caption = 'Distribuição Horizontal'
-        TabOrder = 5
-      end
-      object GroupBox30: TGroupBox
-        Left = 10
-        Height = 64
-        Top = 784
-        Width = 415
-        Caption = 'Distribuição Vertical'
-        TabOrder = 6
-      end
-    end
-    object TabArmadura: TTabSheet
-      Caption = 'Armadura'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox31: TGroupBox
-        Left = 10
-        Height = 226
-        Top = 10
-        Width = 415
-        Caption = 'Armadura longitudinal'
-        TabOrder = 0
-      end
-      object GroupBox32: TGroupBox
-        Left = 10
-        Height = 226
-        Top = 248
-        Width = 415
-        Caption = 'Armadura transversal'
-        TabOrder = 1
-      end
-      object GroupBox33: TGroupBox
-        Left = 8
-        Height = 144
-        Top = 488
-        Width = 415
-        Caption = 'Espaçamento entre barras'
-        TabOrder = 2
-      end
-      object GroupBox34: TGroupBox
-        Left = 10
-        Height = 144
-        Top = 640
-        Width = 415
-        Caption = 'Altura efetiva'
-        TabOrder = 3
-      end
-    end
-    object TabFissuracao: TTabSheet
-      Caption = 'Fissuração'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox35: TGroupBox
-        Left = 10
-        Height = 94
-        Top = 10
-        Width = 415
-        Caption = 'Esforços solicitantes'
-        TabOrder = 0
-      end
-      object GroupBox36: TGroupBox
-        Left = 10
-        Height = 94
-        Top = 120
-        Width = 415
-        Caption = 'Condição da seção'
-        TabOrder = 1
-      end
-      object GroupBox37: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 232
-        Width = 415
-        Caption = 'Propriedades da seção'
-        TabOrder = 2
-      end
-      object GroupBox38: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 384
-        Width = 415
-        Caption = 'Conjunto'
-        TabOrder = 3
-      end
-      object GroupBox39: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 528
-        Width = 415
-        Caption = 'Camadas'
-        TabOrder = 4
-      end
-      object GroupBox40: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 672
-        Width = 415
-        Caption = 'Abertura de fissuras'
-        TabOrder = 5
-      end
-    end
-    object TabDeformacao: TTabSheet
-      Caption = 'Deformação'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox41: TGroupBox
-        Left = 10
-        Height = 94
-        Top = 120
-        Width = 415
-        Caption = 'Condição da seção'
-        TabOrder = 0
-      end
-      object GroupBox42: TGroupBox
-        Left = 10
-        Height = 94
-        Top = 10
-        Width = 415
-        Caption = 'Esforços solicitantes'
-        TabOrder = 1
-      end
-      object GroupBox43: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 232
-        Width = 415
-        Caption = 'Propriedades da seção'
-        TabOrder = 2
-      end
-      object GroupBox44: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 384
-        Width = 415
-        Caption = 'Coeficientes para flecha diferida'
-        TabOrder = 3
-      end
-    end
-    object TabFadiga: TTabSheet
-      Caption = 'Fadiga'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox45: TGroupBox
-        Left = 10
-        Height = 94
-        Top = 120
-        Width = 415
-        Caption = 'Propriedades da seção'
-        TabOrder = 0
-      end
-      object GroupBox46: TGroupBox
-        Left = 10
-        Height = 94
-        Top = 10
-        Width = 415
-        Caption = 'Esforços solicitantes normais'
-        TabOrder = 1
-      end
-      object GroupBox47: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 232
-        Width = 415
-        Caption = 'Tensões nas armaduras longitudinais'
-        TabOrder = 2
-      end
-      object GroupBox48: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 384
-        Width = 415
-        Caption = 'Esforços solicitantes tangenciais'
-        TabOrder = 3
-      end
-      object GroupBox49: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 528
-        Width = 415
-        Caption = 'Tensões nas armaduras transversais'
-        TabOrder = 4
-      end
-    end
-    object TabDetalhamento: TTabSheet
-      Caption = 'Detalhamento'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox50: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 10
-        Width = 415
-        Caption = 'Ancoragem'
-        TabOrder = 0
-      end
-      object GroupBox51: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 160
-        Width = 415
-        Caption = 'Traspasse'
-        TabOrder = 1
-      end
-      object GroupBox52: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 304
-        Width = 415
-        Caption = 'Ganchos'
-        TabOrder = 2
-      end
-    end
-    object TabSobre: TTabSheet
-      Caption = 'Sobre'
-      ClientHeight = 872
-      ClientWidth = 431
-      object GroupBox53: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 10
-        Width = 415
-        Caption = 'Autor'
-        TabOrder = 0
-      end
-      object GroupBox54: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 160
-        Width = 415
-        Caption = 'Licença de Uso'
-        TabOrder = 1
-      end
-      object GroupBox55: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 312
-        Width = 415
-        Caption = 'Direitos'
-        TabOrder = 2
-      end
-      object GroupBox56: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 456
-        Width = 415
-        Caption = 'Termos'
-        TabOrder = 3
-      end
-      object GroupBox57: TGroupBox
-        Left = 10
-        Height = 134
-        Top = 600
-        Width = 415
-        Caption = 'Aviso legal'
-        TabOrder = 4
-      end
-    end
-  end
-  object Barra_Status: TStatusBar
-    Left = 0
-    Height = 23
-    Top = 897
-    Width = 483
-    Panels = <    
-      item
-        Width = 75
-      end    
-      item
-        Width = 100
-      end    
-      item
-        Width = 110
-      end    
-      item
-        Width = 50
-      end    
-      item
-        Width = 100
-      end>
-    SimplePanel = False
   end
 end

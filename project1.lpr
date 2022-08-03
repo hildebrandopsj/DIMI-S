@@ -10,7 +10,7 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1
+  Forms, GUI_unit, Design_unit
   { you can add units after this };
 
 {$R *.res}
@@ -20,7 +20,7 @@ begin
   Application.Title:='DIMensIonamento de Seções';
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm_Principal, Form_Principal);
   Application.Run;
 end.
 
