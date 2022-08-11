@@ -21,8 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="GUI_unit"/>
-        <TopLine Value="535"/>
-        <CursorPos X="23" Y="9"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="638"/>
+        <CursorPos X="34" Y="657"/>
         <FoldState Value=" TJxO1}yD"/>
         <UsageCount Value="217"/>
         <Loaded Value="True"/>
@@ -32,19 +33,13 @@
         <Filename Value="design_unit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Design_unit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos X="22" Y="8"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory>
-      <Position>
-        <Filename Value="gui_unit.pas"/>
-        <Caret Line="9" Column="23" TopLine="535"/>
-      </Position>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>
