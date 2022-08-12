@@ -1,9 +1,7 @@
 # DIMI-S (DIMenIonamento de Seções)
 Programa para dimensionamento de seções em concreto armado.
 
-Foi inicialmente desenvolvido como uma planilha do software SMath Studio e distribuída livremente, atualmente a planilha está sendo transcrita para PASCAL.
-
-A planilha na versão Smath pode ser baixada [aqui](https://github.com/hildebrandopsj/DIMIS/raw/main/Execut%C3%A1veis/DIMIS-Smath%20Studio.zip) 
+Protótipo de aplicação desenvolvido no software Smath Studio, posteriormente será portado para a linguagem Pascal. Portanto, trata-se de um simples MVP (Minimum Viable Product)
 
 **Capabilidades:**
 - Concretos até 90 MPa
