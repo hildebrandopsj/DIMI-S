@@ -36,3 +36,5 @@ A planilha na versão Smath pode ser baixada [aqui](https://github.com/hildebran
 - [ ] Deformação
 - [ ] Fadiga
 - [ ] Detalhamento
+
+O ícone utilizado para este programa foi obtido em: <a href="https://www.flaticon.com/free-icons/concrete" title="concrete icons">Concrete icons created by Smashicons - Flaticon</a>
