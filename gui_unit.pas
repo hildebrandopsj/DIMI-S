@@ -348,11 +348,11 @@ type
     TabArmadura1: TTabSheet;
     TabCortante: TTabSheet;
     TabDeformacao1: TTabSheet;
-    TabDeformacao2: TTabSheet;
+    TabPassiva: TTabSheet;
     TabDetalhamento1: TTabSheet;
     TabFCN: TTabSheet;
     TabFissuracao1: TTabSheet;
-    TabFissuracao2: TTabSheet;
+    TabConcreto: TTabSheet;
     TabFlexao: TTabSheet;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
