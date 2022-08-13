@@ -35,4 +35,8 @@ Protótipo de aplicação desenvolvido no software Smath Studio, posteriormente 
 - [ ] Fadiga
 - [ ] Detalhamento
 
-O ícone utilizado para este programa foi obtido em: <a href="https://www.flaticon.com/free-icons/concrete" title="concrete icons">Concrete icons created by Smashicons - Flaticon</a>
+**Manual Teórico**  
+O manual teórico pode ser acessado [aqui](https://github.com/hildebrandopsj/DIMI-S/wiki)
+
+**Ícones**  
+O ícone utilizado para este programa foi obtido em [Flaticon](www.flaticon.com/free-icons/concrete)
