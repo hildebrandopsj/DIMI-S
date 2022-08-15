@@ -1,7 +1,11 @@
 # DIMI-S (DIMenIonamento de Seções)
-Programa para dimensionamento de seções em concreto armado.
+### Programa livre para dimensionamento de seções em concreto armado. 
+O projeto iniciou como uma pequena aplicação utilizando o software Smath Studio, mas devido a algumas limitações, o autor se propôs a desenvolver uma versão na linguagem pascal utilizando o software livre Lazarus.
 
-Protótipo de aplicação desenvolvido no software Smath Studio, posteriormente será portado para a linguagem Pascal. Portanto, trata-se de um simples MVP (Minimum Viable Product)
+O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquanto a nova versão está em desenvolvimento.
+
+**Downloads**  
+Para baixar a versão do aplicativo criado com o Smath Studio, clique [aqui](https://github.com/hildebrandopsj/DIMI-S/releases/tag/v0.0.213)
 
 **Capabilidades:**
 - Concretos até 90 MPa
@@ -21,18 +25,8 @@ Protótipo de aplicação desenvolvido no software Smath Studio, posteriormente 
 - Auxiliar com testes;
 - Solicitar a inclusão de novas ferramentas;
 
-**Módulos transcritos para Pascal:**
-- [X] Materiais
-- [X] Seção (Resta a etapa de desenho da figura)
-- [X] Flexão Simples (Fase de testes)
-- [ ] Flexão Composta
-- [ ] Cortante
-- [ ] Torção
-- [ ] Armadura
-- [ ] Alojamento
-- [ ] Fissuração
-- [ ] Deformação
-- [ ] Fadiga
-- [ ] Detalhamento
+**Manual Teórico**  
+O manual teórico pode ser acessado [aqui](https://github.com/hildebrandopsj/DIMI-S/wiki)
 
-O ícone utilizado para este programa foi obtido em: <a href="https://www.flaticon.com/free-icons/concrete" title="concrete icons">Concrete icons created by Smashicons - Flaticon</a>
+**Ícones**  
+O ícone utilizado para este programa foi obtido em [Flaticon](www.flaticon.com/free-icons/concrete)
