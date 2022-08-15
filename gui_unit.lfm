@@ -143,8 +143,8 @@ object Form_Principal: TForm_Principal
     Height = 896
     Top = 30
     Width = 465
-    ActivePage = TabSheet1
-    TabIndex = 0
+    ActivePage = TabSheet2
+    TabIndex = 2
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Materiais'

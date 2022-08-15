@@ -150,553 +150,20 @@ object Form_Principal: TForm_Principal
       Caption = 'Materiais'
       ClientHeight = 868
       ClientWidth = 457
-      object gb_Coeficientes: TGroupBox
-        Left = 21
-        Height = 110
-        Top = 15
-        Width = 415
-        Caption = 'Coeficientes de ponderação'
-        ClientHeight = 90
-        ClientWidth = 411
-        Font.CharSet = ANSI_CHARSET
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsBold]
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        TabOrder = 0
-        object lb_Gama_s: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 22
-          Caption = 'γs ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Gama_c: TLabel
-          Left = 10
-          Height = 15
-          Top = 31
-          Width = 23
-          Caption = 'γc ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Delta: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 176
-          Caption = 'Redistribuição de momentos (δ) :'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Gama_s: TEdit
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_Gama_sKeyPress
-          ParentFont = False
-          TabOrder = 0
-          Text = '1,15'
-        end
-        object tb_Gama_c: TEdit
-          Left = 220
-          Height = 23
-          Top = 27
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_Gama_cKeyPress
-          ParentFont = False
-          TabOrder = 1
-          Text = '1,4'
-        end
-        object tb_Delta: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_DeltaKeyPress
-          ParentFont = False
-          TabOrder = 2
-          Text = '1,00'
-        end
-      end
-      object gb_Bloco: TGroupBox
-        Left = 21
-        Height = 129
-        Top = 535
-        Width = 415
-        Caption = 'Parâmetros do bloco retangular'
-        ClientHeight = 109
-        ClientWidth = 411
-        Font.CharSet = ANSI_CHARSET
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 1
-        object lb_Epsilon_c2: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 28
-          Caption = 'εc2 ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Epsilon_cu: TLabel
-          Left = 10
-          Height = 15
-          Top = 31
-          Width = 29
-          Caption = 'εcu ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Alpha_c: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 24
-          Caption = 'αc ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Lambda: TLabel
-          Left = 10
-          Height = 15
-          Top = 85
-          Width = 17
-          Caption = 'λ ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Epsilon_c2: TEdit
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 0
-        end
-        object tb_Epsilon_cu: TEdit
-          Left = 220
-          Height = 23
-          Top = 27
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 1
-        end
-        object tb_Alpha_c: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 2
-        end
-        object tb_Lambda: TEdit
-          Left = 220
-          Height = 23
-          Top = 81
-          Width = 180
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 3
-        end
-        object lb_Epsilon_c2_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 4
-          Width = 15
-          Caption = '‰'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Epsilon_cu_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 31
-          Width = 15
-          Caption = '‰'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-      end
-      object gb_Aco: TGroupBox
-        Left = 21
-        Height = 185
-        Top = 665
-        Width = 415
-        Caption = 'Aço'
-        ClientHeight = 165
-        ClientWidth = 411
-        Font.CharSet = ANSI_CHARSET
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 2
-        object cb_Fyk: TComboBox
-          Left = 220
-          Height = 23
-          Top = 0
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ItemHeight = 15
-          ItemIndex = 1
-          Items.Strings = (
-            'CA25'
-            'CA50'
-            'CA60'
-          )
-          OnChange = cb_FykChange
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 1
-          Text = 'CA50'
-        end
-        object cb_Fywk: TComboBox
-          Left = 220
-          Height = 23
-          Top = 27
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ItemHeight = 15
-          ItemIndex = 0
-          Items.Strings = (
-            'CA50'
-            'CA60'
-          )
-          OnChange = cb_FywkChange
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 5
-          Text = 'CA50'
-        end
-        object tb_Fyd: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 0
-        end
-        object tb_Fywd: TEdit
-          Left = 220
-          Height = 23
-          Top = 81
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 3
-        end
-        object tb_Es: TEdit
-          Left = 220
-          Height = 23
-          Top = 108
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 2
-        end
-        object lb_Fyk: TLabel
-          Left = 10
-          Height = 15
-          Top = 4
-          Width = 27
-          Caption = 'fyk ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Fywk: TLabel
-          Left = 10
-          Height = 15
-          Top = 31
-          Width = 36
-          Caption = 'fywk ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Fyd: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 28
-          Caption = 'fyd ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Fywd: TLabel
-          Left = 10
-          Height = 15
-          Top = 85
-          Width = 37
-          Caption = 'fywd ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Es: TLabel
-          Left = 10
-          Height = 15
-          Top = 112
-          Width = 22
-          Caption = 'Es ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Epsilon_yd: TLabel
-          Left = 10
-          Height = 15
-          Top = 139
-          Width = 29
-          Caption = 'εyd ='
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object tb_Epsilon_yd: TEdit
-          Left = 220
-          Height = 23
-          Top = 135
-          Width = 140
-          Color = clForm
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          TabStop = False
-          TabOrder = 4
-        end
-        object lb_Epsilon_yd_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 139
-          Width = 15
-          Caption = '‰'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Es_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 112
-          Width = 24
-          Caption = 'MPa'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Fywd_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 85
-          Width = 24
-          Caption = 'MPa'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-        object lb_Fyd_u: TLabel
-          Left = 370
-          Height = 15
-          Top = 58
-          Width = 24
-          Caption = 'MPa'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
-      end
       object PageControl4: TPageControl
         Left = 0
         Height = 880
         Top = 0
         Width = 462
-        ActivePage = TabFissuracao2
+        ActivePage = TabConcreto
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentFont = False
         TabIndex = 0
-        TabOrder = 3
+        TabOrder = 0
         TabPosition = tpLeft
-        object TabFissuracao2: TTabSheet
+        object TabConcreto: TTabSheet
           Caption = 'Concreto'
           ClientHeight = 872
           ClientWidth = 431
@@ -1320,9 +787,544 @@ object Form_Principal: TForm_Principal
               ParentFont = False
             end
           end
+          object gb_Coeficientes: TGroupBox
+            Left = 10
+            Height = 110
+            Top = 15
+            Width = 415
+            Caption = 'Coeficientes de ponderação'
+            ClientHeight = 90
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentBackground = False
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 1
+            object lb_Gama_s: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 22
+              Caption = 'γs ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Gama_c: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 23
+              Caption = 'γc ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Delta: TLabel
+              Left = 10
+              Height = 15
+              Top = 58
+              Width = 176
+              Caption = 'Redistribuição de momentos (δ) :'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Gama_s: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 180
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_Gama_sKeyPress
+              ParentFont = False
+              TabOrder = 0
+              Text = '1,15'
+            end
+            object tb_Gama_c: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 180
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_Gama_cKeyPress
+              ParentFont = False
+              TabOrder = 1
+              Text = '1,4'
+            end
+            object tb_Delta: TEdit
+              Left = 220
+              Height = 23
+              Top = 54
+              Width = 180
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              OnKeyPress = tb_DeltaKeyPress
+              ParentFont = False
+              TabOrder = 2
+              Text = '1,00'
+            end
+          end
+          object gb_Bloco: TGroupBox
+            Left = 10
+            Height = 129
+            Top = 535
+            Width = 415
+            Caption = 'Parâmetros do bloco retangular'
+            ClientHeight = 109
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object lb_Epsilon_c2: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 28
+              Caption = 'εc2 ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Epsilon_cu: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 29
+              Caption = 'εcu ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Alpha_c: TLabel
+              Left = 10
+              Height = 15
+              Top = 58
+              Width = 24
+              Caption = 'αc ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Lambda: TLabel
+              Left = 10
+              Height = 15
+              Top = 85
+              Width = 17
+              Caption = 'λ ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Epsilon_c2: TEdit
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Epsilon_cu: TEdit
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 1
+            end
+            object tb_Alpha_c: TEdit
+              Left = 220
+              Height = 23
+              Top = 54
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object tb_Lambda: TEdit
+              Left = 220
+              Height = 23
+              Top = 81
+              Width = 180
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+            object lb_Epsilon_c2_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 4
+              Width = 15
+              Caption = '‰'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Epsilon_cu_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 31
+              Width = 15
+              Caption = '‰'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
         end
-        object TabDeformacao2: TTabSheet
+        object TabPassiva: TTabSheet
           Caption = 'Armadura Passiva'
+          ClientHeight = 872
+          ClientWidth = 431
+          object gb_Aco: TGroupBox
+            Left = 10
+            Height = 185
+            Top = 15
+            Width = 415
+            Caption = 'Aço'
+            ClientHeight = 165
+            ClientWidth = 411
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object cb_Fyk: TComboBox
+              Left = 220
+              Height = 23
+              Top = 0
+              Width = 180
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ItemHeight = 15
+              ItemIndex = 1
+              Items.Strings = (
+                'CA25'
+                'CA50'
+                'CA60'
+              )
+              OnChange = cb_FykChange
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+              Text = 'CA50'
+            end
+            object cb_Fywk: TComboBox
+              Left = 220
+              Height = 23
+              Top = 27
+              Width = 180
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ItemHeight = 15
+              ItemIndex = 0
+              Items.Strings = (
+                'CA50'
+                'CA60'
+              )
+              OnChange = cb_FywkChange
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 5
+              Text = 'CA50'
+            end
+            object tb_Fyd: TEdit
+              Left = 220
+              Height = 23
+              Top = 54
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 0
+            end
+            object tb_Fywd: TEdit
+              Left = 220
+              Height = 23
+              Top = 81
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 3
+            end
+            object tb_Es: TEdit
+              Left = 220
+              Height = 23
+              Top = 108
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 2
+            end
+            object lb_Fyk: TLabel
+              Left = 10
+              Height = 15
+              Top = 4
+              Width = 27
+              Caption = 'fyk ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Fywk: TLabel
+              Left = 10
+              Height = 15
+              Top = 31
+              Width = 36
+              Caption = 'fywk ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Fyd: TLabel
+              Left = 10
+              Height = 15
+              Top = 58
+              Width = 28
+              Caption = 'fyd ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Fywd: TLabel
+              Left = 10
+              Height = 15
+              Top = 85
+              Width = 37
+              Caption = 'fywd ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Es: TLabel
+              Left = 10
+              Height = 15
+              Top = 112
+              Width = 22
+              Caption = 'Es ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Epsilon_yd: TLabel
+              Left = 10
+              Height = 15
+              Top = 139
+              Width = 29
+              Caption = 'εyd ='
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object tb_Epsilon_yd: TEdit
+              Left = 220
+              Height = 23
+              Top = 135
+              Width = 140
+              Color = clForm
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              TabStop = False
+              TabOrder = 4
+            end
+            object lb_Epsilon_yd_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 139
+              Width = 15
+              Caption = '‰'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Es_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 112
+              Width = 24
+              Caption = 'MPa'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Fywd_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 85
+              Width = 24
+              Caption = 'MPa'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+            object lb_Fyd_u: TLabel
+              Left = 370
+              Height = 15
+              Top = 58
+              Width = 24
+              Caption = 'MPa'
+              Font.CharSet = ANSI_CHARSET
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentColor = False
+              ParentFont = False
+            end
+          end
         end
       end
     end
