@@ -29,4 +29,4 @@ Para baixar a versão do aplicativo criado com o Smath Studio, clique [aqui](htt
 O manual teórico pode ser acessado [aqui](https://github.com/hildebrandopsj/DIMI-S/wiki)
 
 **Ícones**  
-O ícone utilizado para este programa foi obtido em [Flaticon](www.flaticon.com/free-icons/concrete)
+O ícone utilizado para este programa foi obtido em www.flaticon.com/free-icons/concrete
