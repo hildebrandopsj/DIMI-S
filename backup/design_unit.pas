@@ -5,7 +5,7 @@ unit Design_unit;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, Math;
 
 implementation
 
