@@ -15,15 +15,14 @@
         <UsageCount Value="217"/>
       </Unit>
       <Unit>
-        <Filename Value="gui_unit.pas"/>
+        <Filename Value="interface_unit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form_Principal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="GUI_unit"/>
-        <TopLine Value="502"/>
-        <CursorPos Y="513"/>
-        <FoldState Value=" TJud1}y*"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="593"/>
+        <CursorPos X="41" Y="609"/>
         <UsageCount Value="217"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -32,14 +31,37 @@
         <Filename Value="design_unit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Design_unit"/>
-        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="54" Y="16"/>
+        <UsageCount Value="112"/>
+      </Unit>
+      <Unit>
+        <Filename Value="engenharia_unit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Engenharia_Unit"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="36" Y="7"/>
-        <UsageCount Value="106"/>
+        <CursorPos X="62" Y="25"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="interface_unit.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="535"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory HistoryIndex="1">
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="62" Column="3" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="31" Column="33" TopLine="17"/>
+      </Position>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>

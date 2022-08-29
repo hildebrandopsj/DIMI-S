@@ -541,10 +541,7 @@ begin
 end;
 
 {$REGION 'MÓDULO DE MATERIAIS '}
- //******************************************************************************
- //                            MÓDULO DE MATERIAIS
- //******************************************************************************
- procedure TForm_Principal.Materiais;
+procedure TForm_Principal.Materiais;
  begin
    try
  //Leitura dos coeficientes de ponderação
@@ -655,6 +652,8 @@ end;
       ShowMessage('Existe uma variável em branco. Verifique os dados inseridos');
     end;
  end;
+
+
  procedure TForm_Principal.tb_Gama_sKeyPress(Sender: TObject; var Key: char);
  begin
    // Coletar apenas números positivos e converter o ponto decimal
@@ -959,7 +958,14 @@ end;
  begin
  try
    //Leitura dos dados de flexão
+  if tb_Msd.Text = '' then
+  begin
+  Msd:=0;
+  end
+  end
+  else
    Msd:=StrToFloat(tb_Msd.Text);
+
    //Conversões
    Msd:=100*Msd;
    Msd_min:=(0.8*(Fctk_sup/10)*W0_inf)/100;
