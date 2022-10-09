@@ -19,7 +19,7 @@ Para baixar a versão do aplicativo criado com o Smath Studio, clique [aqui](htt
 - Fadiga (Armaduras longitudinais e transversais)
 - Detalhamento (Ancoragem, ganchos, traspasse, decalagem etc)
 
-**Agradecimentos:** //
+**Agradecimentos:**  
 Agradeço aos colegas que contribuiram de forma significativa ao desenvolvimento desta ferramenta:
 - Iberê Martins da Silva
 - Caio Fernandes Lessa
