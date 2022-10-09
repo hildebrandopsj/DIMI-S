@@ -1,13 +1,13 @@
 object Form_Principal: TForm_Principal
-  Left = 1291
+  Left = 1020
   Height = 960
-  Top = 36
-  Width = 484
+  Top = 56
+  Width = 892
   BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = bsSingle
   Caption = 'DIMensIonamento de Seções'
   ClientHeight = 960
-  ClientWidth = 484
+  ClientWidth = 892
   Icon.Data = {
     BE0C00000000010001002020000001001800A80C000016000000280000002000
     0000400000000100180000000000000C00006400000064000000000000000000
@@ -119,7 +119,7 @@ object Form_Principal: TForm_Principal
     Left = 0
     Height = 23
     Top = 937
-    Width = 484
+    Width = 892
     Panels = <    
       item
         Width = 75
@@ -143,12 +143,12 @@ object Form_Principal: TForm_Principal
     Height = 880
     Top = 20
     Width = 462
-    ActivePage = TabFlexaoSimples
+    ActivePage = TabGeometria
     Font.CharSet = ANSI_CHARSET
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
-    TabIndex = 2
+    TabIndex = 1
     TabOrder = 1
     TabPosition = tpLeft
     object TabMateriais: TTabSheet
@@ -158,7 +158,7 @@ object Form_Principal: TForm_Principal
       object gb_Concreto: TGroupBox
         Left = 10
         Height = 405
-        Top = 125
+        Top = 100
         Width = 415
         Caption = 'Concreto'
         ClientHeight = 385
@@ -562,7 +562,7 @@ object Form_Principal: TForm_Principal
           ParentFont = False
           ReadOnly = True
           TabStop = False
-          TabOrder = 10
+          TabOrder = 11
         end
         object tb_Eci: TEdit
           Left = 220
@@ -578,7 +578,7 @@ object Form_Principal: TForm_Principal
           ParentFont = False
           ReadOnly = True
           TabStop = False
-          TabOrder = 11
+          TabOrder = 12
         end
         object tb_Ecs: TEdit
           Left = 220
@@ -594,7 +594,7 @@ object Form_Principal: TForm_Principal
           ParentFont = False
           ReadOnly = True
           TabStop = False
-          TabOrder = 12
+          TabOrder = 13
         end
         object lb_Ecs: TLabel
           Left = 10
@@ -631,7 +631,7 @@ object Form_Principal: TForm_Principal
           OnChange = cb_Alpha_eChange
           ParentFont = False
           ReadOnly = True
-          TabOrder = 13
+          TabOrder = 10
           Text = 'Granito ou Gnaisse'
         end
         object lb_Fcd_u: TLabel
@@ -777,11 +777,11 @@ object Form_Principal: TForm_Principal
       end
       object gb_Coeficientes: TGroupBox
         Left = 10
-        Height = 110
-        Top = 15
+        Height = 85
+        Top = 10
         Width = 415
         Caption = 'Coeficientes de ponderação'
-        ClientHeight = 90
+        ClientHeight = 65
         ClientWidth = 411
         Font.CharSet = ANSI_CHARSET
         Font.Height = -12
@@ -821,20 +821,6 @@ object Form_Principal: TForm_Principal
           ParentColor = False
           ParentFont = False
         end
-        object lb_Delta: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 176
-          Caption = 'Redistribuição de momentos (δ) :'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
         object tb_Gama_s: TEdit
           Left = 220
           Height = 23
@@ -865,26 +851,11 @@ object Form_Principal: TForm_Principal
           TabOrder = 1
           Text = '1,4'
         end
-        object tb_Delta: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_DeltaKeyPress
-          ParentFont = False
-          TabOrder = 2
-          Text = '1,00'
-        end
       end
       object gb_Bloco: TGroupBox
         Left = 10
         Height = 129
-        Top = 535
+        Top = 510
         Width = 415
         Caption = 'Parâmetros do bloco retangular'
         ClientHeight = 109
@@ -1047,7 +1018,7 @@ object Form_Principal: TForm_Principal
       object gb_Aco: TGroupBox
         Left = 10
         Height = 185
-        Top = 665
+        Top = 640
         Width = 415
         Caption = 'Aço'
         ClientHeight = 165
@@ -1078,7 +1049,7 @@ object Form_Principal: TForm_Principal
           OnChange = cb_FykChange
           ParentFont = False
           ReadOnly = True
-          TabOrder = 1
+          TabOrder = 0
           Text = 'CA50'
         end
         object cb_Fywk: TComboBox
@@ -1100,7 +1071,7 @@ object Form_Principal: TForm_Principal
           OnChange = cb_FywkChange
           ParentFont = False
           ReadOnly = True
-          TabOrder = 5
+          TabOrder = 1
           Text = 'CA50'
         end
         object tb_Fyd: TEdit
@@ -1117,7 +1088,7 @@ object Form_Principal: TForm_Principal
           ParentFont = False
           ReadOnly = True
           TabStop = False
-          TabOrder = 0
+          TabOrder = 2
         end
         object tb_Fywd: TEdit
           Left = 220
@@ -1149,7 +1120,7 @@ object Form_Principal: TForm_Principal
           ParentFont = False
           ReadOnly = True
           TabStop = False
-          TabOrder = 2
+          TabOrder = 4
         end
         object lb_Fyk: TLabel
           Left = 10
@@ -1249,7 +1220,7 @@ object Form_Principal: TForm_Principal
           ParentFont = False
           ReadOnly = True
           TabStop = False
-          TabOrder = 4
+          TabOrder = 5
         end
         object lb_Epsilon_yd_u: TLabel
           Left = 370
@@ -1316,7 +1287,7 @@ object Form_Principal: TForm_Principal
       object gb_Geometria: TGroupBox
         Left = 10
         Height = 265
-        Top = 15
+        Top = 10
         Width = 415
         Caption = 'Geometria'
         ClientHeight = 245
@@ -1712,7 +1683,7 @@ object Form_Principal: TForm_Principal
       object gb_Propriedades: TGroupBox
         Left = 10
         Height = 185
-        Top = 280
+        Top = 275
         Width = 415
         Caption = 'Propriedades Geométricas'
         ClientHeight = 165
@@ -1947,7 +1918,7 @@ object Form_Principal: TForm_Principal
       object gb_Secao: TGroupBox
         Left = 10
         Height = 361
-        Top = 470
+        Top = 465
         Width = 415
         Caption = 'Seção transversal'
         ClientHeight = 341
@@ -1972,11 +1943,11 @@ object Form_Principal: TForm_Principal
       ClientWidth = 431
       object gb_Es_Flexao_Simples: TGroupBox
         Left = 10
-        Height = 80
+        Height = 100
         Top = 10
         Width = 415
         Caption = 'Esforços Solicitantes'
-        ClientHeight = 60
+        ClientHeight = 80
         ClientWidth = 411
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
@@ -2068,11 +2039,40 @@ object Form_Principal: TForm_Principal
           ParentColor = False
           ParentFont = False
         end
+        object tb_Delta: TEdit
+          Left = 220
+          Height = 23
+          Top = 54
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnKeyPress = tb_DeltaKeyPress
+          ParentFont = False
+          TabOrder = 2
+          Text = '1,00'
+        end
+        object lb_Delta: TLabel
+          Left = 10
+          Height = 15
+          Top = 58
+          Width = 176
+          Caption = 'Redistribuição de momentos (δ) :'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
       end
       object gb_Linha_neutra: TGroupBox
         Left = 10
         Height = 240
-        Top = 95
+        Top = 115
         Width = 415
         Caption = 'Determinação da linha neutra'
         ClientHeight = 220
@@ -2109,7 +2109,7 @@ object Form_Principal: TForm_Principal
           OnKeyPress = tb_MsdKeyPress
           ParentFont = False
           ReadOnly = True
-          TabOrder = 0
+          TabOrder = 1
         end
         object lb_X_u: TLabel
           Left = 370
@@ -2151,7 +2151,7 @@ object Form_Principal: TForm_Principal
           OnKeyPress = tb_MsdKeyPress
           ParentFont = False
           ReadOnly = True
-          TabOrder = 1
+          TabOrder = 0
         end
         object lb_Beta: TLabel
           Left = 10
@@ -2325,7 +2325,7 @@ object Form_Principal: TForm_Principal
       object GroupBox10: TGroupBox
         Left = 10
         Height = 185
-        Top = 344
+        Top = 360
         Width = 415
         Caption = 'Armaduras de equilíbrio geral'
         ClientHeight = 165
@@ -2549,7 +2549,7 @@ object Form_Principal: TForm_Principal
       object GroupBox12: TGroupBox
         Left = 10
         Height = 201
-        Top = 534
+        Top = 550
         Width = 415
         Caption = 'Armaduras adotadas'
         Font.CharSet = ANSI_CHARSET
@@ -2562,7 +2562,7 @@ object Form_Principal: TForm_Principal
       object gb_Auxiliar: TGroupBox
         Left = 10
         Height = 50
-        Top = 752
+        Top = 770
         Width = 415
         Caption = 'Armaduras auxiliares'
         ClientHeight = 30
@@ -2650,7 +2650,8 @@ object Form_Principal: TForm_Principal
           ParentFont = False
         end
         object lb_Msd_min8: TLabel
-          Left = 38
+          AnchorSideLeft.Control = lb_Msd_min7
+          Left = 10
           Height = 15
           Top = 37
           Width = 58
@@ -2664,7 +2665,8 @@ object Form_Principal: TForm_Principal
           ParentFont = False
         end
         object lb_Msd_min9: TLabel
-          Left = 66
+          AnchorSideLeft.Control = lb_Msd_min7
+          Left = 10
           Height = 15
           Top = 65
           Width = 58
@@ -2678,7 +2680,8 @@ object Form_Principal: TForm_Principal
           ParentFont = False
         end
         object lb_Msd_min10: TLabel
-          Left = 94
+          AnchorSideLeft.Control = lb_Msd_min7
+          Left = 10
           Height = 15
           Top = 93
           Width = 58
@@ -2692,7 +2695,8 @@ object Form_Principal: TForm_Principal
           ParentFont = False
         end
         object lb_Msd_min11: TLabel
-          Left = 122
+          AnchorSideLeft.Control = lb_Msd_min7
+          Left = 10
           Height = 15
           Top = 121
           Width = 58
@@ -2770,6 +2774,7 @@ object Form_Principal: TForm_Principal
           TabOrder = 3
         end
         object tb_Fcd8: TEdit
+          AnchorSideBottom.Control = lb_Msd_min7
           Left = 220
           Height = 23
           Top = 27
@@ -2899,7 +2904,8 @@ object Form_Principal: TForm_Principal
           ParentFont = False
         end
         object lb_Msd_min19: TLabel
-          Left = 66
+          AnchorSideLeft.Control = GroupBox14
+          Left = 0
           Height = 15
           Top = 65
           Width = 58
@@ -6573,5 +6579,15 @@ object Form_Principal: TForm_Principal
         end
       end
     end
+  end
+  object Memo1: TMemo
+    Left = 534
+    Height = 90
+    Top = 183
+    Width = 150
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 2
   end
 end

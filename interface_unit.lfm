@@ -1,13 +1,13 @@
 object Form_Principal: TForm_Principal
-  Left = 685
-  Height = 960
-  Top = 29
-  Width = 484
+  Left = 1228
+  Height = 929
+  Top = 53
+  Width = 485
   BorderIcons = [biSystemMenu, biMinimize, biHelp]
   BorderStyle = bsSingle
   Caption = 'DIMensIonamento de Seções'
-  ClientHeight = 960
-  ClientWidth = 484
+  ClientHeight = 929
+  ClientWidth = 485
   Icon.Data = {
     BE0C00000000010001002020000001001800A80C000016000000280000002000
     0000400000000100180000000000000C00006400000064000000000000000000
@@ -118,8 +118,8 @@ object Form_Principal: TForm_Principal
   object Barra_Status: TStatusBar
     Left = 0
     Height = 23
-    Top = 937
-    Width = 484
+    Top = 906
+    Width = 485
     Panels = <    
       item
         Width = 75
@@ -143,12 +143,12 @@ object Form_Principal: TForm_Principal
     Height = 880
     Top = 20
     Width = 462
-    ActivePage = TabMateriais
+    ActivePage = TabGeometria
     Font.CharSet = ANSI_CHARSET
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     TabPosition = tpLeft
     object TabMateriais: TTabSheet
@@ -158,7 +158,7 @@ object Form_Principal: TForm_Principal
       object gb_Concreto: TGroupBox
         Left = 10
         Height = 405
-        Top = 120
+        Top = 100
         Width = 415
         Caption = 'Concreto'
         ClientHeight = 385
@@ -777,11 +777,11 @@ object Form_Principal: TForm_Principal
       end
       object gb_Coeficientes: TGroupBox
         Left = 10
-        Height = 110
+        Height = 85
         Top = 10
         Width = 415
         Caption = 'Coeficientes de ponderação'
-        ClientHeight = 90
+        ClientHeight = 65
         ClientWidth = 411
         Font.CharSet = ANSI_CHARSET
         Font.Height = -12
@@ -821,20 +821,6 @@ object Form_Principal: TForm_Principal
           ParentColor = False
           ParentFont = False
         end
-        object lb_Delta: TLabel
-          Left = 10
-          Height = 15
-          Top = 58
-          Width = 176
-          Caption = 'Redistribuição de momentos (δ) :'
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-        end
         object tb_Gama_s: TEdit
           Left = 220
           Height = 23
@@ -865,26 +851,11 @@ object Form_Principal: TForm_Principal
           TabOrder = 1
           Text = '1,4'
         end
-        object tb_Delta: TEdit
-          Left = 220
-          Height = 23
-          Top = 54
-          Width = 180
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          OnKeyPress = tb_DeltaKeyPress
-          ParentFont = False
-          TabOrder = 2
-          Text = '1,00'
-        end
       end
       object gb_Bloco: TGroupBox
         Left = 10
         Height = 129
-        Top = 530
+        Top = 510
         Width = 415
         Caption = 'Parâmetros do bloco retangular'
         ClientHeight = 109
@@ -1047,7 +1018,7 @@ object Form_Principal: TForm_Principal
       object gb_Aco: TGroupBox
         Left = 10
         Height = 185
-        Top = 660
+        Top = 640
         Width = 415
         Caption = 'Aço'
         ClientHeight = 165
@@ -1972,11 +1943,11 @@ object Form_Principal: TForm_Principal
       ClientWidth = 431
       object gb_Es_Flexao_Simples: TGroupBox
         Left = 10
-        Height = 80
+        Height = 100
         Top = 10
         Width = 415
         Caption = 'Esforços Solicitantes'
-        ClientHeight = 60
+        ClientHeight = 80
         ClientWidth = 411
         Font.CharSet = ANSI_CHARSET
         Font.Pitch = fpVariable
@@ -2068,11 +2039,40 @@ object Form_Principal: TForm_Principal
           ParentColor = False
           ParentFont = False
         end
+        object tb_Delta: TEdit
+          Left = 220
+          Height = 23
+          Top = 54
+          Width = 180
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnKeyPress = tb_DeltaKeyPress
+          ParentFont = False
+          TabOrder = 2
+          Text = '1,00'
+        end
+        object lb_Delta: TLabel
+          Left = 10
+          Height = 15
+          Top = 58
+          Width = 176
+          Caption = 'Redistribuição de momentos (δ) :'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
       end
       object gb_Linha_neutra: TGroupBox
         Left = 10
         Height = 240
-        Top = 95
+        Top = 115
         Width = 415
         Caption = 'Determinação da linha neutra'
         ClientHeight = 220
@@ -2325,7 +2325,7 @@ object Form_Principal: TForm_Principal
       object GroupBox10: TGroupBox
         Left = 10
         Height = 185
-        Top = 344
+        Top = 360
         Width = 415
         Caption = 'Armaduras de equilíbrio geral'
         ClientHeight = 165
@@ -2549,7 +2549,7 @@ object Form_Principal: TForm_Principal
       object GroupBox12: TGroupBox
         Left = 10
         Height = 201
-        Top = 534
+        Top = 550
         Width = 415
         Caption = 'Armaduras adotadas'
         Font.CharSet = ANSI_CHARSET
@@ -2562,7 +2562,7 @@ object Form_Principal: TForm_Principal
       object gb_Auxiliar: TGroupBox
         Left = 10
         Height = 50
-        Top = 752
+        Top = 770
         Width = 415
         Caption = 'Armaduras auxiliares'
         ClientHeight = 30

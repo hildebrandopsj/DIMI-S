@@ -20,8 +20,8 @@
         <ComponentName Value="Form_Principal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="920"/>
-        <CursorPos X="36" Y="1255"/>
+        <TopLine Value="696"/>
+        <CursorPos X="35" Y="718"/>
         <UsageCount Value="217"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -32,7 +32,7 @@
         <UnitName Value="Design_unit"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="54" Y="16"/>
-        <UsageCount Value="112"/>
+        <UsageCount Value="131"/>
       </Unit>
       <Unit>
         <Filename Value="engenharia_unit.pas"/>
@@ -40,35 +40,148 @@
         <UnitName Value="Engenharia_Unit"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="19"/>
-        <CursorPos X="38" Y="45"/>
-        <UsageCount Value="25"/>
+        <TopLine Value="16"/>
+        <CursorPos X="40" Y="131"/>
+        <FoldState Value=" TJQ1{9o"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="interface_unit.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="535"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\math.pp"/>
+        <UnitName Value="Math"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="986"/>
+        <CursorPos X="10" Y="1017"/>
+        <UsageCount Value="9"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="3">
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="engenharia_unit.pas"/>
-        <Caret Line="62" Column="3" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="engenharia_unit.pas"/>
-        <Caret Line="31" Column="33" TopLine="17"/>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="455" Column="17" TopLine="450"/>
       </Position>
       <Position>
         <Filename Value="interface_unit.pas"/>
-        <Caret Line="609" Column="41" TopLine="593"/>
+        <Caret Line="713" Column="39" TopLine="690"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="717" Column="8" TopLine="701"/>
       </Position>
       <Position>
         <Filename Value="engenharia_unit.pas"/>
-        <Caret Line="29" Column="65" TopLine="32"/>
+        <Caret Line="123" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="717" Column="8" TopLine="701"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="723" Column="29" TopLine="702"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="719" Column="41" TopLine="706"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="720" Column="30" TopLine="704"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="514" Column="73" TopLine="502"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="120" Column="59" TopLine="15"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="125" Column="29" TopLine="15"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="122" Column="29" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="120" Column="54" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="122" Column="3" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="126" Column="49" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="122" Column="39" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="125" Column="52" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="122" Column="58" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="27" Column="56"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="121" TopLine="15"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="120" Column="49" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="719" Column="38" TopLine="704"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="721" Column="19" TopLine="706"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="722" Column="23" TopLine="706"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="121" Column="48" TopLine="7"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="721" Column="22" TopLine="706"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="134" Column="20" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="engenharia_unit.pas"/>
+        <Caret Line="123" Column="55" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="719" Column="35" TopLine="672"/>
+      </Position>
+      <Position>
+        <Filename Value="interface_unit.pas"/>
+        <Caret Line="718" Column="35" TopLine="686"/>
       </Position>
     </JumpHistory>
     <RunParams>
