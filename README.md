@@ -4,9 +4,6 @@ O projeto iniciou como uma pequena aplicação utilizando o software Smath Studi
 
 O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquanto a nova versão está em desenvolvimento.
 
-**Downloads**  
-Para baixar a versão do aplicativo criado com o Smath Studio, clique [aqui](https://github.com/hildebrandopsj/DIMI-S/releases/tag/v0.219)
-
 **Capabilidades:**
 - Concretos até 90 MPa
 - Dimensionamento à flexão simples
@@ -18,6 +15,7 @@ Para baixar a versão do aplicativo criado com o Smath Studio, clique [aqui](htt
 - Determinação de coeficientes para verificação da deformação excessiva (Ieq/I0, alpha f)
 - Fadiga (Armaduras longitudinais e transversais)
 - Detalhamento (Ancoragem, ganchos, traspasse, decalagem etc)
+- Ancoragem de vigas em apoios extremos
 
 **Agradecimentos:**  
 Agradeço aos colegas que contribuiram de forma significativa ao desenvolvimento desta ferramenta:
