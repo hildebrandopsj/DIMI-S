@@ -16,6 +16,7 @@ O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquan
 - Fadiga (Armaduras longitudinais e transversais)
 - Detalhamento (Ancoragem, ganchos, traspasse, decalagem etc)
 - Ancoragem de vigas em apoios extremos
+- Cálculo da armadura de suspensão
 
 **Agradecimentos:**  
 Agradeço aos colegas que contribuiram de forma significativa ao desenvolvimento desta ferramenta:
