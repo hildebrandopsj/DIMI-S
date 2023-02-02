@@ -18,15 +18,15 @@ O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquan
 - Ancoragem de vigas em apoios extremos
 - Cálculo da armadura de suspensão
 
+**Manual Teórico**  
+O manual teórico pode ser acessado [aqui](https://github.com/hildebrandopsj/DIMI-S/wiki)
+
+**Ícones**  
+O ícone utilizado para este programa foi obtido em https://www.flaticon.com/authors/smashicons
+
 **Agradecimentos:**  
 Agradeço aos colegas que contribuiram de forma significativa ao desenvolvimento desta ferramenta:
 - Iberê Martins da Silva
 - Caio Fernandes Lessa
 - Sérgio Cifú
 - Osvaldemar Marchetti
-
-**Manual Teórico**  
-O manual teórico pode ser acessado [aqui](https://github.com/hildebrandopsj/DIMI-S/wiki)
-
-**Ícones**  
-O ícone utilizado para este programa foi obtido em https://www.flaticon.com/authors/smashicons
