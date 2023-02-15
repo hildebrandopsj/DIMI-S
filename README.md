@@ -30,3 +30,4 @@ Agradeço aos colegas que contribuiram de forma significativa ao desenvolvimento
 - Caio Fernandes Lessa
 - Sérgio Cifú
 - Osvaldemar Marchetti
+- Gabriela Bottene Perche
