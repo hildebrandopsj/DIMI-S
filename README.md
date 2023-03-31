@@ -17,6 +17,7 @@ O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquan
 - Detalhamento (Ancoragem, ganchos, traspasse, decalagem etc)
 - Ancoragem de vigas em apoios de extremidades
 - Cálculo da armadura de suspensão
+- Cálculo do momento crítico para perda da estabilidade lateral, conforme proposto por Hansen (1969)
 
 **Manual Teórico**  
 O manual teórico pode ser acessado [aqui](https://github.com/hildebrandopsj/DIMI-S/wiki)
