@@ -1,6 +1,6 @@
 # DIMI-S (DIMenIonamento de Seções)
 ### Programa livre para dimensionamento de seções em concreto armado. 
-O projeto iniciou como uma pequena aplicação utilizando o software Smath Studio, mas devido a algumas limitações, o autor se propôs a desenvolver uma versão na linguagem pascal utilizando o software livre Lazarus 
+O projeto iniciou como uma pequena aplicação utilizando o software Smath Studio, mas devido a algumas limitações, o autor se propôs a desenvolver uma nova versão utilizando a linguagem python. 
 
 O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquanto a nova versão está em desenvolvimento.
 
@@ -15,7 +15,7 @@ O aplicativo em Smath Studio é completo e funcional e pode ser utilizado enquan
 - Determinação de coeficientes para verificação da deformação excessiva (Ieq/I0, alpha f)
 - Fadiga (Armaduras longitudinais e transversais)
 - Detalhamento (Ancoragem, ganchos, traspasse, decalagem etc)
-- Ancoragem de vigas em apoios extremos
+- Ancoragem de vigas em apoios de extremidades
 - Cálculo da armadura de suspensão
 
 **Manual Teórico**  
